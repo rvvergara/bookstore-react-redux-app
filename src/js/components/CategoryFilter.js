@@ -3,27 +3,20 @@ import PropTypes from 'prop-types';
 import categories from '../data/bookCategories';
 
 const CategoryFilter = (props) => {
-  const {
-    filter,
-    handleChange,
-  } = props;
+  const { filter, handleChange } = props;
   return (
     <div className="category-container">
+      <h2 className="filter-title">Filter category: </h2>
       <select
-        className="form-select"
+        className="category-select form-select"
         value={filter}
         onChange={e => handleChange(e.target.value)}
       >
-        {
-          ['All'].concat(categories).map(category => (
-            <option
-              key={category}
-              value={category}
-            >
-              { category }
-            </option>
-          ))
-        }
+        {['All'].concat(categories).map(category => (
+          <option key={category} value={category}>
+            {category}
+          </option>
+        ))}
       </select>
     </div>
   );

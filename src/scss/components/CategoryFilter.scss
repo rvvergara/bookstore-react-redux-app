@@ -1,5 +1,19 @@
 .category-container {
+  margin: 10px 0;
   display: flex;
-  height: $medium;
-  width: $large;
+}
+.category-select {
+  width: 16%;
+  height: 45px;
+}
+.filter-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #888888;
+  margin: auto 10px;
 }
