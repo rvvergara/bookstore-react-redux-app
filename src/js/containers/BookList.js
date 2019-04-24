@@ -48,7 +48,7 @@ const mapStateToProps = state => ({
 BookList.propTypes = {
   books: PropTypes.instanceOf(Object).isRequired,
   changeFilters: PropTypes.func.isRequired,
-  filter: PropTypes.func.isRequired,
+  filter: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
 };
 
