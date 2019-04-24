@@ -7,8 +7,8 @@ import CategoryFilter from '../components/CategoryFilter';
 
 const BookList = (props) => {
   const {
- books, changeFilters, filter, removeBook 
-} = props;
+    books, changeFilters, filter, removeBook,
+  } = props;
   return (
     <div>
       <CategoryFilter
@@ -25,7 +25,7 @@ const BookList = (props) => {
 };
 
 const mapStateToProps = state => ({
-  books: state.books.filter(book => (state.filter === "" ? true : book.category === state.filter),),
+  books: state.books.filter(book => (state.filter === '' ? true : book.category === state.filter)),
   filter: state.filter,
 });
 
