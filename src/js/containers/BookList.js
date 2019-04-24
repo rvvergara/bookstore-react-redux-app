@@ -14,7 +14,7 @@ const BookList = props => (
       </tr>
     </thead>
     <tbody>
-      {books.map(book => (
+      {props.books.map(book => (
         <Book
           key={book.id}
           book={book}
