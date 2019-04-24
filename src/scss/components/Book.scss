@@ -2,27 +2,30 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-width: 0;
   word-wrap: break-word;
-  background-color: #fff;
+  background-color: $white;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 0.1rem solid $translucent-black;
   border-radius: 0.25rem;
-  margin: 15px 0;
+  margin: $intercard 0;
 }
+
 .card-body {
   flex: 1 1 auto;
-  padding: 1.25rem;
+  padding: $card-padding;
 }
+
 .columns {
   display: flex;
   flex-wrap: wrap;
 }
+
 .book-info {
   flex: 0 0 75%;
   max-width: 100%;
 }
+
 .progress {
-  max-width: 80px;
-  padding: 30px;
+  max-width: $xlarge * 2;
+  padding: $large;
 }
