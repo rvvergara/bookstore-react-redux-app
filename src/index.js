@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Provider} from 'react-redux';
+import { Provider } from 'react-redux';
 import App from './js/components/App';
 import configureStore from './js/store/configureStore';
 import * as serviceWorker from './serviceWorker';
@@ -13,7 +13,7 @@ const connectedApp = (
   >
     <App />
   </Provider>
-)
+);
 
 ReactDOM.render(connectedApp, document.getElementById('root'));
 

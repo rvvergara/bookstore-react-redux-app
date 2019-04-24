@@ -1,13 +1,19 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import categories from '../data/bookCategories';
 
-const CategoryFilter = (props) => (
-  <select
-    value={props.filter}
-    onChange={e => props.handleChange(e.target.value)}
-  >
-  {
-    ["All"].concat(categories).map(category => (
+const CategoryFilter = (props) => {
+  const {
+    filter,
+    handleChange,
+  } = props;
+  return (
+    <select
+      value={filter}
+      onChange={e => handleChange(e.target.value)}
+    >
+      {
+    ['All'].concat(categories).map(category => (
       <option
         key={category}
         value={category}
@@ -16,7 +22,13 @@ const CategoryFilter = (props) => (
       </option>
     ))
   }
-</select>
-);
+    </select>
+  );
+};
+
+CategoryFilter.propTypes = {
+  filter: PropTypes.func.isRequired,
+  handleChange: PropTypes.func.isRequired,
+};
 
 export default CategoryFilter;

@@ -1,1 +1,1 @@
-export default ["Action", "Biography", "History", "Horror", "Kids", "Learning", "Sci-Fi"];
+export default ['Action', 'Biography', 'History', 'Horror', 'Kids', 'Learning', 'Sci-Fi'];

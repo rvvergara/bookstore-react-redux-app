@@ -23,5 +23,4 @@ export {
   addBook,
   removeBook,
   changeFilters,
-}
-;
+};

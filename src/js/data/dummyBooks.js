@@ -1,15 +1,16 @@
-import uuid from "uuid";
+import uuid from 'uuid';
+
 const books = [
   {
     id: uuid(),
-    title: "Rich Dad Poor Dad",
-    category: "Learning"
+    title: 'Rich Dad Poor Dad',
+    category: 'Learning',
   },
   {
     id: uuid(),
-    title: "Harry Potter",
-    category: "Action"
-  }
+    title: 'Harry Potter',
+    category: 'Action',
+  },
 ];
 
 export default books;
