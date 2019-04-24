@@ -7,7 +7,9 @@ import '../../scss/main.scss';
 export default () => (
   <div id="app">
     <Header />
-    <BooksForm />
-    <BookList />
+    <div id="container">
+      <BooksForm />
+      <BookList />
+    </div>
   </div>
 );
