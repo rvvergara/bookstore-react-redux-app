@@ -7,3 +7,9 @@ body {
   font-size: $regular;
   background-color: #f5f6fa;
 }
+button {
+  border: none;
+  background: transparent;
+  text-transform: none;
+  overflow: visible;
+}

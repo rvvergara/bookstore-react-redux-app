@@ -1,9 +1,7 @@
 import React from 'react';
 
 const ProgressUpdateBtn = () => (
-  <button
-    type="button"
-  >
+  <button className="update-btn update-btn-primary" type="button">
     Update Progress
   </button>
 );

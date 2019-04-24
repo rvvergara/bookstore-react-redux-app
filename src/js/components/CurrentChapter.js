@@ -1,9 +1,9 @@
 import React from 'react';
 
 const CurrentChapter = () => (
-  <div className="current-chapter">
-    <h3>CURRENT CHAPTER</h3>
-    <p>Chapter 17</p>
+  <div>
+    <p className="current-chapter">CURRENT CHAPTER</p>
+    <p className="current-lesson">Chapter 17</p>
   </div>
 );
 
