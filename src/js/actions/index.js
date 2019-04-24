@@ -1,20 +1,20 @@
 import uuid from 'uuid';
 
-const addBook = ({title, category}) => ({
+const addBook = ({ title, category }) => ({
   type: 'ADD_BOOK',
   book: {
     id: uuid(),
     title,
-    category, 
-  }
-}); 
+    category,
+  },
+});
 
-const removeBook = (id) => ({
+const removeBook = id => ({
   type: 'REMOVE_BOOK',
   id,
 });
 
-const changeFilters = (filterText) => ({
+const changeFilters = filterText => ({
   type: 'CHANGE_FILTER',
   filterText,
 });
@@ -24,3 +24,4 @@ export {
   removeBook,
   changeFilters,
 }
+;
