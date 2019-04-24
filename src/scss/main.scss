@@ -1,16 +1,27 @@
-// @import url(
-//   https://fonts.googleapis.com/css?family=Montserrat:300,
-//   400,
-//   500,
-//   600,
-//   700%7CRoboto+Slab:300,
-//   400,
-//   700
-// );
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../fonts/Roboto/Roboto-Light.ttf");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: bold;
+}
 
 @import "./base/settings";
 @import "./base/base";
-@import "./components/App.scss";
 @import "./components/Header.scss";
 @import "./components/Book.scss";
 @import "./container/Progress.scss";
