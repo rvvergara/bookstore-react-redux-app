@@ -1,0 +1,31 @@
+.progress-body {
+  display: flex;
+}
+.progress-bar {
+  max-width: $xlarge * 2;
+  padding: $large;
+}
+.progress-percentage {
+}
+.percent-complete {
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-bottom: 0;
+}
+.completed {
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+}

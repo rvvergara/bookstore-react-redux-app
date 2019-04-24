@@ -4,11 +4,13 @@ import CircularProgressbar from 'react-circular-progressbar';
 const Progress = () => {
   const percentage = 66;
   return (
-    <div>
-      <CircularProgressbar percentage={percentage} />
-      <div className="percentage">
-        <p>Hello</p>
-        <p>hi</p>
+    <div className="progress-body">
+      <div className="progress-bar">
+        <CircularProgressbar percentage={percentage} />
+      </div>
+      <div className="progress-percentage">
+        <p className="percent-complete">{`${percentage}%`}</p>
+        <p className="completed">Completed</p>
       </div>
     </div>
   );
