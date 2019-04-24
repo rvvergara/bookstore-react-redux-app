@@ -14,6 +14,11 @@ const removeBook = (id) => ({
   id,
 });
 
+const changeFilters = (filterText) => ({
+  type: 'CHANGE_FILTER',
+  filterText,
+});
+
 export {
   addBook,
   removeBook,
