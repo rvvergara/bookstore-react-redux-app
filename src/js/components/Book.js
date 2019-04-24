@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import CircularProgressbar from 'react-circular-progressbar';
+import ProgressUpdateBtn from './ProgressUpdateBtn';
 import 'react-circular-progressbar/dist/styles.css';
 
 const Book = (props) => {
@@ -22,6 +23,7 @@ const Book = (props) => {
           </div>
           <div className="progress">
             <CircularProgressbar percentage={percentage} text={`${percentage}%`} />
+            <ProgressUpdateBtn />
           </div>
         </div>
       </div>
