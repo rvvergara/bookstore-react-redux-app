@@ -1,19 +1,19 @@
 .panel-bg {
-  width: 1400px;
-  height: 95px;
+  height: 9.5rem;
   background-color: #ffffff;
   display: flex;
 }
+
 .Bookstore-CMS {
-  width: 240px;
-  height: 37px;
+  width: 24rem;
+  height: 3.7rem;
   font-family: Montserrat;
-  font-size: 30px;
+  font-size: $large;
   font-weight: bold;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
-  color: #0290ff;
-  margin-left: 7%;
+  color: $light-blue;
+  margin-left: $side-pad;
 }

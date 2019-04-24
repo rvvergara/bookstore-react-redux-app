@@ -1,11 +1,11 @@
-import React from "react";
-import Header from "../components/Header";
-import BooksForm from "../containers/BooksForm";
-import BookList from "../containers/BookList";
-import "../../scss/main.scss";
+import React from 'react';
+import Header from "./Header";
+import BooksForm from '../containers/BooksForm';
+import BookList from '../containers/BookList';
+import '../../scss/main.scss';
 
 export default () => (
-  <div>
+  <div id="app">
     <Header />
     <BooksForm />
     <BookList />
