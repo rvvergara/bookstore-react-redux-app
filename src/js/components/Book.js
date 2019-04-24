@@ -1,9 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-const Book = props => {
-  const { id, title, category } = props.book;
-  const { handleRemove } = props;
+const Book = (props) => {
+  const { handleRemove, book } = props;
+  const { id, title, category } = book;
+
   return (
     <div className="card">
       <div className="card-body">
@@ -25,7 +26,8 @@ const Book = props => {
 };
 
 Book.propTypes = {
-  handleRemove: PropTypes.func.isRequired
+  book: PropTypes.instanceOf(Object).isRequired,
+  handleRemove: PropTypes.func.isRequired,
 };
 
 export default Book;
