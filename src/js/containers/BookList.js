@@ -1,16 +1,14 @@
 import React from "react";
 import { connect } from "react-redux";
-import { removeBook,
-  changeFilters,
-} from "../actions";
+import { removeBook, changeFilters } from "../actions";
 import Book from "../components/Book";
-import CategoryFilter from '../components/CategoryFilter';
+import CategoryFilter from "../components/CategoryFilter";
 
 const BookList = props => (
   <div>
-    <CategoryFilter 
+    <CategoryFilter
       filter={props.filter}
-      handleChange={(optionValue)=> props.changeFilters(optionValue)}
+      handleChange={optionValue => props.changeFilters(optionValue)}
     />
     <table>
       <thead>
@@ -35,8 +33,10 @@ const BookList = props => (
 
 const mapStateToProps = state => {
   return {
-    books: state.books,
-    filter: state.filter,
+    books: state.books.filter(book =>
+      state.filter === "" ? true : book.category === state.filter
+    ),
+    filter: state.filter
   };
 };
 
