@@ -1,0 +1,41 @@
+.add-new-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #888888;
+  margin-bottom: 22px;
+}
+.form {
+  display: flex;
+}
+.form-control {
+  width: 100%;
+  background-color: #fff;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  border-radius: 4px;
+  border: solid 1px #e8e8e8;
+  font-family: "Montserrat", sans-serif;
+}
+select.form-control {
+  height: 3.3rem;
+}
+.add-book-btn {
+  height: 45px;
+  border-radius: 3px;
+  font-family: RobotoSlab;
+  font-size: 13px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #ffffff;
+  width: 215px;
+  background-color: #0290ff;
+  border-color: #0290ff;
+}
