@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { removeBook } from "../actions";
-import books from "../data/dummyBooks";
 import Book from "../components/Book";
 
 const BookList = props => (
