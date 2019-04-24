@@ -1,8 +1,8 @@
 import React from "react";
 
 const Header = () => (
-  <header>
-    <h1>Bookstore App</h1>
+  <header className="panel-bg">
+    <h1 className="Bookstore-CMS">Bookstore App</h1>
   </header>
 );
 
