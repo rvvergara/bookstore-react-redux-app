@@ -25,15 +25,8 @@
   font-family: "Montserrat", sans-serif;
 }
 
-.form-select {
+form .form-select {
   flex: 0.75;
-  background: $white;
-  font-size: $medium * 0.7;
-  margin: 0 0.2rem;
-  border: 1px solid #e8e8e8;
-  border-radius: 4px;
-  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  text-align: center;
 }
 
 .add-book-btn {

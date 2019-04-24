@@ -1,4 +1,28 @@
 // All base styles and general styles
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../fonts/Roboto/Roboto-Light.ttf");
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  src: url("../fonts/Roboto/Roboto-Bold.ttf");
+  font-weight: bold;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -16,9 +40,7 @@ button {
 }
 
 input {
-  -webkit-appearance: textfield;
   background-color: white;
-  -webkit-rtl-ordering: logical;
   cursor: text;
   padding: 1px;
   border-width: 2px;
@@ -29,4 +51,14 @@ input {
 
 #container {
   margin: 0 10rem;
+}
+
+.form-select {
+  background: $white;
+  font-size: $medium * 0.7;
+  margin: 0 0.2rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-align: center;
 }

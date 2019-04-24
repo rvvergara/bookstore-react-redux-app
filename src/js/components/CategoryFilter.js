@@ -8,21 +8,24 @@ const CategoryFilter = (props) => {
     handleChange,
   } = props;
   return (
-    <select
-      value={filter}
-      onChange={e => handleChange(e.target.value)}
-    >
-      {
-    ['All'].concat(categories).map(category => (
-      <option
-        key={category}
-        value={category}
+    <div className="category-container">
+      <select
+        className="form-select"
+        value={filter}
+        onChange={e => handleChange(e.target.value)}
       >
-        { category }
-      </option>
-    ))
-  }
-    </select>
+        {
+          ['All'].concat(categories).map(category => (
+            <option
+              key={category}
+              value={category}
+            >
+              { category }
+            </option>
+          ))
+        }
+      </select>
+    </div>
   );
 };
 
