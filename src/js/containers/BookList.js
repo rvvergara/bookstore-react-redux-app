@@ -2,26 +2,30 @@ import React from "react";
 import { connect } from "react-redux";
 import { removeBook } from "../actions";
 import Book from "../components/Book";
+import CategoryFilter from '../components/CategoryFilter';
 
 const BookList = props => (
-  <table>
-    <thead>
-      <tr>
-        <th>BOOK ID</th>
-        <th>Title</th>
-        <th>Category</th>
-      </tr>
-    </thead>
-    <tbody>
-      {props.books.map(book => (
-        <Book
-          key={book.id}
-          book={book}
-          handleRemove={id => props.removeBook(id)}
-        />
-      ))}
-    </tbody>
-  </table>
+  <div>
+    <CategoryFilter />
+    <table>
+      <thead>
+        <tr>
+          <th>BOOK ID</th>
+          <th>Title</th>
+          <th>Category</th>
+        </tr>
+      </thead>
+      <tbody>
+        {props.books.map(book => (
+          <Book
+            key={book.id}
+            book={book}
+            handleRemove={id => props.removeBook(id)}
+          />
+        ))}
+      </tbody>
+    </table>
+  </div>
 );
 
 const mapStateToProps = state => {
