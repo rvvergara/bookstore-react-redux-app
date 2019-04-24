@@ -11,19 +11,25 @@
 }
 .form {
   display: flex;
+  justify-content: space-between;
 }
-.form-control {
-  width: 100%;
+.form-input {
+  flex-basis: 72%;
   background-color: #fff;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
   font-family: "Montserrat", sans-serif;
 }
-select.form-control {
-  height: 3.3rem;
+.form-select {
+  flex: 0.75;
+  border: 1px solid #e8e8e8;
+  border-radius: 4px;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  text-align: center;
 }
 .add-book-btn {
+  flex: 0.75;
   height: 45px;
   border-radius: 3px;
   font-family: RobotoSlab;
@@ -35,7 +41,6 @@ select.form-control {
   letter-spacing: 0.5px;
   text-align: center;
   color: #ffffff;
-  width: 215px;
   background-color: #0290ff;
   border-color: #0290ff;
 }

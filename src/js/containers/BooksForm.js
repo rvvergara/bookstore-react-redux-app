@@ -39,12 +39,13 @@ class BooksForm extends React.Component {
           }}
         >
           <input
-            className="form-control"
+            className="form-input"
             type="text"
             value={this.state.title}
             onChange={e => this.handleChange('title', e.target.value)}
           />
           <select
+            className="form-select"
             value={this.state.category}
             onChange={e => this.handleChange('category', e.target.value)}
           >
