@@ -7,7 +7,7 @@ import categories from "../data/bookCategories";
 class BooksForm extends React.Component {
   state = {
     title: "",
-    category: "Action"
+    category: "Select Category"
   };
 
   handleChange = (key, val) =>
@@ -23,7 +23,7 @@ class BooksForm extends React.Component {
     this.props.changeFilters("All");
     this.setState(() => ({
       title: "",
-      category: "Action"
+      category: "Select Category"
     }));
   };
 
@@ -44,7 +44,7 @@ class BooksForm extends React.Component {
           value={this.state.category}
           onChange={e => this.handleChange("category", e.target.value)}
         >
-          {categories.map(category => (
+          {["Select Category"].concat(categories).map(category => (
             <option key={category} value={category}>
               {category}
             </option>
