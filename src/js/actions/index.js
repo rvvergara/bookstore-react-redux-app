@@ -22,4 +22,5 @@ const changeFilters = (filterText) => ({
 export {
   addBook,
   removeBook,
+  changeFilters,
 }

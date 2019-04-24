@@ -1,8 +1,11 @@
 import React from 'react';
 import categories from '../data/bookCategories';
 
-const CategoryFilter = () => (
-  <select>
+const CategoryFilter = (props) => (
+  <select
+    value={props.filter}
+    onChange={e => props.handleChange(e.target.value)}
+  >
   {
     ["All"].concat(categories).map(category => (
       <option
