@@ -15,7 +15,7 @@ const Book = (props) => {
             <h4 className="genre">{category}</h4>
             <h3 className="title">{title}</h3>
             <div className="action">
-              <button type="button" onClick={() => handleRemove(id)}>
+              <button className="btn btn-link" type="button" onClick={() => handleRemove(id)}>
                 Remove
               </button>
             </div>

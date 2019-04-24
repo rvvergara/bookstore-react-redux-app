@@ -29,3 +29,45 @@
   max-width: $xlarge * 2;
   padding: $large;
 }
+
+.genre {
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-bottom: 4px;
+}
+.title {
+  font-family: "Roboto Slab", serif;
+  font-size: 22px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: #121212;
+  margin: 0;
+}
+.action {
+  margin: 15px 0;
+}
+.btn {
+  border: none;
+  font-family: "Roboto Slab", serif;
+  font-size: 13px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.btn-link {
+  color: #007bff;
+  background-color: transparent;
+}
