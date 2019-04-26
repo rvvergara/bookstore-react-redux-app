@@ -1,0 +1,22 @@
+.category-container {
+  margin: ($regular * 0.8) 0;
+  display: flex;
+}
+
+.category-select {
+  width: 16%;
+  height: $xlarge;
+  font-size: $medium * 0.75;
+}
+
+.filter-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: $medium * 0.85;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.02rem;
+  color: #888888;
+  margin: auto ($small * 0.5);
+}

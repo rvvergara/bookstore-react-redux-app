@@ -1,5 +1,59 @@
-# BOOKSTORE APP
+# bookstore-react-redux-app
 
-### App built with React and Redux
+[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-### by [Ryan](https://github.com/rvvergara) and [Dipto](https://github.com/dipto0321)
+> Bookstore CMS App built using React, Redux and React-Redux. [Live Demo](https://ryto-react-redux-bookstore.netlify.com/)
+
+Current version features:
+
+- User can add books to the list
+- User can remove books
+- User can filter categories
+
+## Table of Contents
+
+- [bookstore-react-redux-app](#bookstore-react-redux-app)
+  - [Table of Contents](#table-of-contents)
+  - [Security](#security)
+  - [Background](#background)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [API](#api)
+  - [Maintainers](#maintainers)
+  - [Contributing](#contributing)
+  - [License](#license)
+
+## Security
+
+## Background
+
+## Install
+
+Follow these steps:
+  - clone this repo
+  - `cd bookstore-react-redux-app`
+  - `yarn install` or `npm install`
+
+## Usage
+
+```
+yarn start
+```
+
+Goto `localhost:3000`
+
+## API
+
+## Maintainers
+
+  [Ryan](https://github.com/rvvergara) and [Dipto](https://github.com/dipto0321)
+
+## Contributing
+
+  [Ryan](https://github.com/rvvergara) and [Dipto](https://github.com/dipto0321)
+
+PRs accepted.
+
+## License
+
+MIT © 2019 Ryan and Dipto
