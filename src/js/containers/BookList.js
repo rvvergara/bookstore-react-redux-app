@@ -7,10 +7,7 @@ import CategoryFilter from '../components/CategoryFilter';
 
 const BookList = (props) => {
   const {
-    books,
-    changeFilters,
-    filter,
-    removeBook,
+    books, changeFilters, filter, removeBook,
   } = props;
   return (
     <div>
@@ -18,24 +15,11 @@ const BookList = (props) => {
         filter={filter}
         handleChange={optionValue => changeFilters(optionValue)}
       />
-      <table>
-        <thead>
-          <tr>
-            <th>BOOK ID</th>
-            <th>Title</th>
-            <th>Category</th>
-          </tr>
-        </thead>
-        <tbody>
-          {books.map(book => (
-            <Book
-              key={book.id}
-              book={book}
-              handleRemove={id => removeBook(id)}
-            />
-          ))}
-        </tbody>
-      </table>
+      <div>
+        {books.map(book => (
+          <Book key={book.id} book={book} handleRemove={id => removeBook(id)} />
+        ))}
+      </div>
     </div>
   );
 };

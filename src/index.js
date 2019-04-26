@@ -8,9 +8,7 @@ import * as serviceWorker from './serviceWorker';
 const store = configureStore();
 
 const connectedApp = (
-  <Provider
-    store={store}
-  >
+  <Provider store={store}>
     <App />
   </Provider>
 );

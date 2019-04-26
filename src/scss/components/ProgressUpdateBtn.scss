@@ -1,0 +1,19 @@
+.update-btn {
+  width: 18.4rem;
+  height: $large;
+  border-radius: 0.3px;
+  font-family: "Roboto Slab", serif;
+  font-size: $small;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+
+.update-btn-primary {
+  color: #ffffff;
+  background-color: $light-blue;
+  border-color: $light-blue;
+}

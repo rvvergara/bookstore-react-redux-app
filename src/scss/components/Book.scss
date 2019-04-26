@@ -1,0 +1,86 @@
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  word-wrap: break-word;
+  background-color: $white;
+  background-clip: border-box;
+  border: 0.1rem solid $translucent-black;
+  border-radius: 0.25rem;
+  margin: $intercard 0;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: $card-padding;
+}
+
+.columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.book-info {
+  flex: 0 0 50%;
+  max-width: 100%;
+}
+
+.progress {
+  flex: 0 0 25%;
+}
+
+.chapter-info {
+  flex: 0 0 20%;
+  padding: 1rem;
+  border-left: 0.1rem solid grey;
+}
+
+.genre {
+  opacity: 0.5;
+  font-family: "Montserrat", sans-serif;
+  font-size: $regular * 0.875;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #121212;
+  margin-bottom: 0.4rem;
+}
+
+.title {
+  font-family: "Roboto Slab", serif;
+  font-size: $medium;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.02rem;
+  color: $black;
+  margin: 0;
+}
+
+.action {
+  margin: $regular 0;
+}
+
+.btn {
+  border: none;
+  font-family: "Roboto Slab", serif;
+  font-size: $small;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.05rem;
+  text-align: center;
+}
+
+.btn:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.btn-link {
+  color: $deep-blue;
+}
