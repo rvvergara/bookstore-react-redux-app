@@ -4,10 +4,11 @@ import { connect } from 'react-redux';
 import { addBook, changeFilters } from '../actions';
 import categories from '../data/bookCategories';
 
-class BooksForm extends React.Component {
+export class BooksForm extends React.Component {
   state = {
     title: '',
     category: 'Select Category',
+    error: '',
   };
 
   handleChange = (key, val) =>
@@ -16,7 +17,7 @@ class BooksForm extends React.Component {
     }));
 
   handleSubmit = () => {
-    this.props.addBook({
+    if(this.state.title && this.state.category !== 'Select Category'){this.props.addBook({
       title: this.state.title,
       category: this.state.category,
     });
@@ -24,13 +25,19 @@ class BooksForm extends React.Component {
     this.setState(() => ({
       title: '',
       category: 'Select Category',
-    }));
+      error: '',
+    }));}else{
+      this.setState(() => ({ error: 'Please enter title and valid category'}))
+    }
   };
 
   render() {
     return (
       <div>
         <h2 className="add-new-title">Add new book</h2>
+        {
+          this.state.error && <div>{ this.state.error }</div>
+        }
         <form
           className="form"
           onSubmit={e => {
