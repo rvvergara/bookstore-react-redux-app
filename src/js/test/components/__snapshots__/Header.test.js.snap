@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render correctly 1`] = `
+<header
+  className="panel-bg"
+>
+  <h1
+    className="Bookstore-CMS"
+  >
+    Bookstore App
+  </h1>
+</header>
+`;
