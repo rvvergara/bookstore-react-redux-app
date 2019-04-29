@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Book component it should render the Book component correctly 1`] = `
+<div
+  className="card"
+>
+  <div
+    className="card-body"
+  >
+    <div
+      className="columns"
+    >
+      <div
+        className="book-info"
+      >
+        <h4
+          className="genre"
+        >
+          History
+        </h4>
+        <h3
+          className="title"
+        >
+          Antiquities of the Jews
+        </h3>
+        <div
+          className="action"
+        >
+          <button
+            className="btn btn-link"
+            onClick={[Function]}
+            type="button"
+          >
+            Remove
+          </button>
+        </div>
+      </div>
+      <div
+        className="progress"
+      >
+        <Progress />
+      </div>
+      <div
+        className="chapter-info"
+      >
+        <CurrentChapter />
+        <ProgressUpdateBtn />
+      </div>
+    </div>
+  </div>
+</div>
+`;
