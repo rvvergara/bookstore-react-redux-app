@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Progress component should render correctly 1`] = `
+<div
+  className="progress-body"
+>
+  <div
+    className="progress-bar"
+  >
+    <CircularProgressbar
+      background={false}
+      backgroundPadding={0}
+      className=""
+      classes={
+        Object {
+          "background": "CircularProgressbar-background",
+          "path": "CircularProgressbar-path",
+          "root": "CircularProgressbar",
+          "text": "CircularProgressbar-text",
+          "trail": "CircularProgressbar-trail",
+        }
+      }
+      counterClockwise={false}
+      initialAnimation={false}
+      percentage={66}
+      strokeWidth={8}
+      styles={
+        Object {
+          "background": Object {},
+          "path": Object {},
+          "root": Object {},
+          "text": Object {},
+          "trail": Object {},
+        }
+      }
+      text=""
+    />
+  </div>
+  <div
+    className="progress-percentage"
+  >
+    <p
+      className="percent-complete"
+    >
+      66%
+    </p>
+    <p
+      className="completed"
+    >
+      Completed
+    </p>
+  </div>
+</div>
+`;
