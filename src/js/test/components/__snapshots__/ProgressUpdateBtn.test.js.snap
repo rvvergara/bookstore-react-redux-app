@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressUpdateBtn should render correctly 1`] = `
+<button
+  className="update-btn update-btn-primary"
+  type="button"
+>
+  Update Progress
+</button>
+`;
