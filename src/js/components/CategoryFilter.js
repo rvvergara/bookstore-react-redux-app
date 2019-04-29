@@ -12,7 +12,7 @@ const CategoryFilter = (props) => {
         value={filter}
         onChange={e => handleChange(e.target.value)}
       >
-        {['All'].concat(categories).map(category => (
+        {['All', ...categories].map(category => (
           <option key={category} value={category}>
             {category}
           </option>
