@@ -19,4 +19,9 @@ describe('Book component', () => {
   test('it should render the Book component correctly', () => {
     expect(wrapper).toMatchSnapshot();
   });
+
+  test('it should call handleRemove on button click', () => {
+    wrapper.find('button').simulate('click');
+    expect(handleRemove).toHaveBeenLastCalledWith(book.id);
+  });
 });
