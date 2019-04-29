@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookList it should render properly 1`] = `
+<div>
+  <CategoryFilter
+    filter=""
+    handleChange={[Function]}
+  />
+  <div>
+    <Book
+      book={
+        Object {
+          "category": "Action",
+          "id": 0,
+          "title": "Lord of the Rings",
+        }
+      }
+      handleRemove={[Function]}
+      key="0"
+    />
+    <Book
+      book={
+        Object {
+          "category": "Learning",
+          "id": 1,
+          "title": "Guide to Investing",
+        }
+      }
+      handleRemove={[Function]}
+      key="1"
+    />
+    <Book
+      book={
+        Object {
+          "category": "Sci-Fi",
+          "id": 2,
+          "title": "Star Trek",
+        }
+      }
+      handleRemove={[Function]}
+      key="2"
+    />
+  </div>
+</div>
+`;
