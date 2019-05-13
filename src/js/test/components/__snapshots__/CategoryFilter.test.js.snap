@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CategoryFilter it should render correctly 1`] = `
+<div
+  className="category-container"
+>
+  <h2
+    className="filter-title"
+  >
+    Filter category: 
+  </h2>
+  <select
+    className="category-select form-select"
+    onChange={[Function]}
+    value="All"
+  >
+    <option
+      key="All"
+      value="All"
+    >
+      All
+    </option>
+    <option
+      key="Action"
+      value="Action"
+    >
+      Action
+    </option>
+    <option
+      key="Biography"
+      value="Biography"
+    >
+      Biography
+    </option>
+    <option
+      key="History"
+      value="History"
+    >
+      History
+    </option>
+    <option
+      key="Horror"
+      value="Horror"
+    >
+      Horror
+    </option>
+    <option
+      key="Kids"
+      value="Kids"
+    >
+      Kids
+    </option>
+    <option
+      key="Learning"
+      value="Learning"
+    >
+      Learning
+    </option>
+    <option
+      key="Sci-Fi"
+      value="Sci-Fi"
+    >
+      Sci-Fi
+    </option>
+  </select>
+</div>
+`;

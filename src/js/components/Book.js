@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Progress from '../containers/Progress';
+import Progress from "./Progress";
 import CurrentChapter from './CurrentChapter';
 import ProgressUpdateBtn from './ProgressUpdateBtn';
 import 'react-circular-progressbar/dist/styles.css';

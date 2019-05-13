@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CurrentChapter should render correctly 1`] = `
+<div>
+  <p
+    className="current-chapter"
+  >
+    CURRENT CHAPTER
+  </p>
+  <p
+    className="current-lesson"
+  >
+    Chapter 17
+  </p>
+</div>
+`;

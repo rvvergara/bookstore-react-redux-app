@@ -5,7 +5,7 @@ import { removeBook, changeFilters } from '../actions';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';
 
-const BookList = (props) => {
+export const BookList = (props) => {
   const {
     books, changeFilters, filter, removeBook,
   } = props;
