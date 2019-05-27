@@ -8,7 +8,7 @@ describe('BookList', () => {
   let wrapper;
   let books;
   let categories;
-  let changeFilters;
+  let changeFilter;
   let filter;
   let removeBook;
 
@@ -16,13 +16,13 @@ describe('BookList', () => {
     books = dummyBooks;
     categories = bookCategories;
     filter = '';
-    changeFilters = jest.fn();
+    changeFilter = jest.fn();
     removeBook = jest.fn();
     wrapper = shallow(
       <BookList
         books={books}
         filter={filter}
-        changeFilters={changeFilters}
+        changeFilter={changeFilter}
         removeBook={removeBook}
       />,
     );
@@ -34,7 +34,7 @@ describe('BookList', () => {
 
   test('it should call changeFilters with new category', () => {
     wrapper.find('CategoryFilter').prop('handleChange')(categories[0]);
-    expect(changeFilters).toHaveBeenLastCalledWith(categories[0]);
+    expect(changeFilter).toHaveBeenLastCalledWith(categories[0]);
   });
 
   test('it should call removeBook with id of an existing book', () => {

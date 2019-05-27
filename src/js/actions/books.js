@@ -1,7 +1,12 @@
 import uuid from 'uuid';
+import {
+  ADD_BOOK,
+  REMOVE_BOOK,
+} from './actionTypes';
+
 
 const addBook = ({ title, category }) => ({
-  type: 'ADD_BOOK',
+  type: ADD_BOOK,
   book: {
     id: uuid(),
     title,
@@ -10,17 +15,11 @@ const addBook = ({ title, category }) => ({
 });
 
 const removeBook = id => ({
-  type: 'REMOVE_BOOK',
+  type: REMOVE_BOOK,
   id,
-});
-
-const changeFilters = filterText => ({
-  type: 'CHANGE_FILTER',
-  filterText,
 });
 
 export {
   addBook,
   removeBook,
-  changeFilters,
 };

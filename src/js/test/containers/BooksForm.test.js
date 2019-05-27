@@ -7,7 +7,7 @@ describe('BooksForm', () => {
   let newBook;
   let addBook;
   let inputBook;
-  let changeFilters;
+  let changeFilter;
 
   beforeEach(() => {
     addBook = jest.fn();
@@ -25,7 +25,7 @@ describe('BooksForm', () => {
       });
     };
 
-    changeFilters = jest.fn();
+    changeFilter = jest.fn();
     newBook = {
       title: 'Some Title',
       author: 'Some Author',
@@ -34,7 +34,7 @@ describe('BooksForm', () => {
     wrapper = shallow(
       <BooksForm
         addBook={addBook}
-        changeFilters={changeFilters}
+        changeFilter={changeFilter}
       />,
     );
   });

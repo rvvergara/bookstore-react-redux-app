@@ -1,8 +1,7 @@
 import {
   addBook,
   removeBook,
-  changeFilters,
-} from '../../actions';
+} from '../../actions/books';
 import books from '../fixtures/books';
 
 describe('addBook', () => {
@@ -22,16 +21,6 @@ describe('removeBook', () => {
     expect(removeBook(id)).toEqual({
       type: 'REMOVE_BOOK',
       id,
-    });
-  });
-});
-
-describe('changeFilters', () => {
-  test('it returns CHANGE_FILTER action', () => {
-    const filterText = 'Cool';
-    expect(changeFilters(filterText)).toEqual({
-      type: 'CHANGE_FILTER',
-      filterText,
     });
   });
 });
