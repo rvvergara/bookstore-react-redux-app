@@ -10,6 +10,7 @@ exports[`BooksDashboard component should render correctly 1`] = `
   >
     <BooksFormModal
       addBookMode={false}
+      switchAddBookMode={[Function]}
     />
     <ConnectFunction />
   </div>

@@ -11,6 +11,7 @@ describe('BookList', () => {
   let changeFilter;
   let filter;
   let removeBook;
+  let switchAddBookMode;
 
   beforeEach(() => {
     books = dummyBooks;
@@ -18,13 +19,14 @@ describe('BookList', () => {
     filter = '';
     changeFilter = jest.fn();
     removeBook = jest.fn();
+    switchAddBookMode = jest.fn();
     wrapper = shallow(
       <BookList
         books={books}
         filter={filter}
         changeFilter={changeFilter}
         removeBook={removeBook}
-        switchAddBookMode={false}
+        switchAddBookMode={switchAddBookMode}
       />,
     );
   });

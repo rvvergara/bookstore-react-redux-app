@@ -7,7 +7,7 @@ exports[`BookList it should render properly 1`] = `
     handleChange={[Function]}
   />
   <button
-    onClick={false}
+    onClick={[MockFunction]}
     type="button"
   >
     Add Book

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BooksFormModal should render correctly 1`] = `
+<Modal
+  ariaHideApp={false}
+  bodyOpenClassName="ReactModal__Body--open"
+  closeTimeoutMS={0}
+  isOpen={false}
+  onRequestClose={[Function]}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <h3>
+    Add New Book
+  </h3>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Cancel
+  </button>
+  <ConnectFunction />
+</Modal>
+`;

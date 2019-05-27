@@ -4,7 +4,12 @@ import { BooksDashboard } from '../../components/BooksDashboard';
 
 describe('BooksDashboard component', () => {
   test('should render correctly', () => {
-    const wrapper = shallow(<BooksDashboard addBookMode={false} />);
+    const wrapper = shallow(
+      <BooksDashboard
+        addBookMode={false}
+        switchAddBookMode={() => {}}
+      />,
+    );
     expect(wrapper).toMatchSnapshot();
   });
 });
