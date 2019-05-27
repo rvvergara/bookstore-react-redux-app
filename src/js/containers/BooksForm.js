@@ -7,27 +7,30 @@ import categories from '../data/bookCategories';
 export class BooksForm extends React.Component {
   state = {
     title: '',
+    author: '',
     category: 'Select Category',
     error: '',
   };
 
-  handleChange = (key, val) =>
+  handleChange = (target) =>
     this.setState(() => ({
-      [key]: val,
+      [target.name]: target.value,
     }));
 
   handleSubmit = () => {
-    if(this.state.title && this.state.category !== 'Select Category'){this.props.addBook({
+    if(this.state.title && this.state.author && this.state.category !== 'Select Category'){this.props.addBook({
       title: this.state.title,
+      author: this.state.author,
       category: this.state.category,
     });
     this.props.changeFilters('All');
     this.setState(() => ({
       title: '',
+      author: '',
       category: 'Select Category',
       error: '',
     }));}else{
-      this.setState(() => ({ error: 'Please enter title and valid category'}))
+      this.setState(() => ({ error: 'Please enter title, author and valid category'}))
     }
   };
 
@@ -48,13 +51,24 @@ export class BooksForm extends React.Component {
           <input
             className="form-input"
             type="text"
+            name="title"
+            placeholder="Title"
             value={this.state.title}
-            onChange={e => this.handleChange('title', e.target.value)}
+            onChange={e => this.handleChange(e.target)}
+          />
+          <input
+            className="form-input"
+            type="text"
+            name="author"
+            placeholder="Author"
+            value={this.state.author}
+            onChange={e => this.handleChange(e.target)}
           />
           <select
+            name='category'
             className="form-select"
             value={this.state.category}
-            onChange={e => this.handleChange('category', e.target.value)}
+            onChange={e => this.handleChange(e.target)}
           >
             {['Select Category'].concat(categories).map(category => (
               <option key={category} value={category}>

@@ -13,12 +13,23 @@ exports[`BooksForm it should render correctly 1`] = `
   >
     <input
       className="form-input"
+      name="title"
       onChange={[Function]}
+      placeholder="Title"
+      type="text"
+      value=""
+    />
+    <input
+      className="form-input"
+      name="author"
+      onChange={[Function]}
+      placeholder="Author"
       type="text"
       value=""
     />
     <select
       className="form-select"
+      name="category"
       onChange={[Function]}
       value="Select Category"
     >

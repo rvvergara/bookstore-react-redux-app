@@ -1,13 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Progress from "./Progress";
+import Progress from './Progress';
 import CurrentChapter from './CurrentChapter';
 import ProgressUpdateBtn from './ProgressUpdateBtn';
 import 'react-circular-progressbar/dist/styles.css';
 
 const Book = (props) => {
   const { handleRemove, book } = props;
-  const { id, title, category } = book;
+  const {
+    id, title, author, category,
+  } = book;
 
   return (
     <div className="card">
@@ -16,6 +18,10 @@ const Book = (props) => {
           <div className="book-info">
             <h4 className="genre">{category}</h4>
             <h3 className="title">{title}</h3>
+            <p>
+              by:&nbsp;
+              {author}
+            </p>
             <div className="action">
               <button className="btn btn-link" type="button" onClick={() => handleRemove(id)}>
                 Remove

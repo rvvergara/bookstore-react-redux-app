@@ -23,6 +23,9 @@ exports[`Book component it should render the Book component correctly 1`] = `
         >
           Antiquities of the Jews
         </h3>
+        <p>
+          by: 
+        </p>
         <div
           className="action"
         >
