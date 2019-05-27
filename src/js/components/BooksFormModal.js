@@ -2,9 +2,9 @@ import React from 'react';
 import Modal from 'react-modal';
 import BooksForm from '../containers/BooksForm';
 
-const BooksFormModal = () => (
+const BooksFormModal = ({ addBookMode }) => (
   <Modal
-    isOpen
+    isOpen={addBookMode}
     ariaHideApp={false}
   >
     <h3>Add New Book</h3>

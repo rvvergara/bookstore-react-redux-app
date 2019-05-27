@@ -6,6 +6,11 @@ exports[`BookList it should render properly 1`] = `
     filter=""
     handleChange={[Function]}
   />
+  <button
+    type="button"
+  >
+    Add Book
+  </button>
   <div>
     <Book
       book={
