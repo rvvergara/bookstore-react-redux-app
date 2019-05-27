@@ -6,10 +6,12 @@ import '../../scss/main.scss';
 
 export const history = createBrowserHistory();
 
-export default () => (
+const App = () => (
   <Router history={history}>
     <Switch>
       <Route path="/" component={BooksDashboard} />
     </Switch>
   </Router>
 );
+
+export default App;
