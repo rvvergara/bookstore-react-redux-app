@@ -1,15 +1,15 @@
 import React from 'react';
-import Header from './Header';
-import BooksForm from '../containers/BooksForm';
-import BookList from '../containers/BookList';
+import { Route, Router, Switch } from 'react-router-dom';
+import { createBrowserHistory } from 'history';
+import BooksDashboard from './BooksDashboard';
 import '../../scss/main.scss';
 
+export const history = createBrowserHistory();
+
 export default () => (
-  <div id="app">
-    <Header />
-    <div id="container">
-      <BooksForm />
-      <BookList />
-    </div>
-  </div>
+  <Router history={history}>
+    <Switch>
+      <Route path="/" component={BooksDashboard} />
+    </Switch>
+  </Router>
 );
