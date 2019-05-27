@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { switchAddBookMode } from '../actions/addBookMode';
-import { removeBook } from '../actions/books';
+import { switchAddBookMode, removeBook } from '../actions/books';
 import { changeFilter } from '../actions/filter';
 import Book from '../components/Book';
 import CategoryFilter from '../components/CategoryFilter';

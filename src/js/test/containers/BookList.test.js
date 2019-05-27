@@ -24,6 +24,7 @@ describe('BookList', () => {
         filter={filter}
         changeFilter={changeFilter}
         removeBook={removeBook}
+        switchAddBookMode={false}
       />,
     );
   });
