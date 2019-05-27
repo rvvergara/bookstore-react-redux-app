@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addBook} from '../actions/books';
+import { addBook, switchAddBookMode} from '../actions/books';
 import { changeFilter} from '../actions/filter';
 import categories from '../data/bookCategories';
 
@@ -25,6 +25,7 @@ export class BooksForm extends React.Component {
       category: this.state.category,
     });
     this.props.changeFilter('All');
+    this.props.switchAddBookMode();
     this.setState(() => ({
       title: '',
       author: '',
@@ -89,9 +90,10 @@ export class BooksForm extends React.Component {
 BooksForm.propTypes = {
   addBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
+  switchAddBookMode: PropTypes.func.isRequired,
 };
 
 export default connect(
   null,
-  { addBook, changeFilter },
+  { addBook, changeFilter, switchAddBookMode },
 )(BooksForm);

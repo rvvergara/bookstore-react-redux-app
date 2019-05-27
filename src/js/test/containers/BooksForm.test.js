@@ -8,9 +8,11 @@ describe('BooksForm', () => {
   let addBook;
   let inputBook;
   let changeFilter;
+  let switchAddBookMode;
 
   beforeEach(() => {
     addBook = jest.fn();
+    switchAddBookMode = jest.fn();
     inputBook = (bookObj) => {
       const { title, author, category } = bookObj;
       wrapper.find('input').at(0).prop('onChange')({
@@ -35,6 +37,7 @@ describe('BooksForm', () => {
       <BooksForm
         addBook={addBook}
         changeFilter={changeFilter}
+        switchAddBookMode={switchAddBookMode}
       />,
     );
   });

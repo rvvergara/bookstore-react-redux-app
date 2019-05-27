@@ -6,11 +6,12 @@ import {
 } from './actionTypes';
 
 
-const addBook = ({ title, category }) => ({
+const addBook = ({ title, author, category }) => ({
   type: ADD_BOOK,
   book: {
     id: uuid(),
     title,
+    author,
     category,
   },
 });
