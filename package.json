@@ -8,6 +8,7 @@
     "react": "^16.8.6",
     "react-circular-progressbar": "^1.1.0",
     "react-dom": "^16.8.6",
+    "react-modal": "^3.8.1",
     "react-redux": "^7.0.2",
     "react-router-dom": "^5.0.0",
     "react-scripts": "3.0.0",
