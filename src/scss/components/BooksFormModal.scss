@@ -1,3 +1,7 @@
+.ReactModalPortal>div {
+  opacity: 0;
+}
+
 .ReactModalPortal .ReactModal__Overlay {
   transition: 0.3s opacity ease-in-out;
   display: flex;

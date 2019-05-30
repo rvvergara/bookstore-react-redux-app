@@ -8,6 +8,7 @@ const BooksFormModal = ({ addBookMode, switchAddBookMode }) => (
     isOpen={addBookMode}
     ariaHideApp={false}
     onRequestClose={switchAddBookMode}
+    closeTimeoutMS={200}
   >
     <div className="modal-controls">
       <button
