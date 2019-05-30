@@ -12,3 +12,16 @@
 .ReactModalPortal .ReactModal__Overlay--before-close {
   opacity: 0;
 }
+
+.modal-controls {
+  text-align: right;
+}
+
+.cancel-btn {
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  background: $deep-red;
+  color: rgb(223, 223, 192);
+  font-weight: 700;
+}

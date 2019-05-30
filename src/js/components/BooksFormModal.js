@@ -9,14 +9,18 @@ const BooksFormModal = ({ addBookMode, switchAddBookMode }) => (
     ariaHideApp={false}
     onRequestClose={switchAddBookMode}
   >
-    <h3>Add New Book</h3>
-    <button
-      type="button"
-      onClick={switchAddBookMode}
-    >
-      Cancel
-    </button>
-    <BooksForm />
+    <div className="modal-controls">
+      <button
+        type="button"
+        className="cancel-btn"
+        onClick={switchAddBookMode}
+      >
+        X
+      </button>
+    </div>
+    <div className="modal-body">
+      <BooksForm />
+    </div>
   </Modal>
 );
 
