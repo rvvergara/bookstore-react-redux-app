@@ -10,16 +10,19 @@ export const BookList = ({
   books, changeFilter, filter, removeBook, switchAddBookMode,
 }) => (
   <div>
-    <CategoryFilter
-      filter={filter}
-      handleChange={optionValue => changeFilter(optionValue)}
-    />
-    <button
-      type="button"
-      onClick={switchAddBookMode}
-    >
-        Add Book
-    </button>
+    <div className="booklist-controls">
+      <CategoryFilter
+        filter={filter}
+        handleChange={optionValue => changeFilter(optionValue)}
+      />
+      <button
+        className="add-book-btn btn-sm"
+        type="button"
+        onClick={switchAddBookMode}
+      >
+          Add Book
+      </button>
+    </div>
     <div>
       {books.map(book => (
         <Book key={book.id} book={book} handleRemove={id => removeBook(id)} />

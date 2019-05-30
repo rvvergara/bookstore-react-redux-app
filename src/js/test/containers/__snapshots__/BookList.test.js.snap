@@ -2,16 +2,21 @@
 
 exports[`BookList it should render properly 1`] = `
 <div>
-  <CategoryFilter
-    filter=""
-    handleChange={[Function]}
-  />
-  <button
-    onClick={[MockFunction]}
-    type="button"
+  <div
+    className="booklist-controls"
   >
-    Add Book
-  </button>
+    <CategoryFilter
+      filter=""
+      handleChange={[Function]}
+    />
+    <button
+      className="add-book-btn btn-sm"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      Add Book
+    </button>
+  </div>
   <div>
     <Book
       book={
