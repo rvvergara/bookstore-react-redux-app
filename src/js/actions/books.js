@@ -3,7 +3,7 @@ import {
   ADD_BOOK,
   REMOVE_BOOK,
   SWITCH_ADD_BOOK_MODE,
-  SWITCH_UPDATE_PROGRESS,
+  SWITCH_PROGRESS_UPDATE,
 } from './actionTypes';
 
 
@@ -29,8 +29,8 @@ const removeBook = id => ({
   id,
 });
 
-const switchUpdateProgress = id => ({
-  type: SWITCH_UPDATE_PROGRESS,
+const switchProgressUpdate = id => ({
+  type: SWITCH_PROGRESS_UPDATE,
   id,
 });
 
@@ -38,5 +38,5 @@ export {
   addBook,
   removeBook,
   switchAddBookMode,
-  switchUpdateProgress,
+  switchProgressUpdate,
 };
