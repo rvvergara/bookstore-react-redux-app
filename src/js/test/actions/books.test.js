@@ -2,8 +2,11 @@ import {
   addBook,
   removeBook,
   switchAddBookMode,
+  switchUpdateProgress,
 } from '../../actions/books';
-import { ADD_BOOK, REMOVE_BOOK, SWITCH_ADD_BOOK_MODE } from '../../actions/actionTypes';
+import {
+ ADD_BOOK, REMOVE_BOOK, SWITCH_ADD_BOOK_MODE, SWITCH_UPDATE_PROGRESS 
+} from '../../actions/actionTypes';
 import books from '../fixtures/books';
 
 describe('addBook', () => {
@@ -30,5 +33,12 @@ describe('removeBook', () => {
 test('switchAddBookMode should return the right action type', () => {
   expect(switchAddBookMode()).toEqual({
     type: SWITCH_ADD_BOOK_MODE,
+  });
+});
+
+test('switchUpdateProgress should return the right action', () => {
+  expect(switchUpdateProgress('someId')).toEqual({
+    type: SWITCH_UPDATE_PROGRESS,
+    id: 'someId',
   });
 });
