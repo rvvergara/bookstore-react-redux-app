@@ -9,6 +9,7 @@ export class BooksForm extends React.Component {
   state = {
     title: '',
     author: '',
+    chapters: '',
     category: 'Select Category',
     error: '',
   };
@@ -29,6 +30,7 @@ export class BooksForm extends React.Component {
     this.setState(() => ({
       title: '',
       author: '',
+      chapters: '',
       category: 'Select Category',
       error: '',
     }));}else{
@@ -66,6 +68,17 @@ export class BooksForm extends React.Component {
             value={this.state.author}
             onChange={e => this.handleChange(e.target)}
           />
+          <input
+            className="form-input"
+            type="text"
+            name="chapters"
+            placeholder="No. Of Chapters"
+            value={this.state.chapters}
+            onChange={(e) => {
+              const re = /^\d+?$/gi;
+              if(!e.target.value || e.target.value.match(re)) this.handleChange(e.target)
+            }}
+/>
           <select
             name='category'
             className="form-select"
