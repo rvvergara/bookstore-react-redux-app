@@ -7,6 +7,7 @@ const books = [
     author: 'Robert Kiyosaki',
     chapters: '10',
     category: 'Learning',
+    currentChapter: '',
   },
   {
     id: uuid(),
@@ -14,6 +15,7 @@ const books = [
     author: 'JK Rowling',
     chapters: '20',
     category: 'Action',
+    currentChapter: '',
   },
 ];
 

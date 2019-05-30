@@ -8,7 +8,7 @@ import 'react-circular-progressbar/dist/styles.css';
 const Book = (props) => {
   const { handleRemove, book } = props;
   const {
-    id, title, author, category,
+    id, title, author, category, chapters, currentChapter,
   } = book;
 
   return (
@@ -32,7 +32,7 @@ const Book = (props) => {
             <Progress />
           </div>
           <div className="chapter-info">
-            <CurrentChapter />
+            <CurrentChapter currentChapter={currentChapter} />
             <ProgressUpdateBtn />
           </div>
         </div>

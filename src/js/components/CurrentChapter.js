@@ -1,10 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const CurrentChapter = () => (
+const CurrentChapter = ({ currentChapter }) => (
   <div>
     <p className="current-chapter">CURRENT CHAPTER</p>
-    <p className="current-lesson">Chapter 17</p>
+    <p className="current-lesson">
+      { currentChapter === '' ? 'Not yet read' : `Chapter ${currentChapter}` }
+    </p>
   </div>
 );
+
+CurrentChapter.propTypes = {
+  currentChapter: PropTypes.string.isRequired,
+};
 
 export default CurrentChapter;
