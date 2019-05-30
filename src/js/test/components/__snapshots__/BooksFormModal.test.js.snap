@@ -4,7 +4,7 @@ exports[`BooksFormModal should render correctly 1`] = `
 <Modal
   ariaHideApp={false}
   bodyOpenClassName="ReactModal__Body--open"
-  closeTimeoutMS={0}
+  closeTimeoutMS={200}
   isOpen={false}
   onRequestClose={[Function]}
   parentSelector={[Function]}
@@ -15,15 +15,21 @@ exports[`BooksFormModal should render correctly 1`] = `
   shouldFocusAfterRender={true}
   shouldReturnFocusAfterClose={true}
 >
-  <h3>
-    Add New Book
-  </h3>
-  <button
-    onClick={[Function]}
-    type="button"
+  <div
+    className="modal-controls"
   >
-    Cancel
-  </button>
-  <ConnectFunction />
+    <button
+      className="cancel-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      X
+    </button>
+  </div>
+  <div
+    className="modal-body"
+  >
+    <ConnectFunction />
+  </div>
 </Modal>
 `;

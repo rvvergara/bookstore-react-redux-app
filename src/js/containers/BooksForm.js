@@ -23,6 +23,7 @@ export class BooksForm extends React.Component {
     if(this.state.title && this.state.author && this.state.category !== 'Select Category'){this.props.addBook({
       title: this.state.title,
       author: this.state.author,
+      chapters: this.state.chapters,
       category: this.state.category,
     });
     this.props.changeFilter('All');

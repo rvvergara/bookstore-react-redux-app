@@ -14,13 +14,18 @@ describe('BooksForm', () => {
     addBook = jest.fn();
     switchAddBookMode = jest.fn();
     inputBook = (bookObj) => {
-      const { title, author, category } = bookObj;
+      const {
+        title, author, chapters, category,
+      } = bookObj;
       wrapper.find('input').at(0).prop('onChange')({
         target: { name: 'title', value: title },
       });
 
       wrapper.find('input').at(1).prop('onChange')({
         target: { name: 'author', value: author },
+      });
+      wrapper.find('input').at(2).prop('onChange')({
+        target: { name: 'chapters', value: chapters },
       });
       wrapper.find('select').prop('onChange')({
         target: { name: 'category', value: category },
@@ -31,6 +36,7 @@ describe('BooksForm', () => {
     newBook = {
       title: 'Some Title',
       author: 'Some Author',
+      chapters: '20',
       category: 'Action',
     };
     wrapper = shallow(
@@ -47,10 +53,12 @@ describe('BooksForm', () => {
   });
 
   test('should change state during changes in title, author and category inputs', () => {
-    const { title, author, category } = newBook;
+    const {
+      title, author, chapters, category,
+    } = newBook;
     inputBook(newBook);
     expect(wrapper.state()).toEqual({
-      title, category, author, error: '',
+      title, category, author, chapters, error: '',
     });
   });
 
