@@ -10,6 +10,9 @@ describe('Book component', () => {
     book = {
       id: 1,
       title: 'Antiquities of the Jews',
+      author: 'Josephus',
+      chapters: '30',
+      currentChapter: '',
       category: 'History',
     };
     handleRemove = jest.fn();

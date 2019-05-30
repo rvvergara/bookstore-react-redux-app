@@ -25,6 +25,7 @@ exports[`Book component it should render the Book component correctly 1`] = `
         </h3>
         <p>
           by: 
+          Josephus
         </p>
         <div
           className="action"
@@ -46,7 +47,9 @@ exports[`Book component it should render the Book component correctly 1`] = `
       <div
         className="chapter-info"
       >
-        <CurrentChapter />
+        <CurrentChapter
+          currentChapter=""
+        />
         <ProgressUpdateBtn />
       </div>
     </div>
