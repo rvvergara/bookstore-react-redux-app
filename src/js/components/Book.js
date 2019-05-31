@@ -29,7 +29,10 @@ const Book = (props) => {
             </div>
           </div>
           <div className="progress">
-            <Progress />
+            <Progress
+              currentChapter={Number(currentChapter)}
+              chapters={Number(chapters)}
+            />
           </div>
           <div className="chapter-info">
             <CurrentChapter currentChapter={currentChapter} />

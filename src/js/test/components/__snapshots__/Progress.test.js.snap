@@ -22,7 +22,7 @@ exports[`Progress component should render correctly 1`] = `
       }
       counterClockwise={false}
       initialAnimation={false}
-      percentage={66}
+      percentage={NaN}
       strokeWidth={8}
       styles={
         Object {
@@ -42,7 +42,7 @@ exports[`Progress component should render correctly 1`] = `
     <p
       className="percent-complete"
     >
-      66%
+      NaN%
     </p>
     <p
       className="completed"

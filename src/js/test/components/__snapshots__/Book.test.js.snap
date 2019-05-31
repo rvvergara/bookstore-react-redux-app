@@ -42,7 +42,10 @@ exports[`Book component it should render the Book component correctly 1`] = `
       <div
         className="progress"
       >
-        <Progress />
+        <Progress
+          chapters={30}
+          currentChapter={0}
+        />
       </div>
       <div
         className="chapter-info"

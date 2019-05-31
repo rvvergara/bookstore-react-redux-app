@@ -10,7 +10,7 @@ exports[`CurrentChapter should render correctly 1`] = `
   <p
     className="current-lesson"
   >
-    Not yet read
+    Not started
   </p>
 </div>
 `;

@@ -5,7 +5,7 @@ import { updateChapter} from '../actions/books';
 
 export class ProgressUpdateBody extends React.Component {
   state = {
-    current: this.props.currentChapter || "1",
+    current: this.props.currentChapter || "0",
   }
 
   handleChange = (target) => {
@@ -30,7 +30,7 @@ export class ProgressUpdateBody extends React.Component {
           onChange={e => this.handleChange(e.target)}
         >
           {
-            chaptersArray.map(chapter => (
+            ['Not started', ...chaptersArray].map(chapter => (
               <option
                 value={chapter}
                 key={`${id}-${chapter}

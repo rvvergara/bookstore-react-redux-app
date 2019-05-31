@@ -11,8 +11,17 @@ exports[`ProgressUpdateBody should render correctly 1`] = `
   <select
     name="current"
     onChange={[Function]}
-    value="1"
+    value="0"
   >
+    <option
+      id="someId Not started
+                "
+      key="someId-Not started
+                "
+      value="Not started"
+    >
+      Not started
+    </option>
     <option
       id="someId 1
                 "

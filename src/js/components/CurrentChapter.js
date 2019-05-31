@@ -5,7 +5,7 @@ const CurrentChapter = ({ currentChapter }) => (
   <div>
     <p className="current-chapter">CURRENT CHAPTER</p>
     <p className="current-lesson">
-      { currentChapter === '' ? 'Not yet read' : `Chapter ${currentChapter}` }
+      { currentChapter === '' ? 'Not started' : `Chapter ${currentChapter}` }
     </p>
   </div>
 );
