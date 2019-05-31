@@ -50,7 +50,9 @@ exports[`Book component it should render the Book component correctly 1`] = `
         <CurrentChapter
           currentChapter=""
         />
-        <ProgressUpdateBtn />
+        <ConnectFunction
+          id={1}
+        />
       </div>
     </div>
   </div>

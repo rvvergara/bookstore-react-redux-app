@@ -2,6 +2,7 @@
 
 exports[`BookList it should render properly 1`] = `
 <div>
+  <ProgressUpdateModal />
   <div
     className="booklist-controls"
   >

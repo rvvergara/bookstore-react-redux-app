@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Progress from './Progress';
 import CurrentChapter from './CurrentChapter';
-import ProgressUpdateBtn from './ProgressUpdateBtn';
+import ProgressUpdateBtn from '../containers/ProgressUpdateBtn';
 import 'react-circular-progressbar/dist/styles.css';
 
 const Book = (props) => {
@@ -33,7 +33,7 @@ const Book = (props) => {
           </div>
           <div className="chapter-info">
             <CurrentChapter currentChapter={currentChapter} />
-            <ProgressUpdateBtn />
+            <ProgressUpdateBtn id={book.id} />
           </div>
         </div>
       </div>
