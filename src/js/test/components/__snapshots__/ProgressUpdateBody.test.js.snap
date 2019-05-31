@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressUpdateBody should render correctly 1`] = `
+<div>
+  <h1>
+    Some Title
+  </h1>
+  <select
+    name="current"
+    onChange={[Function]}
+    value="1"
+  >
+    <option
+      id="someId 1
+                "
+      key="someId-1
+                "
+      value={1}
+    >
+      1
+    </option>
+    <option
+      id="someId 2
+                "
+      key="someId-2
+                "
+      value={2}
+    >
+      2
+    </option>
+    <option
+      id="someId 3
+                "
+      key="someId-3
+                "
+      value={3}
+    >
+      3
+    </option>
+    <option
+      id="someId 4
+                "
+      key="someId-4
+                "
+      value={4}
+    >
+      4
+    </option>
+    <option
+      id="someId 5
+                "
+      key="someId-5
+                "
+      value={5}
+    >
+      5
+    </option>
+  </select>
+</div>
+`;
