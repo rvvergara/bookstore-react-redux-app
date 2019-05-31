@@ -17,6 +17,7 @@ const addBook = ({
     author,
     chapters,
     category,
+    currentChapter: '',
   },
 });
 
