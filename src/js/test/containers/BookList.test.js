@@ -12,6 +12,7 @@ describe('BookList', () => {
   let filter;
   let removeBook;
   let switchAddBookMode;
+  let switchProgressUpdate;
 
   beforeEach(() => {
     books = dummyBooks;
@@ -20,13 +21,17 @@ describe('BookList', () => {
     changeFilter = jest.fn();
     removeBook = jest.fn();
     switchAddBookMode = jest.fn();
+    switchProgressUpdate = jest.fn();
     wrapper = shallow(
       <BookList
         books={books}
+        bookForProgressUpdate={books[0]}
         filter={filter}
         changeFilter={changeFilter}
         removeBook={removeBook}
         switchAddBookMode={switchAddBookMode}
+        progressUpdateMode={{ on: false, id: '' }}
+        switchProgressUpdate={switchProgressUpdate}
       />,
     );
   });
