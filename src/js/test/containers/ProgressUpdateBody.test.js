@@ -4,14 +4,17 @@ import { ProgressUpdateBody } from '../../containers/ProgressUpdateBody';
 
 describe('ProgressUpdateBody', () => {
   let wrapper;
+  let updateChapter;
 
   beforeEach(() => {
     const chaptersArray = [1, 2, 3, 4, 5];
+    updateChapter = jest.fn();
     wrapper = shallow(
       <ProgressUpdateBody
         chaptersArray={chaptersArray}
         id="someId"
         title="Some Title"
+        updateChapter={updateChapter}
       />,
     );
   });
@@ -29,5 +32,6 @@ describe('ProgressUpdateBody', () => {
     });
 
     expect(wrapper.state('current')).toBe('3');
+    expect(updateChapter).toHaveBeenLastCalledWith('someId', '3');
   });
 });

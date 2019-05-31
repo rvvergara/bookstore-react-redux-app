@@ -1,15 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect } from 'react-redux';
+import { updateChapter} from '../actions/books';
 
 export class ProgressUpdateBody extends React.Component {
   state = {
     current: this.props.currentChapter || "1",
   }
 
-  handleChange = (target) => this.setState({
-    [target.name]: target.value,
-  });
+  handleChange = (target) => {
+    const { id, updateChapter } = this.props;
+    this.setState({
+      [target.name]: target.value,
+    });
+
+    updateChapter(id, target.value);
+  }
 
   render(){
     const { chaptersArray, id, title } = this.props;
@@ -46,6 +52,7 @@ ProgressUpdateBody.propTypes = {
   chaptersArray: PropTypes.instanceOf(Object).isRequired,
   id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
+  updateChapter: PropTypes.func.isRequired,
 };
 
-export default connect()(ProgressUpdateBody);
+export default connect(null, { updateChapter})(ProgressUpdateBody);
