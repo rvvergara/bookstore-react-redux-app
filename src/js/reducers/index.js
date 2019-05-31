@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import addBookMode from './addBookMode';
-import switchProgressUpdate from './switchProgressUpdate';
+import progressUpdateMode from './progressUpdateMode';
 import books from './books';
 import filter from './filter';
 
@@ -8,5 +8,5 @@ export default combineReducers({
   addBookMode,
   books,
   filter,
-  switchProgressUpdate,
+  progressUpdateMode,
 });

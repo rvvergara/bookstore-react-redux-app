@@ -1,8 +1,8 @@
-import switchProgressUpdate from '../../reducers/switchProgressUpdate';
+import switchProgressUpdate from '../../reducers/progressUpdateMode';
 import { SWITCH_PROGRESS_UPDATE } from '../../actions/actionTypes';
 
 
-describe('switchProgress update reducer', () => {
+describe('progressUpdate reducer', () => {
   const defaultState = {
     on: false,
     id: '',
