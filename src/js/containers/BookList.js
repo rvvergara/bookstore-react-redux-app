@@ -10,6 +10,7 @@ import ProgressUpdateModal from '../components/ProgressUpdateModal';
 export const BookList = (
   {
     books,
+    bookForProgressUpdate,
     changeFilter,
     filter,
     removeBook,
@@ -19,10 +20,13 @@ export const BookList = (
   },
 ) => (
   <div>
+    {progressUpdateMode.on && (
     <ProgressUpdateModal
+      bookForProgressUpdate={bookForProgressUpdate}
       progressUpdateMode={progressUpdateMode}
       switchProgressUpdate={switchProgressUpdate}
     />
+    )}
     <div className="booklist-controls">
       <CategoryFilter
         filter={filter}
@@ -50,12 +54,14 @@ export const BookList = (
 
 const mapStateToProps = state => ({
   books: state.books.filter(book => (state.filter === '' ? true : book.category === state.filter)),
+  bookForProgressUpdate: state.books.find(({ id }) => state.progressUpdateMode.id === id) || {},
   filter: state.filter,
   progressUpdateMode: state.progressUpdateMode,
 });
 
 BookList.propTypes = {
   books: PropTypes.instanceOf(Object).isRequired,
+  bookForProgressUpdate: PropTypes.instanceOf(Object).isRequired,
   changeFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
   removeBook: PropTypes.func.isRequired,
