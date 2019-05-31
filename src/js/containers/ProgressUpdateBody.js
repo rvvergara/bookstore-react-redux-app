@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {connect } from 'react-redux';
 
-class ProgressUpdateBody extends React.Component {
+export class ProgressUpdateBody extends React.Component {
   state = {
     current: this.props.currentChapter || "1",
   }
@@ -16,6 +17,7 @@ class ProgressUpdateBody extends React.Component {
     return (
       <div>
         <h1>{title}</h1>
+        <strong>Now reading chapter: </strong>
         <select
           name="current"
           value={current}
@@ -46,4 +48,4 @@ ProgressUpdateBody.propTypes = {
   title: PropTypes.string.isRequired,
 };
 
-export default ProgressUpdateBody;
+export default connect()(ProgressUpdateBody);

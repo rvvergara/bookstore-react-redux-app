@@ -1,6 +1,6 @@
 export default [
   {
-    id: 0,
+    id: '0',
     title: 'Lord of the Rings',
     author: 'Tolkien',
     chapters: '35',
@@ -8,7 +8,7 @@ export default [
     currentChapter: '',
   },
   {
-    id: 1,
+    id: '1',
     title: 'Guide to Investing',
     author: 'Kiyosaki',
     chapters: '24',
@@ -16,7 +16,7 @@ export default [
     category: 'Learning',
   },
   {
-    id: 2,
+    id: '2',
     title: 'Star Trek',
     author: 'Roddenberry',
     chapters: '30',

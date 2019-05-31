@@ -29,7 +29,7 @@ exports[`ProgressUpdateModal component should render correctly 1`] = `
   <div
     className="modal-body"
   >
-    <ProgressUpdateBody
+    <ConnectFunction
       author="Roddenberry"
       category="Sci-Fi"
       chapters="30"
@@ -68,7 +68,7 @@ exports[`ProgressUpdateModal component should render correctly 1`] = `
         ]
       }
       currentChapter=""
-      id={2}
+      id="2"
       title="Star Trek"
     />
   </div>

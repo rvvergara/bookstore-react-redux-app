@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
-import ProgressUpdateBody from './ProgressUpdateBody';
+import ProgressUpdateBody from '../containers/ProgressUpdateBody';
 
 const ProgressUpdateModal = (
   {

@@ -27,6 +27,6 @@ test('it should add new book', () => {
 });
 
 test('it should remove an existing book', () => {
-  const action = { type: 'REMOVE_BOOK', id: 0 };
+  const action = { type: 'REMOVE_BOOK', id: '0' };
   expect(booksReducer(bookState, action)).toEqual(bookState.slice(1));
 });

@@ -25,7 +25,7 @@ exports[`BookList it should render properly 1`] = `
           "category": "Action",
           "chapters": "35",
           "currentChapter": "",
-          "id": 0,
+          "id": "0",
           "title": "Lord of the Rings",
         }
       }
@@ -39,7 +39,7 @@ exports[`BookList it should render properly 1`] = `
           "category": "Learning",
           "chapters": "24",
           "currentChapter": "",
-          "id": 1,
+          "id": "1",
           "title": "Guide to Investing",
         }
       }
@@ -53,7 +53,7 @@ exports[`BookList it should render properly 1`] = `
           "category": "Sci-Fi",
           "chapters": "30",
           "currentChapter": "",
-          "id": 2,
+          "id": "2",
           "title": "Star Trek",
         }
       }

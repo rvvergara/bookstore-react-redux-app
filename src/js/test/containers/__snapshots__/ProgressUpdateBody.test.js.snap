@@ -5,6 +5,9 @@ exports[`ProgressUpdateBody should render correctly 1`] = `
   <h1>
     Some Title
   </h1>
+  <strong>
+    Now reading chapter: 
+  </strong>
   <select
     name="current"
     onChange={[Function]}

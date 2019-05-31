@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import ProgressUpdateBody from '../../components/ProgressUpdateBody';
+import { ProgressUpdateBody } from '../../containers/ProgressUpdateBody';
 
 describe('ProgressUpdateBody', () => {
   let wrapper;
