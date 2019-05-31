@@ -21,7 +21,10 @@ exports[`BookList it should render properly 1`] = `
     <Book
       book={
         Object {
+          "author": "Tolkien",
           "category": "Action",
+          "chapters": "35",
+          "currentChapter": "",
           "id": 0,
           "title": "Lord of the Rings",
         }
@@ -32,7 +35,10 @@ exports[`BookList it should render properly 1`] = `
     <Book
       book={
         Object {
+          "author": "Kiyosaki",
           "category": "Learning",
+          "chapters": "24",
+          "currentChapter": "",
           "id": 1,
           "title": "Guide to Investing",
         }
@@ -43,7 +49,10 @@ exports[`BookList it should render properly 1`] = `
     <Book
       book={
         Object {
+          "author": "Roddenberry",
           "category": "Sci-Fi",
+          "chapters": "30",
+          "currentChapter": "",
           "id": 2,
           "title": "Star Trek",
         }
