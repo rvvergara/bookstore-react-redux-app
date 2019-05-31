@@ -4,6 +4,7 @@ import {
   REMOVE_BOOK,
   SWITCH_ADD_BOOK_MODE,
   SWITCH_PROGRESS_UPDATE,
+  UPDATE_CHAPTER,
 } from './actionTypes';
 
 
@@ -35,9 +36,16 @@ const switchProgressUpdate = id => ({
   id,
 });
 
+const updateChapter = (id, newChapter) => ({
+  type: UPDATE_CHAPTER,
+  id,
+  newChapter,
+});
+
 export {
   addBook,
   removeBook,
   switchAddBookMode,
   switchProgressUpdate,
+  updateChapter,
 };
