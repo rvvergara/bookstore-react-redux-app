@@ -1,12 +1,15 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { authenticate } from '../actions/currentUser';
 
-const LoginPage = () => {
+export const LoginPage = ({ authenticate, history }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
 
   const login = (e) => {
     e.preventDefault();
-    console.log('Logged in');
+    authenticate({ email_or_username: email, password });
     setEmail('');
     setPassword('');
   };
@@ -41,4 +44,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default connect(null, { authenticate })(LoginPage);
