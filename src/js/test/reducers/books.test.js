@@ -1,4 +1,3 @@
-import { testNameToKey } from 'jest-snapshot/build/utils';
 import booksReducer from '../../reducers/books';
 import books from '../fixtures/books';
 import { UPDATE_CHAPTER } from '../../actions/actionTypes';
