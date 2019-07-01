@@ -4,6 +4,7 @@ import progressUpdateMode from './progressUpdateMode';
 import books from './books';
 import filter from './filter';
 import currentUser from './currentUser';
+import error from './error';
 
 export default combineReducers({
   addBookMode,
@@ -11,4 +12,5 @@ export default combineReducers({
   filter,
   progressUpdateMode,
   currentUser,
+  error,
 });
