@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { authenticate } from '../actions/currentUser';
 
 export const LoginPage = ({ authenticate, error }) => {
-  const [email, setEmail] = useState('');
+  const [emailOrUsername, setEmailOrUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(error);
 
@@ -13,8 +13,8 @@ export const LoginPage = ({ authenticate, error }) => {
 
   const login = (e) => {
     e.preventDefault();
-    authenticate({ email_or_username: email, password });
-    setEmail('');
+    authenticate({ email_or_username: emailOrUsername, password });
+    setEmailOrUsername('');
     setPassword('');
     setErrorMessage(error);
   };
@@ -22,15 +22,15 @@ export const LoginPage = ({ authenticate, error }) => {
   return (
     <form>
       {
-        error && <div>{errorMessage}</div>
+        error && <div className="error">{errorMessage}</div>
       }
       <div>
         <label htmlFor="email">Username/Email:</label>
         <input
           type="email"
           id="email"
-          value={email}
-          onChange={e => setEmail(e.target.value)}
+          value={emailOrUsername}
+          onChange={e => setEmailOrUsername(e.target.value)}
         />
       </div>
       <div>

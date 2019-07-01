@@ -25,7 +25,15 @@ exports[`App component should render correctly 1`] = `
 >
   <Switch>
     <Route
-      component={[Function]}
+      component={
+        Object {
+          "$$typeof": Symbol(react.memo),
+          "WrappedComponent": [Function],
+          "compare": null,
+          "displayName": "Connect(LoginPage)",
+          "type": [Function],
+        }
+      }
       path="/login"
     />
     <Route
