@@ -14,7 +14,7 @@ const LoginPage = () => {
   return (
     <form>
       <div>
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email">Username/Email:</label>
         <input
           type="email"
           id="email"
