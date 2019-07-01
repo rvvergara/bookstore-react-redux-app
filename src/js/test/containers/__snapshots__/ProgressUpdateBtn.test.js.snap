@@ -3,6 +3,7 @@
 exports[`ProgressUpdateBtn should render correctly 1`] = `
 <button
   className="update-btn update-btn-primary"
+  onClick={[Function]}
   type="button"
 >
   Update Progress

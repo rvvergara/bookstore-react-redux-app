@@ -2,16 +2,30 @@
 
 exports[`BookList it should render properly 1`] = `
 <div>
-  <CategoryFilter
-    filter=""
-    handleChange={[Function]}
-  />
+  <div
+    className="booklist-controls"
+  >
+    <CategoryFilter
+      filter=""
+      handleChange={[Function]}
+    />
+    <button
+      className="add-book-btn btn-sm"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      Add Book
+    </button>
+  </div>
   <div>
     <Book
       book={
         Object {
+          "author": "Tolkien",
           "category": "Action",
-          "id": 0,
+          "chapters": "35",
+          "currentChapter": "",
+          "id": "0",
           "title": "Lord of the Rings",
         }
       }
@@ -21,8 +35,11 @@ exports[`BookList it should render properly 1`] = `
     <Book
       book={
         Object {
+          "author": "Kiyosaki",
           "category": "Learning",
-          "id": 1,
+          "chapters": "24",
+          "currentChapter": "",
+          "id": "1",
           "title": "Guide to Investing",
         }
       }
@@ -32,8 +49,11 @@ exports[`BookList it should render properly 1`] = `
     <Book
       book={
         Object {
+          "author": "Roddenberry",
           "category": "Sci-Fi",
-          "id": 2,
+          "chapters": "30",
+          "currentChapter": "",
+          "id": "2",
           "title": "Star Trek",
         }
       }

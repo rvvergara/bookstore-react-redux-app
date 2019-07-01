@@ -23,6 +23,10 @@ exports[`Book component it should render the Book component correctly 1`] = `
         >
           Antiquities of the Jews
         </h3>
+        <p>
+          by: 
+          Josephus
+        </p>
         <div
           className="action"
         >
@@ -38,13 +42,20 @@ exports[`Book component it should render the Book component correctly 1`] = `
       <div
         className="progress"
       >
-        <Progress />
+        <Progress
+          chapters={30}
+          currentChapter={0}
+        />
       </div>
       <div
         className="chapter-info"
       >
-        <CurrentChapter />
-        <ProgressUpdateBtn />
+        <CurrentChapter
+          currentChapter=""
+        />
+        <ConnectFunction
+          id={1}
+        />
       </div>
     </div>
   </div>

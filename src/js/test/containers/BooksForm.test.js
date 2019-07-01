@@ -6,19 +6,44 @@ describe('BooksForm', () => {
   let wrapper;
   let newBook;
   let addBook;
-  let changeFilters;
+  let inputBook;
+  let changeFilter;
+  let switchAddBookMode;
 
   beforeEach(() => {
     addBook = jest.fn();
-    changeFilters = jest.fn();
+    switchAddBookMode = jest.fn();
+    inputBook = (bookObj) => {
+      const {
+        title, author, chapters, category,
+      } = bookObj;
+      wrapper.find('input').at(0).prop('onChange')({
+        target: { name: 'title', value: title },
+      });
+
+      wrapper.find('input').at(1).prop('onChange')({
+        target: { name: 'author', value: author },
+      });
+      wrapper.find('input').at(2).prop('onChange')({
+        target: { name: 'chapters', value: chapters },
+      });
+      wrapper.find('select').prop('onChange')({
+        target: { name: 'category', value: category },
+      });
+    };
+
+    changeFilter = jest.fn();
     newBook = {
       title: 'Some Title',
+      author: 'Some Author',
+      chapters: '20',
       category: 'Action',
     };
     wrapper = shallow(
       <BooksForm
         addBook={addBook}
-        changeFilters={changeFilters}
+        changeFilter={changeFilter}
+        switchAddBookMode={switchAddBookMode}
       />,
     );
   });
@@ -27,16 +52,14 @@ describe('BooksForm', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  test('should change state during changes in title and category inputs', () => {
-    const { title } = newBook;
-    const { category } = newBook;
-    wrapper.find('input').simulate('change', {
-      target: { value: title },
+  test('should change state during changes in title, author and category inputs', () => {
+    const {
+      title, author, chapters, category,
+    } = newBook;
+    inputBook(newBook);
+    expect(wrapper.state()).toEqual({
+      title, category, author, chapters, error: '',
     });
-    wrapper.find('select').simulate('change', {
-      target: { value: category },
-    });
-    expect(wrapper.state()).toEqual({ title, category, error: '' });
   });
 
   test('should show error message if book title is empty or if ', () => {
@@ -47,14 +70,7 @@ describe('BooksForm', () => {
   });
 
   test('should call addBook if valid title and category', () => {
-    const { title } = newBook;
-    const { category } = newBook;
-    wrapper.find('input').simulate('change', {
-      target: { value: title },
-    });
-    wrapper.find('select').simulate('change', {
-      target: { value: category },
-    });
+    inputBook(newBook);
     wrapper.find('form').simulate('submit', {
       preventDefault: () => {},
     });

@@ -1,4 +1,4 @@
-import filtersReducer from '../../reducers/filters';
+import filterReducer from '../../reducers/filter';
 
 describe('filtersReducer', () => {
   let state;
@@ -11,7 +11,7 @@ describe('filtersReducer', () => {
       type: 'CHANGE_FILTER',
       filterText: 'All',
     };
-    expect(filtersReducer(state, action)).toBe('');
+    expect(filterReducer(state, action)).toBe('');
   });
 
   test('it should return a new filter text', () => {
@@ -20,6 +20,6 @@ describe('filtersReducer', () => {
       type: 'CHANGE_FILTER',
       filterText,
     };
-    expect(filtersReducer(state, action)).toBe(filterText);
+    expect(filterReducer(state, action)).toBe(filterText);
   });
 });

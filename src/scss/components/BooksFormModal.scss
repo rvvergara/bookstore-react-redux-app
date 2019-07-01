@@ -1,0 +1,31 @@
+.ReactModalPortal>div {
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  transition: 0.3s opacity ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.modal-controls {
+  text-align: right;
+}
+
+.cancel-btn {
+  width: 2rem;
+  height: 2rem;
+  text-align: center;
+  background: $deep-red;
+  color: rgb(223, 223, 192);
+  font-weight: 700;
+}

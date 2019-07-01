@@ -1,8 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CircularProgressbar from 'react-circular-progressbar';
 
-const Progress = () => {
-  const percentage = 66;
+const Progress = ({ currentChapter, chapters }) => {
+  const percentage = Math.round((currentChapter / chapters) * 100, 2);
   return (
     <div className="progress-body">
       <div className="progress-bar">
@@ -14,6 +15,11 @@ const Progress = () => {
       </div>
     </div>
   );
+};
+
+Progress.propTypes = {
+  currentChapter: PropTypes.number.isRequired,
+  chapters: PropTypes.number.isRequired,
 };
 
 export default Progress;

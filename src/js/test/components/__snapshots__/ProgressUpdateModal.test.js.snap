@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProgressUpdateModal component should render correctly 1`] = `
+<Modal
+  ariaHideApp={false}
+  bodyOpenClassName="ReactModal__Body--open"
+  closeTimeoutMS={200}
+  isOpen={false}
+  onRequestClose={[Function]}
+  parentSelector={[Function]}
+  portalClassName="ReactModalPortal"
+  role="dialog"
+  shouldCloseOnEsc={true}
+  shouldCloseOnOverlayClick={true}
+  shouldFocusAfterRender={true}
+  shouldReturnFocusAfterClose={true}
+>
+  <div
+    className="modal-controls"
+  >
+    <button
+      className="cancel-btn"
+      onClick={[Function]}
+      type="button"
+    >
+      X
+    </button>
+  </div>
+  <div
+    className="modal-body"
+  >
+    <ConnectFunction
+      author="Roddenberry"
+      category="Sci-Fi"
+      chapters="30"
+      chaptersArray={
+        Array [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+        ]
+      }
+      currentChapter=""
+      id="2"
+      title="Star Trek"
+    />
+  </div>
+</Modal>
+`;
