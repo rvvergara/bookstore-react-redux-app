@@ -15,7 +15,12 @@ export const login = loginParams => (dispatch) => {
     .catch((err) => {
       dispatch(setError(err.response.data.error));
       localStorage.clear();
+      dispatch(setCurrentUser({ authenticated: false, data: null }));
     });
 };
 
-export const logout = () => {};
+export const logout = () => (dispatch) => {
+  localStorage.clear();
+  setAuthorizationToken(false);
+  dispatch(setCurrentUser({ authenticated: false, data: null }));
+};

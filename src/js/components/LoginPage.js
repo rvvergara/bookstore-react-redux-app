@@ -9,7 +9,7 @@ export const LoginPage = ({ login, error }) => {
 
   useEffect(() => {
     setErrorMessage(error);
-  });
+  }, [error]);
 
   const loginUser = (e) => {
     e.preventDefault();
