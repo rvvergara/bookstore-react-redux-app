@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import { authenticate } from '../actions/currentUser';
+import { login } from '../thunks/currentUser';
 
-export const LoginPage = ({ authenticate, error }) => {
+export const LoginPage = ({ login, error }) => {
   const [emailOrUsername, setEmailOrUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(error);
@@ -11,9 +11,9 @@ export const LoginPage = ({ authenticate, error }) => {
     setErrorMessage(error);
   });
 
-  const login = (e) => {
+  const loginUser = (e) => {
     e.preventDefault();
-    authenticate({ email_or_username: emailOrUsername, password });
+    login({ email_or_username: emailOrUsername, password });
     setEmailOrUsername('');
     setPassword('');
     setErrorMessage(error);
@@ -44,7 +44,7 @@ export const LoginPage = ({ authenticate, error }) => {
       </div>
       <button
         type="submit"
-        onClick={login}
+        onClick={loginUser}
       >
         Login
       </button>
@@ -56,4 +56,4 @@ const mapStateToProps = state => ({
   error: state.error,
 });
 
-export default connect(mapStateToProps, { authenticate })(LoginPage);
+export default connect(mapStateToProps, { login })(LoginPage);

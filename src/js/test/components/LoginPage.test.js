@@ -5,11 +5,11 @@ import users from '../fixtures/users';
 
 describe('LoginPage component', () => {
   let wrapper;
-  let authenticate;
+  let login;
 
   beforeEach(() => {
-    authenticate = jest.fn();
-    wrapper = shallow(<LoginPage error={null} authenticate={authenticate} />);
+    login = jest.fn();
+    wrapper = shallow(<LoginPage error={null} login={login} />);
   });
 
   test('should render correctly', () => {
@@ -27,7 +27,7 @@ describe('LoginPage component', () => {
       wrapper.find('button').simulate('click', {
         preventDefault: () => {},
       });
-      expect(authenticate).toHaveBeenLastCalledWith({
+      expect(login).toHaveBeenLastCalledWith({
         email_or_username: users[0].username,
         password: users[0].password,
       });
