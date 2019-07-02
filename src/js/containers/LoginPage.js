@@ -17,9 +17,8 @@ export const LoginPage = ({ login, error, history }) => {
       .then(() => {
         setEmailOrUsername('');
         setPassword('');
-        setErrorMessage(error);
         history.push('/');
-      }).catch(() => {});
+      }).catch(() => setErrorMessage(error));
   };
 
   return (
