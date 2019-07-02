@@ -39,6 +39,7 @@ describe('LoginPage component', () => {
       wrapper.find('input[type="email"]').simulate('change', { target: { value: users[0].email } });
       wrapper.find('input[type="password"]').simulate('change', { target: { value: 'somePassword' } });
       wrapper.find('button').simulate('click', { preventDefault: () => {} });
+      wrapper.setProps({ error: 'Invalid credentials' });
 
       expect(wrapper.find('div.error').exists()).toBeTruthy();
     });
