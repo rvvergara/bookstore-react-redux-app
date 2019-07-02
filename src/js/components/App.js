@@ -8,6 +8,8 @@ import '../../scss/main.scss';
 import LoginPage from '../containers/LoginPage';
 import configureStore from '../store/configureStore';
 import { setCurrentUser } from '../actions/currentUser';
+import { setAuthorizationToken } from '../services/api';
+import withAuth from '../hocs/withAuth';
 
 export const history = createBrowserHistory();
 
@@ -15,8 +17,12 @@ const store = configureStore();
 
 if (localStorage.token) {
   const userData = decode(localStorage.token);
-  if (userData) {
+  setAuthorizationToken(localStorage.token);
+
+  try {
     store.dispatch(setCurrentUser({ authenticated: true, data: userData }));
+  } catch (err) {
+    store.dispatch(setCurrentUser({ authenticated: false, data: null }));
   }
 }
 
@@ -25,7 +31,7 @@ const App = () => (
     <Router history={history}>
       <Switch>
         <Route path="/login" component={LoginPage} />
-        <Route path="/" component={BooksDashboard} />
+        <Route path="/" component={withAuth(BooksDashboard)} />
       </Switch>
     </Router>
   </Provider>
