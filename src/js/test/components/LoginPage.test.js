@@ -9,8 +9,8 @@ describe('LoginPage component', () => {
   let history;
 
   beforeEach(() => {
-    login = jest.fn();
     history = { push: jest.fn() };
+    login = jest.fn(() => Promise.resolve(history.push('/')));
     wrapper = shallow(<LoginPage error={null} login={login} history={history} />);
   });
 
