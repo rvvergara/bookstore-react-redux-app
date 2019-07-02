@@ -1,10 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 
-const withAuth = (Component, isAuthenticated) => {
-  const Authenticate = ({ ...props }) => (isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />);
+const withAuth = (Component) => {
+  const Authenticate = ({ isAuthenticated, ...props }) => (isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />);
 
-  return Authenticate;
+  const mapStateToProps = state => ({
+    isAuthenticated: state.currentUser.authenticated,
+  });
+
+  return connect(mapStateToProps)(Authenticate);
 };
 
 export default withAuth;

@@ -31,7 +31,7 @@ const App = () => (
     <Router history={history}>
       <Switch>
         <Route path="/login" component={LoginPage} />
-        <Route path="/" component={withAuth(BooksDashboard, store.getState().currentUser.authenticated)} />
+        <Route path="/" component={withAuth(BooksDashboard)} />
       </Switch>
     </Router>
   </Provider>
