@@ -30,7 +30,7 @@ const App = () => (
   <Provider store={store}>
     <Router history={history}>
       <Switch>
-        <Route path="/login" component={LoginPage} />
+        <Route path="/login" component={withAuth(LoginPage, true)} />
         <Route path="/" component={withAuth(BooksDashboard)} />
       </Switch>
     </Router>
