@@ -1,14 +1,17 @@
-export const fetchData = (type, resource, data) => {
-  const baseUrl = 'http://localhost:3000/v1';
-  const url = `${baseUrl}/${resource}`;
+import axios from 'axios';
 
-  return fetch(url, {
-    method: type,
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(data),
-  })
-    .then(response => response.json())
-    .catch(error => console.log(error));
+export const fetchData = async (method, path, data) => {
+  const baseUrl = 'http://localhost:3000/v1';
+  const fullPath = `${baseUrl}/${path}`;
+  const result = await axios[method](fullPath, data);
+
+  return result;
+};
+
+export const setAuthorizationToken = (token) => {
+  if (token) {
+    axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  } else {
+    delete axios.defaults.headers.common.Authorization;
+  }
 };
