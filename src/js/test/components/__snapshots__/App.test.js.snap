@@ -48,15 +48,7 @@ exports[`App component should render correctly 1`] = `
         path="/login"
       />
       <Route
-        component={
-          Object {
-            "$$typeof": Symbol(react.memo),
-            "WrappedComponent": [Function],
-            "compare": null,
-            "displayName": "Connect(Authenticate)",
-            "type": [Function],
-          }
-        }
+        component={[Function]}
         path="/"
       />
     </Switch>
