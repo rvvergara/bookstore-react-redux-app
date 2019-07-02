@@ -36,3 +36,43 @@ exports[`LoginPage component should render correctly 1`] = `
   </button>
 </form>
 `;
+
+exports[`LoginPage component wrong password should show error message 1`] = `
+<form>
+  <div
+    className="error"
+  />
+  <div>
+    <label
+      htmlFor="email"
+    >
+      Username/Email:
+    </label>
+    <input
+      id="email"
+      onChange={[Function]}
+      type="email"
+      value=""
+    />
+  </div>
+  <div>
+    <label
+      htmlFor="password"
+    >
+      Password:
+    </label>
+    <input
+      id="password"
+      onChange={[Function]}
+      type="password"
+      value=""
+    />
+  </div>
+  <button
+    onClick={[Function]}
+    type="submit"
+  >
+    Login
+  </button>
+</form>
+`;

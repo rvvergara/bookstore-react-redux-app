@@ -42,6 +42,7 @@ describe('LoginPage component', () => {
       wrapper.setProps({ error: 'Invalid credentials' });
 
       expect(wrapper.find('div.error').exists()).toBeTruthy();
+      expect(wrapper).toMatchSnapshot();
     });
   });
 });
