@@ -6,10 +6,12 @@ import users from '../fixtures/users';
 describe('LoginPage component', () => {
   let wrapper;
   let login;
+  let history;
 
   beforeEach(() => {
     login = jest.fn();
-    wrapper = shallow(<LoginPage error={null} login={login} />);
+    history = { push: jest.fn() };
+    wrapper = shallow(<LoginPage error={null} login={login} history={history} />);
   });
 
   test('should render correctly', () => {
@@ -31,6 +33,7 @@ describe('LoginPage component', () => {
         email_or_username: users[0].username,
         password: users[0].password,
       });
+      expect(history.push).toHaveBeenLastCalledWith('/');
     });
   });
 
