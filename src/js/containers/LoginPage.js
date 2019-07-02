@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../thunks/currentUser';
 
-export const LoginPage = ({ login, error }) => {
+export const LoginPage = ({ login, error, history }) => {
   const [emailOrUsername, setEmailOrUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(error);
@@ -17,6 +17,7 @@ export const LoginPage = ({ login, error }) => {
     setEmailOrUsername('');
     setPassword('');
     setErrorMessage(error);
+    history.push('/');
   };
 
   return (

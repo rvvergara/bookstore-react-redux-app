@@ -3,7 +3,8 @@ import { Route, Router, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import BooksDashboard from './BooksDashboard';
 import '../../scss/main.scss';
-import LoginPage from './LoginPage';
+import LoginPage from '../containers/LoginPage';
+import withAuth from '../hocs/withAuth';
 
 export const history = createBrowserHistory();
 

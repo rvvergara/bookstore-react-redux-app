@@ -42,7 +42,7 @@ exports[`App component should render correctly 1`] = `
           "$$typeof": Symbol(react.memo),
           "WrappedComponent": [Function],
           "compare": null,
-          "displayName": "Connect(BooksDashboard)",
+          "displayName": "Connect(ForRender)",
           "type": [Function],
         }
       }
