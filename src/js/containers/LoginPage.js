@@ -13,11 +13,13 @@ export const LoginPage = ({ login, error, history }) => {
 
   const loginUser = (e) => {
     e.preventDefault();
-    login({ email_or_username: emailOrUsername, password });
-    setEmailOrUsername('');
-    setPassword('');
-    setErrorMessage(error);
-    history.push('/');
+    login({ email_or_username: emailOrUsername, password })
+      .then(() => {
+        setEmailOrUsername('');
+        setPassword('');
+        setErrorMessage(error);
+        history.push('/');
+      }).catch(() => {});
   };
 
   return (
