@@ -9,12 +9,17 @@ exports[`Header component Should render correctly 1`] = `
   >
     Bookstore App
   </h1>
-  <button
-    className="logout-btn"
-    onClick={[MockFunction]}
-    type="button"
+  <div
+    className="user-wrapper"
   >
-    Log Out
-  </button>
+    <span />
+    <button
+      className="logout-btn"
+      onClick={[MockFunction]}
+      type="button"
+    >
+      Log Out
+    </button>
+  </div>
 </header>
 `;

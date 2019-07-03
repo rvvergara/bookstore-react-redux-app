@@ -1,5 +1,5 @@
 .panel-bg {
-  height: 9.5rem;
+  height: 7rem;
   background-color: #ffffff;
   display: flex;
   justify-content: space-between;
@@ -19,9 +19,15 @@
   color: $light-blue;
 }
 
-.logout-btn {
-  margin-right: $small;
+.user-wrapper {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: $medium * 0.8;
+  padding: $medium $small;
+}
+
+.logout-btn {
+  font-size: $medium * 0.8;
+  margin: 0 $small;
 
   &:hover {
     cursor: pointer;
