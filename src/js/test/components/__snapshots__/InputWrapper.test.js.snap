@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`InputWrapper component should render correctly 1`] = `
+<div
+  className="input-wrapper"
+>
+  <label
+    className="user-form__label"
+    htmlFor="email"
+  >
+    Email/Username:
+  </label>
+  <input
+    className="form-input"
+    id="email"
+    onChange={[Function]}
+    type="text"
+    value=""
+  />
+</div>
+`;
