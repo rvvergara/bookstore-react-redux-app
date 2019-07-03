@@ -5,7 +5,7 @@ import { setError } from '../actions/error';
 import InputWrapper from './InputWrapper';
 import Header from './Header';
 
-const SignupPage = ({ signUp, error, setError }) => {
+export const SignUpPage = ({ signUp, error, setError }) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -47,6 +47,7 @@ const SignupPage = ({ signUp, error, setError }) => {
       <Header />
       <div>
         <form>
+          <h2>Create Account</h2>
           {
             error && <div className="error">{error}</div>
           }
@@ -111,4 +112,4 @@ const mapStateToProps = state => ({
   error: state.error,
 });
 
-export default connect(mapStateToProps, { signUp, setError })(SignupPage);
+export default connect(mapStateToProps, { signUp, setError })(SignUpPage);
