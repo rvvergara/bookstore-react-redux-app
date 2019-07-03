@@ -1,0 +1,41 @@
+.form-wrapper {
+  padding: 15%;
+}
+
+.user-form {
+  border: 1px solid black;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  padding: $medium $xlarge;
+  width: 45%;
+  margin: 0 auto;
+}
+
+.input-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: $small 0;
+  padding: 0 $small;
+
+  input {
+    font-size: $medium * 0.8;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  label {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+
+.btn-wrapper {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.user-form__btn {
+  border: 1px solid black;
+  padding: $small * 0.5;
+  margin: $small * 0.3;
+}

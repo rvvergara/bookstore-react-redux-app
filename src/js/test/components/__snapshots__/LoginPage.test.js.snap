@@ -1,78 +1,128 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginPage component should render correctly 1`] = `
-<form>
-  <div>
-    <label
-      htmlFor="email"
-    >
-      Username/Email:
-    </label>
-    <input
-      id="email"
-      onChange={[Function]}
-      type="email"
-      value=""
-    />
-  </div>
-  <div>
-    <label
-      htmlFor="password"
-    >
-      Password:
-    </label>
-    <input
-      id="password"
-      onChange={[Function]}
-      type="password"
-      value=""
-    />
-  </div>
-  <button
-    onClick={[Function]}
-    type="submit"
+<div
+  className="form-wrapper"
+>
+  <form
+    className="form user-form"
   >
-    Login
-  </button>
-</form>
+    <div
+      className="input-wrapper"
+    >
+      <label
+        className="user-form__label"
+        htmlFor="email"
+      >
+        Username/Email:
+      </label>
+      <input
+        className="form-input"
+        id="email"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="input-wrapper"
+    >
+      <label
+        className="user-form__label"
+        htmlFor="password"
+      >
+        Password:
+      </label>
+      <input
+        className="form-input"
+        id="password"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="btn-wrapper"
+    >
+      <button
+        className="user-form__btn"
+        onClick={[Function]}
+        type="submit"
+      >
+        Login
+      </button>
+      <button
+        className="user-form__btn"
+        type="button"
+      >
+        Sign Up
+      </button>
+    </div>
+  </form>
+</div>
 `;
 
 exports[`LoginPage component wrong password should show error message 1`] = `
-<form>
-  <div
-    className="error"
-  />
-  <div>
-    <label
-      htmlFor="email"
-    >
-      Username/Email:
-    </label>
-    <input
-      id="email"
-      onChange={[Function]}
-      type="email"
-      value=""
-    />
-  </div>
-  <div>
-    <label
-      htmlFor="password"
-    >
-      Password:
-    </label>
-    <input
-      id="password"
-      onChange={[Function]}
-      type="password"
-      value=""
-    />
-  </div>
-  <button
-    onClick={[Function]}
-    type="submit"
+<div
+  className="form-wrapper"
+>
+  <form
+    className="form user-form"
   >
-    Login
-  </button>
-</form>
+    <div
+      className="error"
+    />
+    <div
+      className="input-wrapper"
+    >
+      <label
+        className="user-form__label"
+        htmlFor="email"
+      >
+        Username/Email:
+      </label>
+      <input
+        className="form-input"
+        id="email"
+        onChange={[Function]}
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      className="input-wrapper"
+    >
+      <label
+        className="user-form__label"
+        htmlFor="password"
+      >
+        Password:
+      </label>
+      <input
+        className="form-input"
+        id="password"
+        onChange={[Function]}
+        type="password"
+        value=""
+      />
+    </div>
+    <div
+      className="btn-wrapper"
+    >
+      <button
+        className="user-form__btn"
+        onClick={[Function]}
+        type="submit"
+      >
+        Login
+      </button>
+      <button
+        className="user-form__btn"
+        type="button"
+      >
+        Sign Up
+      </button>
+    </div>
+  </form>
+</div>
 `;

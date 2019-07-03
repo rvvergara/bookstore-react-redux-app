@@ -19,30 +19,56 @@ export const LoginPage = ({ login, error, history }) => {
   };
 
   return (
-    <form>
-      {error && <div className="error">{errorMessage}</div>}
-      <div>
-        <label htmlFor="email">Username/Email:</label>
-        <input
-          type="email"
-          id="email"
-          value={emailOrUsername}
-          onChange={e => setEmailOrUsername(e.target.value)}
-        />
-      </div>
-      <div>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          value={password}
-          onChange={e => setPassword(e.target.value)}
-        />
-      </div>
-      <button type="submit" onClick={loginUser}>
-        Login
-      </button>
-    </form>
+    <div className="form-wrapper">
+      <form className="form user-form">
+        {error && <div className="error">{errorMessage}</div>}
+        <div className="input-wrapper">
+          <label
+            htmlFor="email"
+            className="user-form__label"
+          >
+            Username/Email:
+          </label>
+          <input
+            type="text"
+            id="email"
+            className="form-input"
+            value={emailOrUsername}
+            onChange={e => setEmailOrUsername(e.target.value)}
+          />
+        </div>
+        <div className="input-wrapper">
+          <label
+            htmlFor="password"
+            className="user-form__label"
+          >
+            Password:
+          </label>
+          <input
+            type="password"
+            id="password"
+            className="form-input"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+        </div>
+        <div className="btn-wrapper">
+          <button
+            type="submit"
+            className="user-form__btn"
+            onClick={loginUser}
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            className="user-form__btn"
+          >
+            Sign Up
+          </button>
+        </div>
+      </form>
+    </div>
   );
 };
 
