@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { ProgressUpdateBtn } from '../../containers/ProgressUpdateBtn';
+import { ProgressUpdateBtn } from '../../components/ProgressUpdateBtn';
 
 test('ProgressUpdateBtn should render correctly', () => {
   const switchProgressUpdate = jest.fn();

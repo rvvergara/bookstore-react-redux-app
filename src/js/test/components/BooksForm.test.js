@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { BooksForm } from '../../containers/BooksForm';
+import { BooksForm } from '../../components/BooksForm';
 
 describe('BooksForm', () => {
   let wrapper;

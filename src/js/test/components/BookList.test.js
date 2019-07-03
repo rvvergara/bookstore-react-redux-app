@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { BookList } from '../../containers/BookList';
+import { BookList } from '../../components/BookList';
 import dummyBooks from '../fixtures/books';
 import bookCategories from '../fixtures/categories';
 
