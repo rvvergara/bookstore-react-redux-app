@@ -31,9 +31,16 @@ export const logout = () => (dispatch) => {
   dispatch(setCurrentUser({ authenticated: false, data: null }));
 };
 
-export const signUp = signupParams => dispatch => fetchData('post', 'users', signupParams)
-  .then((res) => {
-    const { user } = res.data;
-    setUserInStore(user, dispatch);
-  })
-  .catch(err => setErrorInStore(err, dispatch));
+export const signUp = signupParams => (dispatch) => {
+  const path = 'users';
+  return fetchData('post', path, signupParams)
+    .then((res) => {
+      const { user } = res.data;
+      setUserInStore(user, dispatch);
+    })
+    .catch((err) => {
+      console.log('Cannot create user');
+      setErrorInStore(err, dispatch)
+      ; 
+});
+};

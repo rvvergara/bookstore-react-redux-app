@@ -57,6 +57,18 @@ exports[`App component should render correctly 1`] = `
             "type": [Function],
           }
         }
+        path="/signup"
+      />
+      <Route
+        component={
+          Object {
+            "$$typeof": Symbol(react.memo),
+            "WrappedComponent": [Function],
+            "compare": null,
+            "displayName": "Connect(Authenticate)",
+            "type": [Function],
+          }
+        }
         path="/"
       />
     </Switch>

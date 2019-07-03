@@ -1,88 +1,96 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`LoginPage component should render correctly 1`] = `
-<div
-  className="form-wrapper"
->
-  <form
-    className="form user-form"
+<div>
+  <ConnectFunction />
+  <div
+    className="form-wrapper"
   >
-    <InputWrapper
-      inputId="email"
-      inputValue=""
-      labelValue="Username/Email:"
-      setInput={[Function]}
-      type="text"
-    />
-    <InputWrapper
-      inputId="password"
-      inputValue=""
-      labelValue="Password:"
-      setInput={[Function]}
-      type="password"
-    />
-    <div
-      className="btn-wrapper"
+    <form
+      className="form user-form"
     >
-      <button
-        className="user-form__btn"
-        onClick={[Function]}
-        type="submit"
+      <InputWrapper
+        inputId="email"
+        inputValue=""
+        labelValue="Username/Email:"
+        setInput={[Function]}
+        type="text"
+      />
+      <InputWrapper
+        inputId="password"
+        inputValue=""
+        labelValue="Password:"
+        setInput={[Function]}
+        type="password"
+      />
+      <div
+        className="btn-wrapper"
       >
-        Login
-      </button>
-      <button
-        className="user-form__btn"
-        type="button"
-      >
-        Sign Up
-      </button>
-    </div>
-  </form>
+        <button
+          className="user-form__btn"
+          onClick={[Function]}
+          type="submit"
+        >
+          Login
+        </button>
+        <button
+          className="user-form__btn"
+          onClick={[Function]}
+          type="button"
+        >
+          Sign Up
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
 `;
 
 exports[`LoginPage component wrong password should show error message 1`] = `
-<div
-  className="form-wrapper"
->
-  <form
-    className="form user-form"
+<div>
+  <ConnectFunction />
+  <div
+    className="form-wrapper"
   >
-    <div
-      className="error"
-    />
-    <InputWrapper
-      inputId="email"
-      inputValue=""
-      labelValue="Username/Email:"
-      setInput={[Function]}
-      type="text"
-    />
-    <InputWrapper
-      inputId="password"
-      inputValue=""
-      labelValue="Password:"
-      setInput={[Function]}
-      type="password"
-    />
-    <div
-      className="btn-wrapper"
+    <form
+      className="form user-form"
     >
-      <button
-        className="user-form__btn"
-        onClick={[Function]}
-        type="submit"
+      <div
+        className="error"
+      />
+      <InputWrapper
+        inputId="email"
+        inputValue=""
+        labelValue="Username/Email:"
+        setInput={[Function]}
+        type="text"
+      />
+      <InputWrapper
+        inputId="password"
+        inputValue=""
+        labelValue="Password:"
+        setInput={[Function]}
+        type="password"
+      />
+      <div
+        className="btn-wrapper"
       >
-        Login
-      </button>
-      <button
-        className="user-form__btn"
-        type="button"
-      >
-        Sign Up
-      </button>
-    </div>
-  </form>
+        <button
+          className="user-form__btn"
+          onClick={[Function]}
+          type="submit"
+        >
+          Login
+        </button>
+        <button
+          className="user-form__btn"
+          onClick={[Function]}
+          type="button"
+        >
+          Sign Up
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
 `;

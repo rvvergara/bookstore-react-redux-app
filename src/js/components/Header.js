@@ -1,27 +1,30 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { logout } from '../thunks/user';
+import history from '../services/history';
 
-export const Header = ({ logout, name }) => (
+export const Header = ({ logout, currentUser }) => (
   <header className="panel-bg">
     <h1 className="bookstore-cms">Bookstore App</h1>
     <div className="user-wrapper">
+      {currentUser.authenticated && (
       <span>
-        { name }
+        { `${currentUser.data.first_name} ${currentUser.data.last_name}` }
       </span>
+      )}
       <button
         type="button"
         className="logout-btn"
-        onClick={logout}
+        onClick={currentUser.authenticated ? logout : () => history.push('/login')}
       >
-        Log Out
+        {currentUser.authenticated ? 'Log Out' : 'Log In'}
       </button>
     </div>
   </header>
 );
 
 const mapStateToProps = state => ({
-  name: `${state.currentUser.data.first_name} ${state.currentUser.data.last_name}`,
+  currentUser: state.currentUser,
 });
 
 export default connect(mapStateToProps, { logout })(Header);

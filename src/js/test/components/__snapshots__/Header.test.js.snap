@@ -1,25 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header component Should render correctly 1`] = `
-<header
-  className="panel-bg"
->
-  <h1
-    className="bookstore-cms"
-  >
-    Bookstore App
-  </h1>
-  <div
-    className="user-wrapper"
-  >
-    <span />
-    <button
-      className="logout-btn"
-      onClick={[MockFunction]}
-      type="button"
-    >
-      Log Out
-    </button>
-  </div>
-</header>
-`;
+exports[`Header component Should render correctly 1`] = `undefined`;

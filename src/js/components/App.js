@@ -1,17 +1,16 @@
 import React from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import { createBrowserHistory } from 'history';
 import decode from 'jwt-decode';
 import BooksDashboard from './BooksDashboard';
 import '../../scss/main.scss';
 import LoginPage from './LoginPage';
+import SignUpPage from './SignUpPage';
 import configureStore from '../store/configureStore';
 import { setCurrentUser } from '../actions/user';
 import { setAuthorizationToken } from '../services/api';
+import history from '../services/history';
 import withAuth from '../hocs/withAuth';
-
-export const history = createBrowserHistory();
 
 const store = configureStore();
 
@@ -32,6 +31,7 @@ const App = () => (
     <Router history={history}>
       <Switch>
         <Route path="/login" component={withAuth(LoginPage, true)} />
+        <Route path="/signup" component={withAuth(SignUpPage, true)} />
         <Route path="/" component={withAuth(BooksDashboard)} />
       </Switch>
     </Router>
