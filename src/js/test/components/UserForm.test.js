@@ -1,9 +1,9 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { SignUpPage } from '../../components/SignUpPage';
+import { UserForm } from '../../components/UserForm';
 import users from '../fixtures/users';
 
-describe('SignUpPage component', () => {
+describe('UserForm component for signup', () => {
   let wrapper;
   let signUp;
   let setError;
@@ -12,7 +12,7 @@ describe('SignUpPage component', () => {
     signUp = jest.fn();
     setError = jest.fn();
     wrapper = shallow(
-      <SignUpPage
+      <UserForm
         error={null}
         signUp={signUp}
         setError={setError}
