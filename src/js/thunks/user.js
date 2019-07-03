@@ -39,8 +39,19 @@ export const signUp = signupParams => (dispatch) => {
       setUserInStore(user, dispatch);
     })
     .catch((err) => {
-      console.log('Cannot create user');
-      setErrorInStore(err, dispatch)
-      ; 
-});
+      setErrorInStore(err, dispatch);
+    });
+};
+
+export const updateAccount = (username, userParams) => (dispatch) => {
+  const path = `users/${username}`;
+
+  return fetchData('put', path, userParams)
+    .then((res) => {
+      const { user } = res.data;
+      setUserInStore(user, dispatch);
+    })
+    .catch((err) => {
+      setErrorInStore(err, dispatch);
+    });
 };

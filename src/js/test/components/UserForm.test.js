@@ -54,3 +54,7 @@ describe('UserForm component for signup', () => {
     expect(wrapper.find('div[className="error"]').exists()).toBeTruthy();
   });
 });
+
+describe('UserForm for editing user account', () => {
+
+});
