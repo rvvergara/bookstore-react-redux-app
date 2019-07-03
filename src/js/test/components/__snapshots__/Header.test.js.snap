@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Header component should render correctly 1`] = `
+exports[`Header component Should render correctly 1`] = `
 <header
   className="panel-bg"
 >
@@ -9,5 +9,12 @@ exports[`Header component should render correctly 1`] = `
   >
     Bookstore App
   </h1>
+  <button
+    className="btn"
+    onClick={[MockFunction]}
+    type="button"
+  >
+    Log Out
+  </button>
 </header>
 `;
