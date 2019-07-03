@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SignUpPage component renders correctly 1`] = `
+<div>
+  <ConnectFunction />
+  <h2>
+    Create Account
+  </h2>
+  <ConnectFunction />
+</div>
+`;
