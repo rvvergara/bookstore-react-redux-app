@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
-import { login } from '../thunks/currentUser';
+import { login } from '../thunks/user';
 
 export const LoginPage = ({ login, error, history }) => {
   const [emailOrUsername, setEmailOrUsername] = useState('');

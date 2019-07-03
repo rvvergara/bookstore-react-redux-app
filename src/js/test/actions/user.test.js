@@ -1,5 +1,5 @@
 import { SET_CURRENT_USER } from '../../actions/actionTypes';
-import { setCurrentUser } from '../../actions/currentUser';
+import { setCurrentUser } from '../../actions/user';
 import users from '../fixtures/users';
 
 describe('setCurrentUser', () => {

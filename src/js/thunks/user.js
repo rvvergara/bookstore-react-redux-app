@@ -1,4 +1,4 @@
-import { setCurrentUser } from '../actions/currentUser';
+import { setCurrentUser } from '../actions/user';
 import { setError } from '../actions/error';
 import { fetchData, setAuthorizationToken } from '../services/api';
 

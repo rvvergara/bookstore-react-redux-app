@@ -1,4 +1,4 @@
-import currentUserReducer from '../../reducers/currentUser';
+import currentUserReducer from '../../reducers/user';
 import users from '../fixtures/users';
 import { SET_CURRENT_USER } from '../../actions/actionTypes';
 

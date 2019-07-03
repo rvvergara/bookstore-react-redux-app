@@ -7,7 +7,7 @@ import BooksDashboard from './BooksDashboard';
 import '../../scss/main.scss';
 import LoginPage from '../containers/LoginPage';
 import configureStore from '../store/configureStore';
-import { setCurrentUser } from '../actions/currentUser';
+import { setCurrentUser } from '../actions/user';
 import { setAuthorizationToken } from '../services/api';
 import withAuth from '../hocs/withAuth';
 
