@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../thunks/user';
+import InputWrapper from './InputWrapper';
 
 export const LoginPage = ({ login, error, history }) => {
   const [emailOrUsername, setEmailOrUsername] = useState('');
@@ -22,36 +23,20 @@ export const LoginPage = ({ login, error, history }) => {
     <div className="form-wrapper">
       <form className="form user-form">
         {error && <div className="error">{errorMessage}</div>}
-        <div className="input-wrapper">
-          <label
-            htmlFor="email"
-            className="user-form__label"
-          >
-            Username/Email:
-          </label>
-          <input
-            type="text"
-            id="email"
-            className="form-input"
-            value={emailOrUsername}
-            onChange={e => setEmailOrUsername(e.target.value)}
-          />
-        </div>
-        <div className="input-wrapper">
-          <label
-            htmlFor="password"
-            className="user-form__label"
-          >
-            Password:
-          </label>
-          <input
-            type="password"
-            id="password"
-            className="form-input"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-        </div>
+        <InputWrapper
+          inputValue={emailOrUsername}
+          labelValue="Username/Email:"
+          setInput={setEmailOrUsername}
+          type="text"
+          inputId="email"
+        />
+        <InputWrapper
+          inputValue={password}
+          labelValue="Password:"
+          setInput={setPassword}
+          type="password"
+          inputId="password"
+        />
         <div className="btn-wrapper">
           <button
             type="submit"

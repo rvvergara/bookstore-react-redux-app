@@ -7,40 +7,20 @@ exports[`LoginPage component should render correctly 1`] = `
   <form
     className="form user-form"
   >
-    <div
-      className="input-wrapper"
-    >
-      <label
-        className="user-form__label"
-        htmlFor="email"
-      >
-        Username/Email:
-      </label>
-      <input
-        className="form-input"
-        id="email"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      className="input-wrapper"
-    >
-      <label
-        className="user-form__label"
-        htmlFor="password"
-      >
-        Password:
-      </label>
-      <input
-        className="form-input"
-        id="password"
-        onChange={[Function]}
-        type="password"
-        value=""
-      />
-    </div>
+    <InputWrapper
+      inputId="email"
+      inputValue=""
+      labelValue="Username/Email:"
+      setInput={[Function]}
+      type="text"
+    />
+    <InputWrapper
+      inputId="password"
+      inputValue=""
+      labelValue="Password:"
+      setInput={[Function]}
+      type="password"
+    />
     <div
       className="btn-wrapper"
     >
@@ -72,40 +52,20 @@ exports[`LoginPage component wrong password should show error message 1`] = `
     <div
       className="error"
     />
-    <div
-      className="input-wrapper"
-    >
-      <label
-        className="user-form__label"
-        htmlFor="email"
-      >
-        Username/Email:
-      </label>
-      <input
-        className="form-input"
-        id="email"
-        onChange={[Function]}
-        type="text"
-        value=""
-      />
-    </div>
-    <div
-      className="input-wrapper"
-    >
-      <label
-        className="user-form__label"
-        htmlFor="password"
-      >
-        Password:
-      </label>
-      <input
-        className="form-input"
-        id="password"
-        onChange={[Function]}
-        type="password"
-        value=""
-      />
-    </div>
+    <InputWrapper
+      inputId="email"
+      inputValue=""
+      labelValue="Username/Email:"
+      setInput={[Function]}
+      type="text"
+    />
+    <InputWrapper
+      inputId="password"
+      inputValue=""
+      labelValue="Password:"
+      setInput={[Function]}
+      type="password"
+    />
     <div
       className="btn-wrapper"
     >
