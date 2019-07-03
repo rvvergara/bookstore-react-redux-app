@@ -23,6 +23,7 @@ if (localStorage.token) {
     store.dispatch(setCurrentUser({ authenticated: true, data: userData }));
   } catch (err) {
     store.dispatch(setCurrentUser({ authenticated: false, data: null }));
+    localStorage.clear();
   }
 }
 

@@ -52,7 +52,7 @@ exports[`LoginPage component wrong password should show error message 1`] = `
       id="email"
       onChange={[Function]}
       type="email"
-      value="ryto@gmail.com"
+      value=""
     />
   </div>
   <div>
@@ -65,7 +65,7 @@ exports[`LoginPage component wrong password should show error message 1`] = `
       id="password"
       onChange={[Function]}
       type="password"
-      value="somePassword"
+      value=""
     />
   </div>
   <button
