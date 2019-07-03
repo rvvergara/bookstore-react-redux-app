@@ -53,6 +53,6 @@ export const updateAccount = userParams => (dispatch) => {
       setUserInStore(user, dispatch);
     })
     .catch((err) => {
-      setErrorInStore(err, dispatch);
+      dispatch(setError(err.response.data.error));
     });
 };

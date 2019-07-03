@@ -59,3 +59,63 @@ exports[`UserForm component for signup should render correctly 1`] = `
   </form>
 </div>
 `;
+
+exports[`UserForm for editing user account should render correctly 1`] = `
+<div>
+  <form>
+    <InputWrapper
+      inputId="username"
+      inputValue="ryto"
+      labelValue="Username: "
+      setInput={[Function]}
+      type="text"
+    />
+    <InputWrapper
+      inputId="email"
+      inputValue="ryto@gmail.com"
+      labelValue="Email: "
+      setInput={[Function]}
+      type="email"
+    />
+    <InputWrapper
+      inputId="password"
+      inputValue=""
+      labelValue="Password: "
+      setInput={[Function]}
+      type="password"
+    />
+    <InputWrapper
+      inputId="password-confirmation"
+      inputValue=""
+      labelValue="Confirm Password: "
+      setInput={[Function]}
+      type="password"
+    />
+    <InputWrapper
+      inputId="first-name"
+      inputValue="Ryto"
+      labelValue="First Name: "
+      setInput={[Function]}
+      type="text"
+    />
+    <InputWrapper
+      inputId="last-name"
+      inputValue="Verkar"
+      labelValue="Last Name: "
+      setInput={[Function]}
+      type="text"
+    />
+    <div
+      className="btn-wrapper"
+    >
+      <button
+        className="user-form__btn"
+        onClick={[Function]}
+        type="submit"
+      >
+        Update Account
+      </button>
+    </div>
+  </form>
+</div>
+`;
