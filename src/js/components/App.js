@@ -6,11 +6,13 @@ import BooksDashboard from './BooksDashboard';
 import '../../scss/main.scss';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
+import EditUserPage from './EditUserPage';
 import configureStore from '../store/configureStore';
 import { setCurrentUser } from '../actions/user';
 import { setAuthorizationToken } from '../services/api';
 import history from '../services/history';
 import withAuth from '../hocs/withAuth';
+import withCorrectUser from '../hocs/withCorrectUser';
 
 const store = configureStore();
 
@@ -32,7 +34,8 @@ const App = () => (
       <Switch>
         <Route path="/login" component={withAuth(LoginPage, true)} />
         <Route path="/signup" component={withAuth(SignUpPage, true)} />
-        <Route path="/" component={withAuth(BooksDashboard)} />
+        <Route path="/" component={withAuth(BooksDashboard)} exact />
+        <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
       </Switch>
     </Router>
   </Provider>

@@ -5,14 +5,14 @@ import { setError } from '../actions/error';
 import InputWrapper from './InputWrapper';
 
 export const UserForm = ({
-  signUp, error, setError, authenticated,
+  signUp, error, setError, isAuthenticated, userData,
 }) => {
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState(userData ? userData.username : '');
+  const [email, setEmail] = useState(userData ? userData.email : '');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [firstName, setFirstName] = useState(userData ? userData.first_name : '');
+  const [lastName, setLastName] = useState(userData ? userData.last_name : '');
 
   const removeErrorMsg = useCallback(() => {
     setError(null);
@@ -97,7 +97,7 @@ export const UserForm = ({
             className="user-form__btn"
             onClick={handleSubmit}
           >
-            { authenticated ? 'Update Account' : 'Create Account'}
+            { isAuthenticated ? 'Update Account' : 'Create Account'}
           </button>
         </div>
       </form>
@@ -108,6 +108,7 @@ export const UserForm = ({
 const mapStateToProps = state => ({
   error: state.error,
   isAuthenticated: state.currentUser.authenticated,
+  userData: state.currentUser.data,
 });
 
 export default connect(mapStateToProps, { signUp, setError })(UserForm);

@@ -7,7 +7,7 @@ const withCorrectUser = (Component) => {
   const Allowed = ({ isAllowed, ...rest }) => (isAllowed ? <Component {...rest} /> : <Redirect to="/" />);
 
   const mapStateToProps = (state, ownProps) => ({
-    isAllowed: state.currentUser.data.id === ownProps.match.params.id,
+    isAllowed: state.currentUser.data.username === ownProps.match.params.id,
   });
 
   Allowed.propTypes = {
