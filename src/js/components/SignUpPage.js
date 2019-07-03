@@ -1,16 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { signUp } from '../thunks/user';
+import { setError } from '../actions/error';
 import InputWrapper from './InputWrapper';
 import Header from './Header';
 
-const SignupPage = ({ signUp, error }) => {
+const SignupPage = ({ signUp, error, setError }) => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
+
+  const removeErrorMsg = useCallback(() => {
+    setError(null);
+  }, [setError]);
+
+  useEffect(() => {
+    removeErrorMsg();
+    return () => setError(null);
+  }, [removeErrorMsg, setError]);
 
   const signupUser = (e) => {
     e.preventDefault();
@@ -29,10 +39,7 @@ const SignupPage = ({ signUp, error }) => {
         last_name: lastName,
         password_confirmation: passwordConfirmation,
       },
-    })
-      .then(() => {
-        console.log('User created');
-      });
+    });
   };
 
   return (
@@ -104,4 +111,4 @@ const mapStateToProps = state => ({
   error: state.error,
 });
 
-export default connect(mapStateToProps, { signUp })(SignupPage);
+export default connect(mapStateToProps, { signUp, setError })(SignupPage);
