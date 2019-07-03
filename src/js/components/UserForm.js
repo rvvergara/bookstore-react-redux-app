@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
-import { signUp } from '../thunks/user';
+import { signUp, updateAccount } from '../thunks/user';
 import { setError } from '../actions/error';
 import InputWrapper from './InputWrapper';
 
 export const UserForm = ({
-  signUp, error, setError, isAuthenticated, userData,
+  signUp, error, setError, isAuthenticated, userData, updateAccount,
 }) => {
   const [username, setUsername] = useState(userData ? userData.username : '');
   const [email, setEmail] = useState(userData ? userData.email : '');
@@ -13,6 +13,7 @@ export const UserForm = ({
   const [passwordConfirmation, setPasswordConfirmation] = useState('');
   const [firstName, setFirstName] = useState(userData ? userData.first_name : '');
   const [lastName, setLastName] = useState(userData ? userData.last_name : '');
+  const saveUser = isAuthenticated ? updateAccount : signUp;
 
   const removeErrorMsg = useCallback(() => {
     setError(null);
@@ -31,15 +32,13 @@ export const UserForm = ({
     setPasswordConfirmation('');
     setFirstName('');
     setLastName('');
-    signUp({
-      user: {
-        username,
-        email,
-        password,
-        first_name: firstName,
-        last_name: lastName,
-        password_confirmation: passwordConfirmation,
-      },
+    const secureAttributes = { password, password_confirmation: passwordConfirmation };
+    const profileAttributes = {
+      username, email, first_name: firstName, last_name: lastName,
+    };
+    const userParams = password === '' ? profileAttributes : { ...profileAttributes, ...secureAttributes };
+    saveUser({
+      user: userParams,
     });
   };
 
@@ -111,4 +110,4 @@ const mapStateToProps = state => ({
   userData: state.currentUser.data,
 });
 
-export default connect(mapStateToProps, { signUp, setError })(UserForm);
+export default connect(mapStateToProps, { signUp, setError, updateAccount })(UserForm);

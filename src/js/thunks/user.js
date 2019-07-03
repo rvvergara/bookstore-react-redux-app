@@ -1,6 +1,7 @@
 import { setCurrentUser } from '../actions/user';
 import { setError } from '../actions/error';
 import { fetchData, setAuthorizationToken } from '../services/api';
+import history from '../services/history';
 
 const setUserInStore = (user, dispatch) => {
   const { token } = user;
@@ -43,12 +44,12 @@ export const signUp = signupParams => (dispatch) => {
     });
 };
 
-export const updateAccount = (username, userParams) => (dispatch) => {
-  const path = `users/${username}`;
-
+export const updateAccount = userParams => (dispatch) => {
+  const path = `${userParams.user.username}`;
   return fetchData('put', path, userParams)
     .then((res) => {
       const { user } = res.data;
+      history.push('/');
       setUserInStore(user, dispatch);
     })
     .catch((err) => {
