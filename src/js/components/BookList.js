@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { switchAddBookMode, removeBook, switchProgressUpdate } from '../actions/books';
 import { changeFilter } from '../actions/filter';
-import Book from '../components/Book';
-import CategoryFilter from '../components/CategoryFilter';
-import ProgressUpdateModal from '../components/ProgressUpdateModal';
+import Book from './Book';
+import CategoryFilter from './CategoryFilter';
+import ProgressUpdateModal from './ProgressUpdateModal';
 
 export const BookList = (
   {

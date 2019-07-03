@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
-import BooksForm from '../containers/BooksForm';
+import BooksForm from './BooksForm';
 
 const BooksFormModal = ({ addBookMode, switchAddBookMode }) => (
   <Modal

@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { switchAddBookMode } from '../actions/books';
-import BookList from '../containers/BookList';
+import BookList from './BookList';
 import BooksFormModal from './BooksFormModal';
 import Header from './Header';
 

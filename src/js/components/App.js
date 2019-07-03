@@ -5,7 +5,7 @@ import { createBrowserHistory } from 'history';
 import decode from 'jwt-decode';
 import BooksDashboard from './BooksDashboard';
 import '../../scss/main.scss';
-import LoginPage from '../containers/LoginPage';
+import LoginPage from './LoginPage';
 import configureStore from '../store/configureStore';
 import { setCurrentUser } from '../actions/user';
 import { setAuthorizationToken } from '../services/api';
