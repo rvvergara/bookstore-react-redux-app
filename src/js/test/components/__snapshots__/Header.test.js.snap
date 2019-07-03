@@ -5,12 +5,12 @@ exports[`Header component Should render correctly 1`] = `
   className="panel-bg"
 >
   <h1
-    className="Bookstore-CMS"
+    className="bookstore-cms"
   >
     Bookstore App
   </h1>
   <button
-    className="btn"
+    className="logout-btn"
     onClick={[MockFunction]}
     type="button"
   >

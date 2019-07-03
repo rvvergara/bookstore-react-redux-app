@@ -4,10 +4,10 @@ import { logout } from '../thunks/user';
 
 export const Header = ({ logout }) => (
   <header className="panel-bg">
-    <h1 className="Bookstore-CMS">Bookstore App</h1>
+    <h1 className="bookstore-cms">Bookstore App</h1>
     <button
       type="button"
-      className="btn"
+      className="logout-btn"
       onClick={logout}
     >
       Log Out

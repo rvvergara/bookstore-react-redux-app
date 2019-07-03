@@ -2,9 +2,11 @@
   height: 9.5rem;
   background-color: #ffffff;
   display: flex;
+  justify-content: space-between;
+  padding: 0 10rem;
 }
 
-.Bookstore-CMS {
+.bookstore-cms {
   width: 24rem;
   height: 3.7rem;
   font-family: "Montserrat";
@@ -15,5 +17,14 @@
   line-height: normal;
   letter-spacing: normal;
   color: $light-blue;
-  margin-left: $side-pad;
+}
+
+.logout-btn {
+  margin-right: $small;
+  font-size: $medium * 0.8;
+
+  &:hover {
+    cursor: pointer;
+    color: $translucent-gray;
+  }
 }
