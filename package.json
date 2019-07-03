@@ -24,6 +24,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "proxy": "http://localhost:3000/v1",
   "jest": {
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
