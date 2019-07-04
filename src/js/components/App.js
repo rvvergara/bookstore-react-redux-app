@@ -7,6 +7,7 @@ import '../../scss/main.scss';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
 import EditUserPage from './EditUserPage';
+import AdminDashboard from './AdminDashboard';
 import configureStore from '../store/configureStore';
 import { setCurrentUser } from '../actions/user';
 import { setAuthorizationToken } from '../services/api';
@@ -36,6 +37,7 @@ const App = () => (
         <Route path="/signup" component={withAuth(SignUpPage, true)} />
         <Route path="/" component={withAuth(BooksDashboard)} exact />
         <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
+        <Route path="/admin" component={AdminDashboard} />
       </Switch>
     </Router>
   </Provider>
