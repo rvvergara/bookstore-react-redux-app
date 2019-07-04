@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { logout } from '../thunks/user';
 import history from '../services/history';
@@ -11,6 +12,14 @@ export const Header = ({ logout, currentUser }) => (
       <span>
         { `${currentUser.data.first_name} ${currentUser.data.last_name}` }
       </span>
+      )}
+      {currentUser.authenticated && currentUser.data.access_level > 1 && (
+      <NavLink
+        className="logout-btn"
+        to="/admin"
+      >
+        Admin Dashboard
+      </NavLink>
       )}
       <button
         type="button"
