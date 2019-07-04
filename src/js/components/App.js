@@ -14,6 +14,7 @@ import { setAuthorizationToken } from '../services/api';
 import history from '../services/history';
 import withAuth from '../hocs/withAuth';
 import withCorrectUser from '../hocs/withCorrectUser';
+import withAdmin from '../hocs/withAdmin';
 
 const store = configureStore();
 
@@ -37,7 +38,7 @@ const App = () => (
         <Route path="/signup" component={withAuth(SignUpPage, true)} />
         <Route path="/" component={withAuth(BooksDashboard)} exact />
         <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
-        <Route path="/admin" component={AdminDashboard} />
+        <Route path="/admin" component={withAuth(withAdmin(AdminDashboard))} />
       </Switch>
     </Router>
   </Provider>
