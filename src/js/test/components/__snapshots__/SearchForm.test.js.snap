@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm component should render correctly 1`] = `
+<div
+  className="form-wrapper search-form"
+>
+  <form
+    className="form"
+  >
+    <input
+      className="form-input"
+      onChange={[Function]}
+      placeholder="Search books, authors, etc"
+      type="search"
+      value=""
+    />
+    <button
+      className="add-book-btn btn-sm"
+      onClick={[Function]}
+      type="submit"
+    >
+      Search
+    </button>
+  </form>
+</div>
+`;

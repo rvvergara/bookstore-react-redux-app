@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { searchBooks } from '../thunks/book';
 
-const SearchForm = ({ searchBooks }) => {
+export const SearchForm = ({ searchBooks }) => {
   const [keywords, setKeywords] = useState('');
   const handleSearch = (e) => {
     e.preventDefault();
