@@ -1,34 +1,12 @@
-import React, { useState } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import Header from './Header';
-import { searchBooks } from '../thunks/book';
+import SearchForm from './SearchForm';
 
-const AdminDashboard = ({ searchBooks }) => {
-  const [keywords, setKeywords] = useState('');
-  const handleSearch = (e) => {
-    e.preventDefault();
-    searchBooks(keywords, true);
-    setKeywords('');
-  };
-  return (
-    <div>
-      <Header />
-      <form>
-        <input
-          type="search"
-          placeholder="Search books, authors, etc"
-          value={keywords}
-          onChange={e => setKeywords(e.target.value)}
-        />
-        <button
-          type="submit"
-          onClick={handleSearch}
-        >
-          Search
-        </button>
-      </form>
-    </div>
-  );
-};
+const AdminDashboard = () => (
+  <div>
+    <Header />
+    <SearchForm />
+  </div>
+);
 
-export default connect(null, { searchBooks })(AdminDashboard);
+export default AdminDashboard;
