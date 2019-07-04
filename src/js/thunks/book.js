@@ -6,7 +6,7 @@ export const searchBooks = (keyword, isAdminSearch) => (dispatch) => {
   if (isAdminSearch) {
     return bookListFromGoogle(keyword)
       .then((res) => {
-        dispatch(listSearchResults(res.data.items.map(item => item.volumeInfo)));
+        dispatch(listSearchResults(res.data.items.map(item => ({ ...item.volumeInfo, id: item.id }))));
       })
       .catch((err) => {
         const { errors } = err.response.data.error;
