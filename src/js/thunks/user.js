@@ -1,5 +1,5 @@
 import { setCurrentUser } from '../actions/user';
-import { setError } from '../actions/error';
+import { setErrors } from '../actions/errors';
 import { fetchData, setAuthorizationToken } from '../services/api';
 import history from '../services/history';
 
@@ -8,11 +8,11 @@ const setUserInStore = (user, dispatch) => {
   localStorage.setItem('token', token);
   setAuthorizationToken(token);
   dispatch(setCurrentUser({ authenticated: true, data: user }));
-  dispatch(setError(null));
+  dispatch(setErrors(null));
 };
 
 const setErrorInStore = (err, dispatch) => {
-  dispatch(setError(err.response.data.error));
+  dispatch(setErrors(err.response.data));
   localStorage.clear();
   dispatch(setCurrentUser({ authenticated: false, data: null }));
 };
@@ -53,6 +53,6 @@ export const updateAccount = userParams => (dispatch) => {
       setUserInStore(user, dispatch);
     })
     .catch((err) => {
-      dispatch(setError(err.response.data.error));
+      dispatch(setErrors(err.response.data));
     });
 };

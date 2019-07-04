@@ -40,7 +40,7 @@ describe('LoginPage component', () => {
       wrapper.find('InputWrapper').at(0).prop('setInput')(users[0].email);
       wrapper.find('InputWrapper').at(1).prop('setInput')('somePassword');
       wrapper.find('button').at(0).simulate('click', { preventDefault: () => {} });
-      wrapper.setProps({ error: 'Invalid credentials' });
+      wrapper.setProps({ errors: { message: 'Invalid credentials', errors: { general: 'Cannot process request' } } });
 
       expect(wrapper.find('div.error').exists()).toBeTruthy();
       expect(wrapper).toMatchSnapshot();

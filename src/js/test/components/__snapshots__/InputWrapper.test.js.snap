@@ -9,6 +9,7 @@ exports[`InputWrapper component should render correctly 1`] = `
     htmlFor="email"
   >
     Email/Username:
+     
   </label>
   <input
     className="form-input"

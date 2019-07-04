@@ -1,14 +1,16 @@
 import React from 'react';
 
 const InputWrapper = ({
-  setInput, inputValue, labelValue, type, inputId,
+  setInput, inputValue, labelValue, type, inputId, error,
 }) => (
   <div className="input-wrapper">
     <label
       htmlFor={inputId}
       className="user-form__label"
     >
-      { labelValue}
+      { labelValue }
+      {' '}
+      {error}
     </label>
     <input
       type={type}

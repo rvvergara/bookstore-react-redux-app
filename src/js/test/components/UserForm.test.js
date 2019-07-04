@@ -49,7 +49,7 @@ describe('UserForm component for signup', () => {
   });
 
   test('should show error when user information incomplete', () => {
-    wrapper.setProps({ error: 'Cannot save user' });
+    wrapper.setProps({ errors: { message: 'Cannot save user', errors: { username: ['already taken'] } } });
     expect(wrapper.find('div[className="error"]').exists()).toBeTruthy();
   });
 });
@@ -88,7 +88,7 @@ describe('UserForm for editing user account', () => {
   });
 
   test('should show an error when a user info is missing', () => {
-    wrapper.setProps({ error: 'Cannot update user' });
+    wrapper.setProps({ errors: { message: 'Cannot update user', errors: { email: ["can't be blank"] } } });
     wrapper.find('button[type="submit"]').simulate('click', { preventDefault: () => {} });
     expect(wrapper.find('div[className="error"]').exists()).toBeTruthy();
   });

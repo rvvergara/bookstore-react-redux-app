@@ -4,10 +4,10 @@ import { login } from '../thunks/user';
 import InputWrapper from './InputWrapper';
 import Header from './Header';
 
-export const LoginPage = ({ login, error, history }) => {
+export const LoginPage = ({ login, errors, history }) => {
   const [emailOrUsername, setEmailOrUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [errorMessage, setErrorMessage] = useState(error);
+  const [errorMessage, setErrorMessage] = useState(errors ? errors.message : errors);
 
   const loginUser = (e) => {
     e.preventDefault();
@@ -17,7 +17,7 @@ export const LoginPage = ({ login, error, history }) => {
       .then(() => {
         history.push('/');
       })
-      .catch(() => setErrorMessage(error));
+      .catch(() => setErrorMessage(errors));
   };
 
   return (
@@ -25,7 +25,7 @@ export const LoginPage = ({ login, error, history }) => {
       <Header />
       <div className="form-wrapper">
         <form className="form user-form">
-          {error && <div className="error">{errorMessage}</div>}
+          {errors && <div className="error">{errorMessage}</div>}
           <InputWrapper
             inputValue={emailOrUsername}
             labelValue="Username/Email:"
@@ -63,7 +63,7 @@ export const LoginPage = ({ login, error, history }) => {
 };
 
 const mapStateToProps = state => ({
-  error: state.error,
+  errors: state.errors,
 });
 
 export default connect(

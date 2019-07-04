@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { signUp, updateAccount } from '../thunks/user';
-import { setError } from '../actions/error';
+import { setErrors } from '../actions/errors';
 import InputWrapper from './InputWrapper';
 
 export const UserForm = ({
-  signUp, error, setError, isAuthenticated, userData, updateAccount,
+  signUp, errors, setErrors, isAuthenticated, userData, updateAccount,
 }) => {
   const [username, setUsername] = useState(userData ? userData.username : '');
   const [email, setEmail] = useState(userData ? userData.email : '');
@@ -16,22 +16,16 @@ export const UserForm = ({
   const saveUser = isAuthenticated ? updateAccount : signUp;
 
   const removeErrorMsg = useCallback(() => {
-    setError(null);
-  }, [setError]);
+    setErrors(null);
+  }, [setErrors]);
 
   useEffect(() => {
     removeErrorMsg();
-    return () => setError(null);
-  }, [removeErrorMsg, setError]);
+    return () => setErrors(null);
+  }, [removeErrorMsg, setErrors]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUsername('');
-    setEmail('');
-    setPassword('');
-    setPasswordConfirmation('');
-    setFirstName('');
-    setLastName('');
     const secureAttributes = { password, password_confirmation: passwordConfirmation };
     const profileAttributes = {
       username, email, first_name: firstName, last_name: lastName,
@@ -46,14 +40,16 @@ export const UserForm = ({
     <div>
       <form>
         {
-            error && <div className="error">{error}</div>
+            errors && <div className="error">{errors.message}</div>
           }
         <InputWrapper
           inputValue={username}
-          labelValue="Username: "
+          labelValue="Username (you can only set this at sign up): "
           setInput={setUsername}
           type="text"
           inputId="username"
+          error={errors ? errors.errors.username : null}
+
         />
         <InputWrapper
           inputValue={email}
@@ -61,6 +57,7 @@ export const UserForm = ({
           setInput={setEmail}
           type="email"
           inputId="email"
+          error={errors ? errors.errors.email : null}
         />
         <InputWrapper
           inputValue={password}
@@ -68,6 +65,8 @@ export const UserForm = ({
           setInput={setPassword}
           type="password"
           inputId="password"
+          error={errors ? errors.errors.password : null}
+
         />
         <InputWrapper
           inputValue={passwordConfirmation}
@@ -75,6 +74,8 @@ export const UserForm = ({
           setInput={setPasswordConfirmation}
           type="password"
           inputId="password-confirmation"
+          error={errors ? errors.errors.password : null}
+
         />
         <InputWrapper
           inputValue={firstName}
@@ -82,6 +83,8 @@ export const UserForm = ({
           setInput={setFirstName}
           type="text"
           inputId="first-name"
+          error={errors ? errors.errors.first_name : null}
+
         />
         <InputWrapper
           inputValue={lastName}
@@ -89,6 +92,8 @@ export const UserForm = ({
           setInput={setLastName}
           type="text"
           inputId="last-name"
+          error={errors ? errors.errors.last_name : null}
+
         />
         <div className="btn-wrapper">
           <button
@@ -105,9 +110,9 @@ export const UserForm = ({
 };
 
 const mapStateToProps = state => ({
-  error: state.error,
+  errors: state.errors,
   isAuthenticated: state.currentUser.authenticated,
   userData: state.currentUser.data,
 });
 
-export default connect(mapStateToProps, { signUp, setError, updateAccount })(UserForm);
+export default connect(mapStateToProps, { signUp, setErrors, updateAccount })(UserForm);
