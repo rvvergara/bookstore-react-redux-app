@@ -1,3 +1,4 @@
+export const LIST_SEARCH_RESULTS = 'LIST_SEARCH_RESULTS';
 export const ADD_BOOK = 'ADD_BOOK';
 export const SWITCH_ADD_BOOK_MODE = 'SWITCH_ADD_BOOK_MODE';
 export const REMOVE_BOOK = 'REMOVE_BOOK';
