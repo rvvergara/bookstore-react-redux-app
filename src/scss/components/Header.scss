@@ -16,7 +16,16 @@
   font-stretch: normal;
   line-height: normal;
   letter-spacing: normal;
+
+  a {
+    color: $light-blue;
+  }
+}
+
+.active {
+  font-weight: 700;
   color: $light-blue;
+
 }
 
 .user-wrapper {

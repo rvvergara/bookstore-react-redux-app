@@ -7,7 +7,11 @@ exports[`Header component Should render correctly when not logged on 1`] = `
   <h1
     className="bookstore-cms"
   >
-    Bookstore App
+    <Link
+      to="/"
+    >
+      Bookstore App
+    </Link>
   </h1>
   <div
     className="user-wrapper"
@@ -30,13 +34,24 @@ exports[`Header component Should render correctly while authenticated 1`] = `
   <h1
     className="bookstore-cms"
   >
-    Bookstore App
+    <Link
+      to="/"
+    >
+      Bookstore App
+    </Link>
   </h1>
   <div
     className="user-wrapper"
   >
     <span>
-      Ryto Verkar
+      <NavLink
+        activeClassName="active"
+        to="/users/ryto"
+      >
+        Ryto
+         
+        Verkar
+      </NavLink>
     </span>
     <button
       className="logout-btn"
