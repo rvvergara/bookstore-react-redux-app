@@ -4,6 +4,5 @@ exports[`AdminDashboard component should render correctly 1`] = `
 <div>
   <ConnectFunction />
   <ConnectFunction />
-  <ConnectFunction />
 </div>
 `;

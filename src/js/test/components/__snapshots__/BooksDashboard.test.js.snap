@@ -4,7 +4,6 @@ exports[`BooksDashboard component should render correctly 1`] = `
 <div
   id="app"
 >
-  <ConnectFunction />
   <div
     id="container"
   >

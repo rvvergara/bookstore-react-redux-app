@@ -34,69 +34,72 @@ exports[`App component should render correctly 1`] = `
       }
     }
   >
-    <Switch>
-      <Route
-        component={
-          Object {
-            "$$typeof": Symbol(react.memo),
-            "WrappedComponent": [Function],
-            "compare": null,
-            "displayName": "Connect(Authenticate)",
-            "type": [Function],
+    <div>
+      <ConnectFunction />
+      <Switch>
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(Authenticate)",
+              "type": [Function],
+            }
           }
-        }
-        path="/login"
-      />
-      <Route
-        component={
-          Object {
-            "$$typeof": Symbol(react.memo),
-            "WrappedComponent": [Function],
-            "compare": null,
-            "displayName": "Connect(Authenticate)",
-            "type": [Function],
+          path="/login"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(Authenticate)",
+              "type": [Function],
+            }
           }
-        }
-        path="/signup"
-      />
-      <Route
-        component={
-          Object {
-            "$$typeof": Symbol(react.memo),
-            "WrappedComponent": [Function],
-            "compare": null,
-            "displayName": "Connect(Authenticate)",
-            "type": [Function],
+          path="/signup"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(Authenticate)",
+              "type": [Function],
+            }
           }
-        }
-        exact={true}
-        path="/"
-      />
-      <Route
-        component={
-          Object {
-            "$$typeof": Symbol(react.memo),
-            "WrappedComponent": [Function],
-            "compare": null,
-            "displayName": "Connect(Authenticate)",
-            "type": [Function],
+          exact={true}
+          path="/"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(Authenticate)",
+              "type": [Function],
+            }
           }
-        }
-        path="/users/:id"
-      />
-      <Route
-        component={
-          Object {
-            "$$typeof": Symbol(react.memo),
-            "WrappedComponent": [Function],
-            "compare": null,
-            "displayName": "Connect(Authenticate)",
-            "type": [Function],
+          path="/users/:id"
+        />
+        <Route
+          component={
+            Object {
+              "$$typeof": Symbol(react.memo),
+              "WrappedComponent": [Function],
+              "compare": null,
+              "displayName": "Connect(Authenticate)",
+              "type": [Function],
+            }
           }
-        }
-        path="/admin"
-      />
-    </Switch>
+          path="/admin"
+        />
+      </Switch>
+    </div>
   </Router>
 </Provider>
 `;

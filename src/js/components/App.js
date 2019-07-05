@@ -8,6 +8,7 @@ import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
 import EditUserPage from './EditUserPage';
 import AdminDashboard from './AdminDashboard';
+import Header from './Header';
 import configureStore from '../store/configureStore';
 import { setCurrentUser } from '../actions/user';
 import { setAuthorizationToken } from '../services/api';
@@ -33,13 +34,16 @@ if (localStorage.token) {
 const App = () => (
   <Provider store={store}>
     <Router history={history}>
-      <Switch>
-        <Route path="/login" component={withAuth(LoginPage, true)} />
-        <Route path="/signup" component={withAuth(SignUpPage, true)} />
-        <Route path="/" component={withAuth(BooksDashboard)} exact />
-        <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
-        <Route path="/admin" component={withAuth(withAdmin(AdminDashboard))} />
-      </Switch>
+      <div>
+        <Header />
+        <Switch>
+          <Route path="/login" component={withAuth(LoginPage, true)} />
+          <Route path="/signup" component={withAuth(SignUpPage, true)} />
+          <Route path="/" component={withAuth(BooksDashboard)} exact />
+          <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
+          <Route path="/admin" component={withAuth(withAdmin(AdminDashboard))} />
+        </Switch>
+      </div>
     </Router>
   </Provider>
 );

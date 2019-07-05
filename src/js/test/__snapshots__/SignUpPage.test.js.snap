@@ -2,7 +2,6 @@
 
 exports[`SignUpPage component renders correctly 1`] = `
 <div>
-  <ConnectFunction />
   <h2>
     Create Account
   </h2>

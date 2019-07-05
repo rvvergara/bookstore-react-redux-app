@@ -4,11 +4,9 @@ import PropTypes from 'prop-types';
 import { switchAddBookMode } from '../actions/books';
 import BookList from './BookList';
 import BooksFormModal from './BooksFormModal';
-import Header from './Header';
 
 export const BooksDashboard = ({ addBookMode, switchAddBookMode }) => (
   <div id="app">
-    <Header />
     <div id="container">
       <BooksFormModal
         addBookMode={addBookMode}

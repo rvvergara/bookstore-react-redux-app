@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../thunks/user';
 import InputWrapper from './InputWrapper';
-import Header from './Header';
 
 export const LoginPage = ({ login, errors, history }) => {
   const [emailOrUsername, setEmailOrUsername] = useState('');
@@ -22,7 +21,6 @@ export const LoginPage = ({ login, errors, history }) => {
 
   return (
     <div>
-      <Header />
       <div className="form-wrapper">
         <form className="form user-form">
           {errors && <div className="error">{errorMessage}</div>}

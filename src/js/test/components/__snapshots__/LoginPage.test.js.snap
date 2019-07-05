@@ -2,7 +2,6 @@
 
 exports[`LoginPage component should render correctly 1`] = `
 <div>
-  <ConnectFunction />
   <div
     className="form-wrapper"
   >
@@ -48,7 +47,6 @@ exports[`LoginPage component should render correctly 1`] = `
 
 exports[`LoginPage component wrong password should show error message 1`] = `
 <div>
-  <ConnectFunction />
   <div
     className="form-wrapper"
   >
