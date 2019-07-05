@@ -1,15 +1,17 @@
 import { listSearchResults } from '../actions/search';
 import { setErrors } from '../actions/errors';
 import { bookListFromGoogle } from '../services/api';
+import getUnique from '../services/arrayProcessing';
 
 export const searchBooks = (keyword, isAdminSearch) => (dispatch) => {
   if (isAdminSearch) {
     return bookListFromGoogle(keyword)
       .then((res) => {
-        dispatch(listSearchResults(res.data.items.map(({ id, volumeInfo }) => ({
+        const resultsData = res.data.items.map(({ id, volumeInfo }) => ({
           id,
           ...volumeInfo,
-        }))));
+        }));
+        dispatch(listSearchResults(getUnique(resultsData, 'id')));
       })
       .catch((err) => {
         const { errors } = err.response.data.error;
