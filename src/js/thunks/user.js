@@ -18,7 +18,7 @@ const setErrorInStore = (err, dispatch) => {
 };
 
 export const login = loginParams => (dispatch) => {
-  const path = 'sessions';
+  const path = '/v1/sessions';
   return fetchData('post', path, loginParams).then((res) => {
     const { user } = res.data;
     setUserInStore(user, dispatch);
@@ -33,7 +33,7 @@ export const logout = () => (dispatch) => {
 };
 
 export const signUp = signupParams => (dispatch) => {
-  const path = 'users';
+  const path = '/v1/users';
   return fetchData('post', path, signupParams)
     .then((res) => {
       const { user } = res.data;
@@ -45,7 +45,7 @@ export const signUp = signupParams => (dispatch) => {
 };
 
 export const updateAccount = userParams => (dispatch) => {
-  const path = `${userParams.user.username}`;
+  const path = `/v1/users/${userParams.user.username}`;
   return fetchData('put', path, userParams)
     .then((res) => {
       const { user } = res.data;
