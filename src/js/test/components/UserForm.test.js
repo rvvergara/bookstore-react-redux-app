@@ -84,6 +84,7 @@ describe('UserForm for editing user account', () => {
       user: {
         username, email, first_name: newFirstName, last_name,
       },
+      id: users[0].id,
     });
   });
 

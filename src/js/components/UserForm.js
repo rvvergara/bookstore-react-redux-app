@@ -30,10 +30,9 @@ export const UserForm = ({
     const profileAttributes = {
       username, email, first_name: firstName, last_name: lastName,
     };
-    const userParams = password === '' ? profileAttributes : { ...profileAttributes, ...secureAttributes };
-    saveUser({
-      user: userParams,
-    });
+    const userParamsData = password === '' ? profileAttributes : { ...profileAttributes, ...secureAttributes };
+    const params = userData ? { user: userParamsData, id: userData.id } : { user: userParamsData };
+    saveUser(params);
   };
 
   return (
@@ -44,7 +43,7 @@ export const UserForm = ({
           }
         <InputWrapper
           inputValue={username}
-          labelValue="Username (you can only set this at sign up): "
+          labelValue="Username: "
           setInput={setUsername}
           type="text"
           inputId="username"

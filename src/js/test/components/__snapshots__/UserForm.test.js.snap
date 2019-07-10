@@ -7,7 +7,7 @@ exports[`UserForm component for signup should render correctly 1`] = `
       error={null}
       inputId="username"
       inputValue=""
-      labelValue="Username (you can only set this at sign up): "
+      labelValue="Username: "
       setInput={[Function]}
       type="text"
     />
@@ -73,7 +73,7 @@ exports[`UserForm for editing user account should render correctly 1`] = `
       error={null}
       inputId="username"
       inputValue="ryto"
-      labelValue="Username (you can only set this at sign up): "
+      labelValue="Username: "
       setInput={[Function]}
       type="text"
     />
