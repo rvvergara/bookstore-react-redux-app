@@ -1,4 +1,4 @@
-import { setCurrentUser } from '../actions/user';
+import { setCurrentUser, listUsers } from '../actions/user';
 import { setErrors } from '../actions/errors';
 import { fetchData, setAuthorizationToken } from '../services/api';
 import history from '../services/history';
@@ -9,6 +9,17 @@ const setUserInStore = (user, dispatch) => {
   setAuthorizationToken(token);
   dispatch(setCurrentUser({ authenticated: true, data: user }));
   dispatch(setErrors(null));
+};
+
+export const fetchUsers = () => (dispatch) => {
+  const path = '/v1/users';
+  return fetchData('get', path)
+    .then((res) => {
+      const { users } = res.data;
+      dispatch(listUsers(users));
+      dispatch(setErrors(null));
+    })
+    .catch(error => setErrorInStore(error, dispatch));
 };
 
 const setErrorInStore = (err, dispatch) => {
