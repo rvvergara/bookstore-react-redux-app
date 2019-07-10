@@ -3,6 +3,7 @@ import {
   Tab, Tabs, TabList, TabPanel,
 } from 'react-tabs';
 import 'react-tabs/style/react-tabs.scss';
+import SearchForm from './SearchForm';
 
 const AdminDashboard = () => (
   <Tabs>
@@ -14,7 +15,7 @@ const AdminDashboard = () => (
       <h2>Users</h2>
     </TabPanel>
     <TabPanel>
-      <h2>Books</h2>
+      <SearchForm />
     </TabPanel>
   </Tabs>
 );
