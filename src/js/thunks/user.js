@@ -60,7 +60,6 @@ export const updateAccount = userParams => (dispatch) => {
   return fetchData('put', path, userParams)
     .then((res) => {
       const { user } = res.data;
-      history.push('/');
       setUserInStore(user, dispatch);
     })
     .catch((err) => {
