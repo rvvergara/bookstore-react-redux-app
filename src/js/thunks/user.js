@@ -1,7 +1,7 @@
+import decode from 'jwt-decode';
 import { setCurrentUser, listUsers } from '../actions/user';
 import { setErrors } from '../actions/errors';
 import { fetchData, setAuthorizationToken } from '../services/api';
-import history from '../services/history';
 
 const setUserInStore = (user, dispatch) => {
   const { token } = user;
@@ -60,7 +60,13 @@ export const updateAccount = userParams => (dispatch) => {
   return fetchData('put', path, userParams)
     .then((res) => {
       const { user } = res.data;
-      setUserInStore(user, dispatch);
+      const { token } = user;
+      if (token === null) {
+        const currentUser = { ...decode(localStorage.token), token: localStorage.token };
+        setUserInStore(currentUser, dispatch);
+      } else {
+        setUserInStore(user, dispatch);
+      }
     })
     .catch((err) => {
       dispatch(setErrors(err.response.data));
