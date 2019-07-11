@@ -4,8 +4,8 @@ import { UserForm } from '../../components/UserForm';
 import users from '../fixtures/users';
 
 let wrapper;
-const signUp = jest.fn();
-const updateAccount = jest.fn();
+const signUp = jest.fn(() => Promise.resolve());
+const updateAccount = jest.fn(() => Promise.resolve());
 const setError = jest.fn();
 
 describe('UserForm component for signup', () => {

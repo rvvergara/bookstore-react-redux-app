@@ -13,9 +13,10 @@ export const searchBooks = (keyword, isAdminSearch) => (dispatch) => {
         }));
         dispatch(listSearchResults(getUnique(resultsData, 'id')));
       })
-      .catch((err) => {
-        const { errors } = err.response.data.error;
-        dispatch(setErrors(errors.map(error => error.message)));
+      .catch(() => {
+        dispatch(setErrors(['Cannot find book']));
       });
   }
 };
+
+export const other = () => {};

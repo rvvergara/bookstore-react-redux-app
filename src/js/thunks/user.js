@@ -1,7 +1,7 @@
-import { setCurrentUser } from '../actions/user';
+import decode from 'jwt-decode';
+import { setCurrentUser, listUsers } from '../actions/user';
 import { setErrors } from '../actions/errors';
 import { fetchData, setAuthorizationToken } from '../services/api';
-import history from '../services/history';
 
 const setUserInStore = (user, dispatch) => {
   const { token } = user;
@@ -9,6 +9,17 @@ const setUserInStore = (user, dispatch) => {
   setAuthorizationToken(token);
   dispatch(setCurrentUser({ authenticated: true, data: user }));
   dispatch(setErrors(null));
+};
+
+export const fetchUsers = () => (dispatch) => {
+  const path = '/v1/users';
+  return fetchData('get', path)
+    .then((res) => {
+      const { users } = res.data;
+      dispatch(listUsers(users));
+      dispatch(setErrors(null));
+    })
+    .catch(error => setErrorInStore(error, dispatch));
 };
 
 const setErrorInStore = (err, dispatch) => {
@@ -49,8 +60,13 @@ export const updateAccount = userParams => (dispatch) => {
   return fetchData('put', path, userParams)
     .then((res) => {
       const { user } = res.data;
-      history.push('/');
-      setUserInStore(user, dispatch);
+      const { token } = user;
+      if (token === null) {
+        const currentUser = { ...decode(localStorage.token), token: localStorage.token };
+        setUserInStore(currentUser, dispatch);
+      } else {
+        setUserInStore(user, dispatch);
+      }
     })
     .catch((err) => {
       dispatch(setErrors(err.response.data));

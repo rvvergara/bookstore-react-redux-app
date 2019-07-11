@@ -1,0 +1,27 @@
+.user-panel {
+  border-bottom: 1px dotted black;
+  display: flex;
+  font-family: Arial, Helvetica, sans-serif;
+  justify-content: space-between;
+}
+
+.user-panel__access-switch {
+  padding: $medium 0;
+  height: $large;
+  margin-right: $medium;
+
+  span {
+    display: inline-block;
+    margin-right: $small;
+  }
+}
+
+.react-switch-bg {
+  width: $xlarge * 1.25 !important;
+  height: $medium * 1.05 !important;
+}
+
+.react-switch-handle {
+  width: $small * 1.45 !important;
+  height: $small * 1.6 !important;
+}

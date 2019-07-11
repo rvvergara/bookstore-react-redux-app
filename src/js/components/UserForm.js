@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { connect } from 'react-redux';
 import { signUp, updateAccount } from '../thunks/user';
+import history from '../services/history';
 import { setErrors } from '../actions/errors';
 import InputWrapper from './InputWrapper';
 
@@ -32,7 +33,8 @@ export const UserForm = ({
     };
     const userParamsData = password === '' ? profileAttributes : { ...profileAttributes, ...secureAttributes };
     const params = userData ? { user: userParamsData, id: userData.id } : { user: userParamsData };
-    saveUser(params);
+    saveUser(params)
+      .then(() => history.push('/'));
   };
 
   return (
