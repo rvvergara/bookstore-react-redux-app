@@ -4,6 +4,7 @@ import {
 } from 'react-tabs';
 import 'react-tabs/style/react-tabs.scss';
 import SearchForm from './SearchForm';
+import SearchResultsList from './SearchResultsList';
 import UserList from './UserList';
 
 const AdminDashboard = () => (
@@ -17,6 +18,7 @@ const AdminDashboard = () => (
     </TabPanel>
     <TabPanel>
       <SearchForm />
+      <SearchResultsList />
     </TabPanel>
   </Tabs>
 );

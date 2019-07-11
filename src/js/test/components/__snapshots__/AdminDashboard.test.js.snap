@@ -46,6 +46,7 @@ exports[`AdminDashboard component should render correctly 1`] = `
     selectedClassName="react-tabs__tab-panel--selected"
   >
     <ConnectFunction />
+    <ConnectFunction />
   </TabPanel>
 </Tabs>
 `;
