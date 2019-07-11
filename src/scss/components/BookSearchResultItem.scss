@@ -1,0 +1,21 @@
+.book-result-item {
+  color: lighten($black, 15%);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  padding: $regular $side-pad * 1.2;
+}
+
+.book-result-item__details {
+  display: flex;
+}
+
+.book-result-item__image-wrapper {
+  margin-right: $medium;
+
+  img {
+    display: inline-block;
+  }
+}
+
+.book-result-item__infos {
+  height: 30%;
+}

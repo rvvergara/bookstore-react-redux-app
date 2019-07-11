@@ -14,16 +14,20 @@ const BookSearchResultItem = ({
         {' '}
         {subtitle}
       </h3>
-      <div>
-        <img src={imageLinks.smallThumbnail} alt={title} />
+      <div className="book-result-item__details">
+        <div className="book-result-item__image-wrapper">
+          <img src={imageLinks.smallThumbnail} alt={title} />
+        </div>
+        <div className="book-result-item__infos">
+          <h4>
+            By:
+            {' '}
+            {authorNames}
+            {' '}
+          </h4>
+          <p>{description.substr(0, 500)}</p>
+        </div>
       </div>
-      <h4>
-        By:
-        {' '}
-        {authorNames}
-        {' '}
-      </h4>
-      <p>{description}</p>
     </div>
   );
 };
