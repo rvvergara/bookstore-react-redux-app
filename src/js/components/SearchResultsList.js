@@ -5,12 +5,9 @@ import { listSearchResults } from '../actions/search';
 
 export const SearchResultsList = ({ searchResults, listSearchResults }) => {
   useEffect(() => () => listSearchResults([]), [listSearchResults]);
-  if (searchResults !== null) {
-    return searchResults.map(book => (
-      <BookSearchResultItem key={book.id} book={book} />
-    ));
-  }
-  return <p>Search for books</p>;
+  return searchResults.map(book => (
+    <BookSearchResultItem key={book.id} book={book} />
+  ));
 };
 
 const mapStateToProps = state => ({
