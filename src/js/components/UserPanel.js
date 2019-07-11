@@ -6,7 +6,7 @@ import { updateAccount } from '../thunks/user';
 export const UserPanel = ({
   user: {
     id, username, first_name, last_name, access_level,
-  }, updateAccount,
+  }, updateAccount, currentUserLevel,
 }) => {
   const [checked, setChecked] = useState(access_level > 1);
   const handleChange = () => {
@@ -20,6 +20,7 @@ export const UserPanel = ({
         <h3>{`${first_name} ${last_name}`}</h3>
         <p>{ access_level}</p>
       </div>
+      {currentUserLevel > 2 && (
       <label htmlFor="normal-switch">
         <span>User is admin?</span>
         <Switch
@@ -29,8 +30,13 @@ export const UserPanel = ({
           id="normal-switch"
         />
       </label>
+      )}
     </div>
   );
 };
 
-export default connect(null, { updateAccount })(UserPanel);
+const mapStateToProps = state => ({
+  currentUserLevel: state.currentUser.data.access_level,
+});
+
+export default connect(mapStateToProps, { updateAccount })(UserPanel);
