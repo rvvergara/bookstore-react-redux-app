@@ -5,27 +5,25 @@ const BookSearchResultItem = ({
     title, subtitle, description, authors, imageLinks,
   },
 }) => {
-  const authorNames = authors ? authors.map(author => author).join(', ') : 'No author data';
+  const authorNames = authors.map(author => author).join(', ');
   return (
-    <div>
+    <div className="book-result-item">
       <h3>
         {title}
 :
         {' '}
         {subtitle}
       </h3>
-      {imageLinks && (
       <div>
         <img src={imageLinks.smallThumbnail} alt={title} />
       </div>
-      )}
       <h4>
-By:
+        By:
         {' '}
         {authorNames}
         {' '}
       </h4>
-      <p>{description || 'No description'}</p>
+      <p>{description}</p>
     </div>
   );
 };
