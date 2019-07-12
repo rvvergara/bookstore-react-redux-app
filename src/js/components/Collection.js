@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { switchAddItemMode, removeItem, switchProgressUpdate } from '../actions/item';
+import { switchAddItemMode, removeItem, switchProgressUpdate } from '../actions/collection';
 import { changeFilter } from '../actions/filter';
 import CollectionItem from './CollectionItem';
 import CategoryFilter from './CategoryFilter';

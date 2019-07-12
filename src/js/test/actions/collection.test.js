@@ -4,7 +4,7 @@ import {
   switchAddItemMode,
   switchProgressUpdate,
   updateChapter,
-} from '../../actions/item';
+} from '../../actions/collection';
 import {
   ADD_ITEM, REMOVE_ITEM, SWITCH_ADD_ITEM_MODE, SWITCH_PROGRESS_UPDATE, UPDATE_CHAPTER,
 } from '../../actions/actionTypes';

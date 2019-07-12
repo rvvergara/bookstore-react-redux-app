@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { switchAddItemMode } from '../actions/item';
+import { switchAddItemMode } from '../actions/collection';
 import Collection from './Collection';
 import BooksFormModal from './BooksFormModal';
 
