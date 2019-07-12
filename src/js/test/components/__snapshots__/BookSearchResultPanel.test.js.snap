@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BookSearchResultPanel should render corectly 1`] = `
+<div
+  className="book-result-item"
+>
+  <Link
+    target="blank"
+    to="/admin/book-search/0"
+  >
+    <h3>
+      Lord of the Rings
+      :
+       
+    </h3>
+  </Link>
+  <div
+    className="book-result-item__details"
+  >
+    <div
+      className="book-result-item__image-wrapper"
+    >
+      <img
+        alt="Lord of the Rings"
+        src=""
+      />
+    </div>
+    <div
+      className="book-result-item__infos"
+    >
+      <h4>
+        By:
+         
+        Tolkien
+         
+      </h4>
+      <p>
+        Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.
+      </p>
+    </div>
+  </div>
+</div>
+`;

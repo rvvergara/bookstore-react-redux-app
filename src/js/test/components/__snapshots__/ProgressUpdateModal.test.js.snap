@@ -30,7 +30,11 @@ exports[`ProgressUpdateModal component should render correctly 1`] = `
     className="modal-body"
   >
     <ConnectFunction
-      author="Roddenberry"
+      authors={
+        Array [
+          "Roddenberry",
+        ]
+      }
       category="Sci-Fi"
       chapters="30"
       chaptersArray={
@@ -68,7 +72,13 @@ exports[`ProgressUpdateModal component should render correctly 1`] = `
         ]
       }
       currentChapter=""
+      description="Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur."
       id="2"
+      imageLinks={
+        Object {
+          "smallThumbnail": "",
+        }
+      }
       title="Star Trek"
     />
   </div>

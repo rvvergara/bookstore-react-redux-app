@@ -22,11 +22,17 @@ exports[`Collection it should render properly 1`] = `
       handleRemove={[Function]}
       item={
         Object {
-          "author": "Tolkien",
+          "authors": Array [
+            "Tolkien",
+          ],
           "category": "Action",
           "chapters": "35",
           "currentChapter": "",
+          "description": "Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.",
           "id": "0",
+          "imageLinks": Object {
+            "smallThumbnail": "",
+          },
           "title": "Lord of the Rings",
         }
       }
@@ -36,11 +42,17 @@ exports[`Collection it should render properly 1`] = `
       handleRemove={[Function]}
       item={
         Object {
-          "author": "Kiyosaki",
+          "authors": Array [
+            "Kiyosaki",
+          ],
           "category": "Learning",
           "chapters": "24",
           "currentChapter": "",
+          "description": "Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.",
           "id": "1",
+          "imageLinks": Object {
+            "smallThumbnail": "",
+          },
           "title": "Guide to Investing",
         }
       }
@@ -50,11 +62,17 @@ exports[`Collection it should render properly 1`] = `
       handleRemove={[Function]}
       item={
         Object {
-          "author": "Roddenberry",
+          "authors": Array [
+            "Roddenberry",
+          ],
           "category": "Sci-Fi",
           "chapters": "30",
           "currentChapter": "",
+          "description": "Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.",
           "id": "2",
+          "imageLinks": Object {
+            "smallThumbnail": "",
+          },
           "title": "Star Trek",
         }
       }
