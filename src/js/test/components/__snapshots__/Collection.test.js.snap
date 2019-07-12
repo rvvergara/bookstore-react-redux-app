@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BookList it should render properly 1`] = `
+exports[`Collection it should render properly 1`] = `
 <div>
   <div
     className="booklist-controls"
@@ -18,7 +18,7 @@ exports[`BookList it should render properly 1`] = `
     </button>
   </div>
   <div>
-    <Book
+    <CollectionItem
       book={
         Object {
           "author": "Tolkien",
@@ -32,7 +32,7 @@ exports[`BookList it should render properly 1`] = `
       handleRemove={[Function]}
       key="0"
     />
-    <Book
+    <CollectionItem
       book={
         Object {
           "author": "Kiyosaki",
@@ -46,7 +46,7 @@ exports[`BookList it should render properly 1`] = `
       handleRemove={[Function]}
       key="1"
     />
-    <Book
+    <CollectionItem
       book={
         Object {
           "author": "Roddenberry",

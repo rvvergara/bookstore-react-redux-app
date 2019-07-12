@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { BookList } from '../../components/BookList';
+import { Collection } from '../../components/Collection';
 import dummyBooks from '../fixtures/books';
 import bookCategories from '../fixtures/categories';
 
-describe('BookList', () => {
+describe('Collection', () => {
   let wrapper;
   let books;
   let categories;
@@ -23,7 +23,7 @@ describe('BookList', () => {
     switchAddBookMode = jest.fn();
     switchProgressUpdate = jest.fn();
     wrapper = shallow(
-      <BookList
+      <Collection
         books={books}
         bookForProgressUpdate={books[0]}
         filter={filter}
@@ -46,7 +46,7 @@ describe('BookList', () => {
   });
 
   test('it should call removeBook with id of an existing book', () => {
-    wrapper.find('Book').at(2).prop('handleRemove')(books[2].id);
+    wrapper.find('CollectionItem').at(2).prop('handleRemove')(books[2].id);
     expect(removeBook).toHaveBeenLastCalledWith(books[2].id);
   });
 });

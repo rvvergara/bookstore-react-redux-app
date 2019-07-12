@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { switchAddBookMode, removeBook, switchProgressUpdate } from '../actions/books';
 import { changeFilter } from '../actions/filter';
-import Book from './Book';
+import CollectionItem from './CollectionItem';
 import CategoryFilter from './CategoryFilter';
 import ProgressUpdateModal from './ProgressUpdateModal';
 
-export const BookList = (
+export const Collection = (
   {
     books,
     bookForProgressUpdate,
@@ -42,7 +42,7 @@ export const BookList = (
     </div>
     <div>
       {books.map(book => (
-        <Book
+        <CollectionItem
           key={book.id}
           book={book}
           handleRemove={id => removeBook(id)}
@@ -59,7 +59,7 @@ const mapStateToProps = state => ({
   progressUpdateMode: state.progressUpdateMode,
 });
 
-BookList.propTypes = {
+Collection.propTypes = {
   books: PropTypes.instanceOf(Object).isRequired,
   bookForProgressUpdate: PropTypes.instanceOf(Object).isRequired,
   changeFilter: PropTypes.func.isRequired,
@@ -75,4 +75,4 @@ export default connect(
   {
     removeBook, changeFilter, switchAddBookMode, switchProgressUpdate,
   },
-)(BookList);
+)(Collection);

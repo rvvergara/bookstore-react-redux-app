@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Router, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import decode from 'jwt-decode';
-import BooksDashboard from './BooksDashboard';
+import UserDashboard from './UserDashboard';
 import '../../scss/main.scss';
 import LoginPage from './LoginPage';
 import SignUpPage from './SignUpPage';
@@ -39,7 +39,7 @@ const App = () => (
         <Switch>
           <Route path="/login" component={withAuth(LoginPage, true)} />
           <Route path="/signup" component={withAuth(SignUpPage, true)} />
-          <Route path="/" component={withAuth(BooksDashboard)} exact />
+          <Route path="/" component={withAuth(UserDashboard)} exact />
           <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
           <Route path="/admin" component={withAuth(withAdmin(AdminDashboard))} />
         </Switch>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Book from '../../components/Book';
+import CollectionItem from '../../components/CollectionItem';
 
 describe('Book component', () => {
   let wrapper;
@@ -16,7 +16,7 @@ describe('Book component', () => {
       category: 'History',
     };
     handleRemove = jest.fn();
-    wrapper = shallow(<Book book={book} handleRemove={handleRemove} />);
+    wrapper = shallow(<CollectionItem book={book} handleRemove={handleRemove} />);
   });
 
   test('it should render the Book component correctly', () => {

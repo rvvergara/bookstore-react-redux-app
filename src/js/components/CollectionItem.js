@@ -5,7 +5,7 @@ import CurrentChapter from './CurrentChapter';
 import ProgressUpdateBtn from './ProgressUpdateBtn';
 import 'react-circular-progressbar/dist/styles.css';
 
-const Book = (props) => {
+const CollectionItem = (props) => {
   const { handleRemove, book } = props;
   const {
     id, title, author, category, chapters, currentChapter,
@@ -44,9 +44,9 @@ const Book = (props) => {
   );
 };
 
-Book.propTypes = {
+CollectionItem.propTypes = {
   book: PropTypes.instanceOf(Object).isRequired,
   handleRemove: PropTypes.func.isRequired,
 };
 
-export default Book;
+export default CollectionItem;
