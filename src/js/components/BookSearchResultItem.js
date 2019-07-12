@@ -1,19 +1,25 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const BookSearchResultItem = ({
   book: {
-    title, subtitle, description, authors, imageLinks,
+    id, title, subtitle, description, authors, imageLinks,
   },
 }) => {
   const authorNames = authors.map(author => author).join(', ');
   return (
     <div className="book-result-item">
-      <h3>
-        {title}
-:
-        {' '}
-        {subtitle}
-      </h3>
+      <Link
+        to={`/admin/book-search/${id}`}
+        target="blank"
+      >
+        <h3>
+          {title}
+            :
+          {' '}
+          {subtitle}
+        </h3>
+      </Link>
       <div className="book-result-item__details">
         <div className="book-result-item__image-wrapper">
           <img src={imageLinks.smallThumbnail} alt={title} />

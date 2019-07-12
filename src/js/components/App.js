@@ -41,7 +41,8 @@ const App = () => (
           <Route path="/signup" component={withAuth(SignUpPage, true)} />
           <Route path="/" component={withAuth(UserDashboard)} exact />
           <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
-          <Route path="/admin" component={withAuth(withAdmin(AdminDashboard))} />
+          <Route path="/admin" component={withAuth(withAdmin(AdminDashboard))} exact />
+          <Route path="/admin/book-search/:id" />
         </Switch>
       </div>
     </Router>
