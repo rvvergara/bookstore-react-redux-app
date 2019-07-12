@@ -5,8 +5,8 @@ import BooksFormModal from '../../components/BooksFormModal';
 test('BooksFormModal should render correctly', () => {
   const wrapper = shallow(
     <BooksFormModal
-      addBookMode={false}
-      switchAddBookMode={() => {}}
+      addItemMode={false}
+      switchAddItemMode={() => {}}
     />,
   );
   expect(wrapper).toMatchSnapshot();

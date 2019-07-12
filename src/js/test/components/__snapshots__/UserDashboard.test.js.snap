@@ -8,8 +8,8 @@ exports[`UserDashboard component should render correctly 1`] = `
     id="container"
   >
     <BooksFormModal
-      addBookMode={false}
-      switchAddBookMode={[Function]}
+      addItemMode={false}
+      switchAddItemMode={[Function]}
     />
     <ConnectFunction />
   </div>

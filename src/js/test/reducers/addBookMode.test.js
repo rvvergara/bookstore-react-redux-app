@@ -1,18 +1,18 @@
-import { SWITCH_ADD_BOOK_MODE } from '../../actions/actionTypes';
-import addBookModeReducer from '../../reducers/addBookMode';
+import { SWITCH_ADD_ITEM_MODE } from '../../actions/actionTypes';
+import addItemModeReducer from '../../reducers/addItemMode';
 
-describe('addBookMode reducer', () => {
+describe('addItemMode reducer', () => {
   let action;
 
   beforeEach(() => {
-    action = { type: SWITCH_ADD_BOOK_MODE };
+    action = { type: SWITCH_ADD_ITEM_MODE };
   });
 
-  test('should change addBookMode form false to true', () => {
-    expect(addBookModeReducer(false, action)).toEqual(true);
+  test('should change addItemMode form false to true', () => {
+    expect(addItemModeReducer(false, action)).toEqual(true);
   });
 
-  test('should change addBookMode form from true to false', () => {
-    expect(addBookModeReducer(true, action)).toBe(false);
+  test('should change addItemMode form from true to false', () => {
+    expect(addItemModeReducer(true, action)).toBe(false);
   });
 });

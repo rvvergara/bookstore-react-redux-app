@@ -4,16 +4,16 @@ import { BooksForm } from '../../components/BooksForm';
 
 describe('BooksForm', () => {
   let wrapper;
-  let newBook;
-  let addBook;
-  let inputBook;
+  let newItem;
+  let addItem;
+  let inputItem;
   let changeFilter;
-  let switchAddBookMode;
+  let switchAddItemMode;
 
   beforeEach(() => {
-    addBook = jest.fn();
-    switchAddBookMode = jest.fn();
-    inputBook = (bookObj) => {
+    addItem = jest.fn();
+    switchAddItemMode = jest.fn();
+    inputItem = (bookObj) => {
       const {
         title, author, chapters, category,
       } = bookObj;
@@ -33,7 +33,7 @@ describe('BooksForm', () => {
     };
 
     changeFilter = jest.fn();
-    newBook = {
+    newItem = {
       title: 'Some Title',
       author: 'Some Author',
       chapters: '20',
@@ -41,9 +41,9 @@ describe('BooksForm', () => {
     };
     wrapper = shallow(
       <BooksForm
-        addBook={addBook}
+        addItem={addItem}
         changeFilter={changeFilter}
-        switchAddBookMode={switchAddBookMode}
+        switchAddItemMode={switchAddItemMode}
       />,
     );
   });
@@ -55,8 +55,8 @@ describe('BooksForm', () => {
   test('should change state during changes in title, author and category inputs', () => {
     const {
       title, author, chapters, category,
-    } = newBook;
-    inputBook(newBook);
+    } = newItem;
+    inputItem(newItem);
     expect(wrapper.state()).toEqual({
       title, category, author, chapters, error: '',
     });
@@ -70,10 +70,10 @@ describe('BooksForm', () => {
   });
 
   test('should call addBook if valid title and category', () => {
-    inputBook(newBook);
+    inputItem(newItem);
     wrapper.find('form').simulate('submit', {
       preventDefault: () => {},
     });
-    expect(addBook).toHaveBeenLastCalledWith(newBook);
+    expect(addItem).toHaveBeenLastCalledWith(newItem);
   });
 });

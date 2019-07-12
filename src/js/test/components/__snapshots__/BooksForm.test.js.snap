@@ -94,7 +94,7 @@ exports[`BooksForm it should render correctly 1`] = `
       className="add-book-btn"
       type="submit"
     >
-      Add Book
+      Add To Collection
     </button>
   </form>
 </div>

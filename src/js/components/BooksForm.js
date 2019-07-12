@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addBook, switchAddBookMode} from '../actions/books';
+import { addItem, switchAddItemMode} from '../actions/item';
 import { changeFilter} from '../actions/filter';
 import categories from '../data/bookCategories';
 
@@ -20,14 +20,14 @@ export class BooksForm extends React.Component {
     }));
 
   handleSubmit = () => {
-    if(this.state.title && this.state.author && this.state.category !== 'Select Category'){this.props.addBook({
+    if(this.state.title && this.state.author && this.state.category !== 'Select Category'){this.props.addItem({
       title: this.state.title,
       author: this.state.author,
       chapters: this.state.chapters,
       category: this.state.category,
     });
     this.props.changeFilter('All');
-    this.props.switchAddBookMode();
+    this.props.switchAddItemMode();
     this.setState(() => ({
       title: '',
       author: '',
@@ -93,7 +93,7 @@ export class BooksForm extends React.Component {
             ))}
           </select>
           <button className="add-book-btn" type="submit">
-            Add Book
+            Add To Collection
           </button>
         </form>
       </div>
@@ -102,12 +102,12 @@ export class BooksForm extends React.Component {
 }
 
 BooksForm.propTypes = {
-  addBook: PropTypes.func.isRequired,
+  addItem: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
-  switchAddBookMode: PropTypes.func.isRequired,
+  switchAddItemMode: PropTypes.func.isRequired,
 };
 
 export default connect(
   null,
-  { addBook, changeFilter, switchAddBookMode },
+  { addItem, changeFilter, switchAddItemMode },
 )(BooksForm);

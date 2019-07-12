@@ -5,12 +5,12 @@ import ProgressUpdateBody from './ProgressUpdateBody';
 
 const ProgressUpdateModal = (
   {
-    bookForProgressUpdate,
+    itemForProgressUpdate,
     progressUpdateMode,
     switchProgressUpdate,
   },
 ) => {
-  const chaptersArray = Array.from({ length: bookForProgressUpdate.chapters }, (v, k) => k + 1);
+  const chaptersArray = Array.from({ length: itemForProgressUpdate.chapters }, (v, k) => k + 1);
   return (
     <Modal
       isOpen={progressUpdateMode.on}
@@ -30,7 +30,7 @@ const ProgressUpdateModal = (
       <div className="modal-body">
         <ProgressUpdateBody
           chaptersArray={chaptersArray}
-          {...bookForProgressUpdate}
+          {...itemForProgressUpdate}
         />
       </div>
     </Modal>
@@ -38,7 +38,7 @@ const ProgressUpdateModal = (
 };
 
 ProgressUpdateModal.propTypes = {
-  bookForProgressUpdate: PropTypes.instanceOf(Object).isRequired,
+  itemForProgressUpdate: PropTypes.instanceOf(Object).isRequired,
   progressUpdateMode: PropTypes.instanceOf(Object).isRequired,
   switchProgressUpdate: PropTypes.func.isRequired,
 };

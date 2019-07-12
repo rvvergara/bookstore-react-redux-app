@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { switchAddBookMode, removeBook, switchProgressUpdate } from '../actions/books';
+import { switchAddItemMode, removeItem, switchProgressUpdate } from '../actions/item';
 import { changeFilter } from '../actions/filter';
 import CollectionItem from './CollectionItem';
 import CategoryFilter from './CategoryFilter';
@@ -9,12 +9,12 @@ import ProgressUpdateModal from './ProgressUpdateModal';
 
 export const Collection = (
   {
-    books,
-    bookForProgressUpdate,
+    collection,
+    itemForProgressUpdate,
     changeFilter,
     filter,
-    removeBook,
-    switchAddBookMode,
+    removeItem,
+    switchAddItemMode,
     progressUpdateMode,
     switchProgressUpdate,
   },
@@ -22,7 +22,7 @@ export const Collection = (
   <div>
     {progressUpdateMode.on && (
     <ProgressUpdateModal
-      bookForProgressUpdate={bookForProgressUpdate}
+      itemForProgressUpdate={itemForProgressUpdate}
       progressUpdateMode={progressUpdateMode}
       switchProgressUpdate={switchProgressUpdate}
     />
@@ -35,17 +35,17 @@ export const Collection = (
       <button
         className="add-book-btn btn-sm"
         type="button"
-        onClick={switchAddBookMode}
+        onClick={switchAddItemMode}
       >
-          Add Book
+          Add To Collection
       </button>
     </div>
     <div>
-      {books.map(book => (
+      {collection.map(item => (
         <CollectionItem
-          key={book.id}
-          book={book}
-          handleRemove={id => removeBook(id)}
+          key={item.id}
+          item={item}
+          handleRemove={id => removeItem(id)}
         />
       ))}
     </div>
@@ -53,19 +53,19 @@ export const Collection = (
 );
 
 const mapStateToProps = state => ({
-  books: state.books.filter(book => (state.filter === '' ? true : book.category === state.filter)),
-  bookForProgressUpdate: state.books.find(({ id }) => state.progressUpdateMode.id === id) || {},
+  collection: state.collection.filter(item => (state.filter === '' ? true : item.category === state.filter)),
+  itemForProgressUpdate: state.collection.find(({ id }) => state.progressUpdateMode.id === id) || {},
   filter: state.filter,
   progressUpdateMode: state.progressUpdateMode,
 });
 
 Collection.propTypes = {
-  books: PropTypes.instanceOf(Object).isRequired,
-  bookForProgressUpdate: PropTypes.instanceOf(Object).isRequired,
+  collection: PropTypes.instanceOf(Object).isRequired,
+  itemForProgressUpdate: PropTypes.instanceOf(Object).isRequired,
   changeFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
-  removeBook: PropTypes.func.isRequired,
-  switchAddBookMode: PropTypes.func.isRequired,
+  removeItem: PropTypes.func.isRequired,
+  switchAddItemMode: PropTypes.func.isRequired,
   progressUpdateMode: PropTypes.instanceOf(Object).isRequired,
   switchProgressUpdate: PropTypes.func.isRequired,
 };
@@ -73,6 +73,6 @@ Collection.propTypes = {
 export default connect(
   mapStateToProps,
   {
-    removeBook, changeFilter, switchAddBookMode, switchProgressUpdate,
+    removeItem, changeFilter, switchAddItemMode, switchProgressUpdate,
   },
 )(Collection);

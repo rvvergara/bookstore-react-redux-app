@@ -4,10 +4,10 @@ import CollectionItem from '../../components/CollectionItem';
 
 describe('Book component', () => {
   let wrapper;
-  let book;
+  let item;
   let handleRemove;
   beforeEach(() => {
-    book = {
+    item = {
       id: 1,
       title: 'Antiquities of the Jews',
       author: 'Josephus',
@@ -16,7 +16,7 @@ describe('Book component', () => {
       category: 'History',
     };
     handleRemove = jest.fn();
-    wrapper = shallow(<CollectionItem book={book} handleRemove={handleRemove} />);
+    wrapper = shallow(<CollectionItem item={item} handleRemove={handleRemove} />);
   });
 
   test('it should render the Book component correctly', () => {
@@ -25,6 +25,6 @@ describe('Book component', () => {
 
   test('it should call handleRemove on button click', () => {
     wrapper.find('button').simulate('click');
-    expect(handleRemove).toHaveBeenLastCalledWith(book.id);
+    expect(handleRemove).toHaveBeenLastCalledWith(item.id);
   });
 });

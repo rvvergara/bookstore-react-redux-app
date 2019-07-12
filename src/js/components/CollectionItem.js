@@ -6,10 +6,10 @@ import ProgressUpdateBtn from './ProgressUpdateBtn';
 import 'react-circular-progressbar/dist/styles.css';
 
 const CollectionItem = (props) => {
-  const { handleRemove, book } = props;
+  const { handleRemove, item } = props;
   const {
     id, title, author, category, chapters, currentChapter,
-  } = book;
+  } = item;
 
   return (
     <div className="card">
@@ -36,7 +36,7 @@ const CollectionItem = (props) => {
           </div>
           <div className="chapter-info">
             <CurrentChapter currentChapter={currentChapter} />
-            <ProgressUpdateBtn id={book.id} />
+            <ProgressUpdateBtn id={item.id} />
           </div>
         </div>
       </div>
@@ -45,7 +45,7 @@ const CollectionItem = (props) => {
 };
 
 CollectionItem.propTypes = {
-  book: PropTypes.instanceOf(Object).isRequired,
+  item: PropTypes.instanceOf(Object).isRequired,
   handleRemove: PropTypes.func.isRequired,
 };
 

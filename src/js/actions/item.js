@@ -1,18 +1,18 @@
 import uuid from 'uuid';
 import {
-  ADD_BOOK,
-  REMOVE_BOOK,
-  SWITCH_ADD_BOOK_MODE,
+  ADD_ITEM,
+  REMOVE_ITEM,
+  SWITCH_ADD_ITEM_MODE,
   SWITCH_PROGRESS_UPDATE,
   UPDATE_CHAPTER,
 } from './actionTypes';
 
 
-const addBook = ({
+const addItem = ({
   title, author, chapters, category,
 }) => ({
-  type: ADD_BOOK,
-  book: {
+  type: ADD_ITEM,
+  item: {
     id: uuid(),
     title,
     author,
@@ -22,12 +22,12 @@ const addBook = ({
   },
 });
 
-const switchAddBookMode = () => ({
-  type: SWITCH_ADD_BOOK_MODE,
+const switchAddItemMode = () => ({
+  type: SWITCH_ADD_ITEM_MODE,
 });
 
-const removeBook = id => ({
-  type: REMOVE_BOOK,
+const removeItem = id => ({
+  type: REMOVE_ITEM,
   id,
 });
 
@@ -43,9 +43,9 @@ const updateChapter = (id, newChapter) => ({
 });
 
 export {
-  addBook,
-  removeBook,
-  switchAddBookMode,
+  addItem,
+  removeItem,
+  switchAddItemMode,
   switchProgressUpdate,
   updateChapter,
 };

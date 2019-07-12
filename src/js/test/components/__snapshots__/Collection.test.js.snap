@@ -14,12 +14,13 @@ exports[`Collection it should render properly 1`] = `
       onClick={[MockFunction]}
       type="button"
     >
-      Add Book
+      Add To Collection
     </button>
   </div>
   <div>
     <CollectionItem
-      book={
+      handleRemove={[Function]}
+      item={
         Object {
           "author": "Tolkien",
           "category": "Action",
@@ -29,11 +30,11 @@ exports[`Collection it should render properly 1`] = `
           "title": "Lord of the Rings",
         }
       }
-      handleRemove={[Function]}
       key="0"
     />
     <CollectionItem
-      book={
+      handleRemove={[Function]}
+      item={
         Object {
           "author": "Kiyosaki",
           "category": "Learning",
@@ -43,11 +44,11 @@ exports[`Collection it should render properly 1`] = `
           "title": "Guide to Investing",
         }
       }
-      handleRemove={[Function]}
       key="1"
     />
     <CollectionItem
-      book={
+      handleRemove={[Function]}
+      item={
         Object {
           "author": "Roddenberry",
           "category": "Sci-Fi",
@@ -57,7 +58,6 @@ exports[`Collection it should render properly 1`] = `
           "title": "Star Trek",
         }
       }
-      handleRemove={[Function]}
       key="2"
     />
   </div>

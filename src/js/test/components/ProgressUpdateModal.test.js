@@ -11,7 +11,7 @@ describe('ProgressUpdateModal component', () => {
     switchProgressUpdate = jest.fn();
     wrapper = shallow(
       <ProgressUpdateModal
-        bookForProgressUpdate={books[2]}
+        itemForProgressUpdate={books[2]}
         progressUpdateMode={{ on: false, id: '' }}
         switchProgressUpdate={switchProgressUpdate}
       />,

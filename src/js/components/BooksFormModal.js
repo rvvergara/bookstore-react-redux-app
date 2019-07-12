@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import BooksForm from './BooksForm';
 
-const BooksFormModal = ({ addBookMode, switchAddBookMode }) => (
+const BooksFormModal = ({ addItemMode, switchAddItemMode }) => (
   <Modal
-    isOpen={addBookMode}
+    isOpen={addItemMode}
     ariaHideApp={false}
-    onRequestClose={switchAddBookMode}
+    onRequestClose={switchAddItemMode}
     closeTimeoutMS={200}
   >
     <div className="modal-controls">
       <button
         type="button"
         className="cancel-btn"
-        onClick={switchAddBookMode}
+        onClick={switchAddItemMode}
       >
         X
       </button>
@@ -26,8 +26,8 @@ const BooksFormModal = ({ addBookMode, switchAddBookMode }) => (
 );
 
 BooksFormModal.propTypes = {
-  addBookMode: PropTypes.bool.isRequired,
-  switchAddBookMode: PropTypes.func.isRequired,
+  addItemMode: PropTypes.bool.isRequired,
+  switchAddItemMode: PropTypes.func.isRequired,
 };
 
 export default BooksFormModal;
