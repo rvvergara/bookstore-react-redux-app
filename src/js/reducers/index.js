@@ -6,6 +6,7 @@ import filter from './filter';
 import currentUser from './currentUser';
 import errors from './errors';
 import searchResults from './search';
+import searchTerm from './searchTerm';
 import users from './users';
 
 export default combineReducers({
@@ -16,5 +17,6 @@ export default combineReducers({
   currentUser,
   errors,
   searchResults,
+  searchTerm,
   users,
 });
