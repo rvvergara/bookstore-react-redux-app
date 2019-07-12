@@ -2,7 +2,7 @@
 
 exports[`SearchResultsList should render correctly with search result 1`] = `
 Array [
-  <BookSearchResultItem
+  <BookSearchResultPanel
     book={
       Object {
         "author": "Tolkien",
@@ -15,7 +15,7 @@ Array [
     }
     key="0"
   />,
-  <BookSearchResultItem
+  <BookSearchResultPanel
     book={
       Object {
         "author": "Kiyosaki",
@@ -28,7 +28,7 @@ Array [
     }
     key="1"
   />,
-  <BookSearchResultItem
+  <BookSearchResultPanel
     book={
       Object {
         "author": "Roddenberry",

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const BookSearchResultItem = ({
+const BookSearchResultPanel = ({
   book: {
     id, title, subtitle, description, authors, imageLinks,
   },
@@ -38,4 +38,4 @@ const BookSearchResultItem = ({
   );
 };
 
-export default BookSearchResultItem;
+export default BookSearchResultPanel;
