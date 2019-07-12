@@ -1,26 +1,23 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import BookSearchResultPanel from './BookSearchResultPanel';
-import { listSearchResults } from '../actions/search';
 
 export const SearchResultsList = ({
-  searchResults, listSearchResults, searchTerm, error,
-}) => {
-  useEffect(() => () => listSearchResults([]), [listSearchResults]);
-  return (
+  searchResults, searchTerm, error,
+}) => (
 
-    <div>
-      {searchResults.length > 0 && (
+  <div>
+    {searchResults.length > 0 && (
       <h4 className="search-result-heading">
         Search results for
         {' '}
         {searchTerm}
       </h4>
-      )}
-      {searchResults.map(book => (
-        <BookSearchResultPanel key={book.id} book={book} />
-      ))}
-      {
+    )}
+    {searchResults.map(book => (
+      <BookSearchResultPanel key={book.id} book={book} />
+    ))}
+    {
         error && (
         <h4>
           No results for
@@ -29,9 +26,8 @@ export const SearchResultsList = ({
         </h4>
         )
       }
-    </div>
-  );
-};
+  </div>
+);
 
 const mapStateToProps = state => ({
   searchResults: state.searchResults,
@@ -39,4 +35,4 @@ const mapStateToProps = state => ({
   error: state.errors ? state.errors[0] : null,
 });
 
-export default connect(mapStateToProps, { listSearchResults })(SearchResultsList);
+export default connect(mapStateToProps)(SearchResultsList);
