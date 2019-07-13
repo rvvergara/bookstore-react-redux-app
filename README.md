@@ -2,7 +2,7 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-> Bookstore CMS App built using React, Redux and React-Redux. [Live Demo](https://ryto-react-redux-bookstore.netlify.com/)
+> Bookstore CMS App built using React, Redux and React-Redux. [Live Demo](https://bookstore-cms-react-redux.netlify.com)
 
 Current version features:
 
@@ -30,9 +30,10 @@ Current version features:
 ## Install
 
 Follow these steps:
-  - clone this repo
-  - `cd bookstore-react-redux-app`
-  - `yarn install` or `npm install`
+
+- clone this repo
+- `cd bookstore-react-redux-app`
+- `yarn install` or `npm install`
 
 ## Usage
 
@@ -46,11 +47,11 @@ Goto `localhost:3000`
 
 ## Maintainers
 
-  [Ryan](https://github.com/rvvergara) and [Dipto](https://github.com/dipto0321)
+[Ryan](https://github.com/rvvergara) and [Dipto](https://github.com/dipto0321)
 
 ## Contributing
 
-  [Ryan](https://github.com/rvvergara) and [Dipto](https://github.com/dipto0321)
+[Ryan](https://github.com/rvvergara) and [Dipto](https://github.com/dipto0321)
 
 PRs accepted.
 
