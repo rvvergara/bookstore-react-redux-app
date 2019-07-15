@@ -36,6 +36,14 @@ exports[`BookSearchResultPanel should render corectly 1`] = `
       </h4>
       <p>
         Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.
+         
+        <Link
+          className="btn logout-btn active"
+          target="blank"
+          to="/admin/book-search/0"
+        >
+          Add To Library
+        </Link>
       </p>
     </div>
   </div>

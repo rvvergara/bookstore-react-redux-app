@@ -31,7 +31,17 @@ const BookSearchResultPanel = ({
             {authorNames}
             {' '}
           </h4>
-          <p>{description.substr(0, 500)}</p>
+          <p>
+            {description.substr(0, 500)}
+            {' '}
+            <Link
+              to={`/admin/book-search/${id}`}
+              target="blank"
+              className="btn logout-btn active"
+            >
+              Add To Library
+            </Link>
+          </p>
         </div>
       </div>
     </div>
