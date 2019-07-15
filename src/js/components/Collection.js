@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { switchAddItemMode, removeItem, switchProgressUpdate } from '../actions/collection';
+import { switchAddBookMode, removeBook, switchProgressUpdate } from '../actions/book';
 import { changeFilter } from '../actions/filter';
 import CollectionItem from './CollectionItem';
 import CategoryFilter from './CategoryFilter';
@@ -13,8 +13,8 @@ export const Collection = (
     itemForProgressUpdate,
     changeFilter,
     filter,
-    removeItem,
-    switchAddItemMode,
+    removeBook,
+    switchAddBookMode,
     progressUpdateMode,
     switchProgressUpdate,
   },
@@ -35,7 +35,7 @@ export const Collection = (
       <button
         className="add-book-btn btn-sm"
         type="button"
-        onClick={switchAddItemMode}
+        onClick={switchAddBookMode}
       >
           Add To Collection
       </button>
@@ -45,7 +45,7 @@ export const Collection = (
         <CollectionItem
           key={item.id}
           item={item}
-          handleRemove={id => removeItem(id)}
+          handleRemove={id => removeBook(id)}
         />
       ))}
     </div>
@@ -64,8 +64,8 @@ Collection.propTypes = {
   itemForProgressUpdate: PropTypes.instanceOf(Object).isRequired,
   changeFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
-  removeItem: PropTypes.func.isRequired,
-  switchAddItemMode: PropTypes.func.isRequired,
+  removeBook: PropTypes.func.isRequired,
+  switchAddBookMode: PropTypes.func.isRequired,
   progressUpdateMode: PropTypes.instanceOf(Object).isRequired,
   switchProgressUpdate: PropTypes.func.isRequired,
 };
@@ -73,6 +73,6 @@ Collection.propTypes = {
 export default connect(
   mapStateToProps,
   {
-    removeItem, changeFilter, switchAddItemMode, switchProgressUpdate,
+    removeBook, changeFilter, switchAddBookMode, switchProgressUpdate,
   },
 )(Collection);

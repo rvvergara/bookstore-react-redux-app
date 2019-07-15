@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 import Modal from 'react-modal';
 import CollectionItemForm from './CollectionItemForm';
 
-const CollectionItemFormModal = ({ addItemMode, switchAddItemMode }) => (
+const CollectionItemFormModal = ({ addBookMode, switchAddBookMode }) => (
   <Modal
-    isOpen={addItemMode}
+    isOpen={addBookMode}
     ariaHideApp={false}
-    onRequestClose={switchAddItemMode}
+    onRequestClose={switchAddBookMode}
     closeTimeoutMS={200}
   >
     <div className="modal-controls">
       <button
         type="button"
         className="cancel-btn"
-        onClick={switchAddItemMode}
+        onClick={switchAddBookMode}
       >
         X
       </button>
@@ -26,8 +26,8 @@ const CollectionItemFormModal = ({ addItemMode, switchAddItemMode }) => (
 );
 
 CollectionItemFormModal.propTypes = {
-  addItemMode: PropTypes.bool.isRequired,
-  switchAddItemMode: PropTypes.func.isRequired,
+  addBookMode: PropTypes.bool.isRequired,
+  switchAddBookMode: PropTypes.func.isRequired,
 };
 
 export default CollectionItemFormModal;

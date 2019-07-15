@@ -1,16 +1,16 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { switchAddItemMode } from '../actions/collection';
+import { switchAddBookMode } from '../actions/book';
 import Collection from './Collection';
 import CollectionItemFormModal from './CollectionItemFormModal';
 
-export const UserDashboard = ({ addItemMode, switchAddItemMode }) => (
+export const UserDashboard = ({ addBookMode, switchAddBookMode }) => (
   <div id="app">
     <div id="container">
       <CollectionItemFormModal
-        addItemMode={addItemMode}
-        switchAddItemMode={switchAddItemMode}
+        addBookMode={addBookMode}
+        switchAddBookMode={switchAddBookMode}
       />
       <Collection />
     </div>
@@ -18,12 +18,12 @@ export const UserDashboard = ({ addItemMode, switchAddItemMode }) => (
 );
 
 const mapStateToProps = state => ({
-  addItemMode: state.addItemMode,
+  addBookMode: state.addBookMode,
 });
 
 UserDashboard.propTypes = {
-  addItemMode: PropTypes.bool.isRequired,
-  switchAddItemMode: PropTypes.func.isRequired,
+  addBookMode: PropTypes.bool.isRequired,
+  switchAddBookMode: PropTypes.func.isRequired,
 };
 
-export default connect(mapStateToProps, { switchAddItemMode })(UserDashboard);
+export default connect(mapStateToProps, { switchAddBookMode })(UserDashboard);

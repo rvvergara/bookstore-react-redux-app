@@ -5,8 +5,8 @@ import CollectionItemFormModal from '../../components/CollectionItemFormModal';
 test('CollectionItemFormModal should render correctly', () => {
   const wrapper = shallow(
     <CollectionItemFormModal
-      addItemMode={false}
-      switchAddItemMode={() => {}}
+      addBookMode={false}
+      switchAddBookMode={() => {}}
     />,
   );
   expect(wrapper).toMatchSnapshot();

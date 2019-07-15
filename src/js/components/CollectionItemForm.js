@@ -1,7 +1,8 @@
 import React from 'react';
+import uid from 'uuid';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { addItem, switchAddItemMode} from '../actions/collection';
+import { addBook, switchAddBookMode} from '../actions/book';
 import { changeFilter} from '../actions/filter';
 import categories from '../data/bookCategories';
 
@@ -20,14 +21,16 @@ export class CollectionItemForm extends React.Component {
     }));
 
   handleSubmit = () => {
-    if(this.state.title && this.state.author && this.state.category !== 'Select Category'){this.props.addItem({
+    if(this.state.title && this.state.author && this.state.category !== 'Select Category'){this.props.addBook({
+      id: uid(),
       title: this.state.title,
       author: this.state.author,
       chapters: this.state.chapters,
       category: this.state.category,
+      currentChapter: '0'
     });
     this.props.changeFilter('All');
-    this.props.switchAddItemMode();
+    this.props.switchAddBookMode();
     this.setState(() => ({
       title: '',
       author: '',
@@ -102,12 +105,12 @@ export class CollectionItemForm extends React.Component {
 }
 
 CollectionItemForm.propTypes = {
-  addItem: PropTypes.func.isRequired,
+  addBook: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
-  switchAddItemMode: PropTypes.func.isRequired,
+  switchAddBookMode: PropTypes.func.isRequired,
 };
 
 export default connect(
   null,
-  { addItem, changeFilter, switchAddItemMode },
+  { addBook, changeFilter, switchAddBookMode },
 )(CollectionItemForm);

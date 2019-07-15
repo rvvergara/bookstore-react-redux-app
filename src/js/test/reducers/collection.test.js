@@ -16,23 +16,23 @@ test('it should return default state', () => {
   expect(collectionReducer(collectionState, action)).toEqual(collectionState);
 });
 
-test('it should add new item', () => {
+test('it should add new book', () => {
   const action = {
-    type: 'ADD_ITEM',
+    type: 'ADD_BOOK',
     item: {
       title: 'In Praise of Folly',
       category: 'Comedy',
     },
   };
-  expect(collectionReducer(collectionState, action)).toEqual([...collectionState, action.item]);
+  expect(collectionReducer(collectionState, action)).toEqual([...collectionState, action.book]);
 });
 
-test('it should remove an existing item', () => {
-  const action = { type: 'REMOVE_ITEM', id: '0' };
+test('it should remove an existing book', () => {
+  const action = { type: 'REMOVE_BOOK', id: '0' };
   expect(collectionReducer(collectionState, action)).toEqual(collectionState.slice(1));
 });
 
-test('it should update current chapter of selected item', () => {
+test('it should update current chapter of selected book', () => {
   const action = {
     type: UPDATE_CHAPTER,
     id: collectionState[1].id,

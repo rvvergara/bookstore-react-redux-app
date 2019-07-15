@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect } from 'react-redux';
-import { updateChapter} from '../actions/collection';
+import { updateChapter} from '../actions/book';
 
 export class ProgressUpdateBody extends React.Component {
   state = {

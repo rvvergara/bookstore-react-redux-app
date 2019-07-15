@@ -6,8 +6,8 @@ describe('UserDashboard component', () => {
   test('should render correctly', () => {
     const wrapper = shallow(
       <UserDashboard
-        addItemMode={false}
-        switchAddItemMode={() => {}}
+        addBookMode={false}
+        switchAddBookMode={() => {}}
       />,
     );
     expect(wrapper).toMatchSnapshot();

@@ -4,16 +4,16 @@ import { CollectionItemForm } from '../../components/CollectionItemForm';
 
 describe('CollectionItemForm', () => {
   let wrapper;
-  let newItem;
-  let addItem;
-  let inputItem;
+  let newBook;
+  let addBook;
+  let bookItem;
   let changeFilter;
-  let switchAddItemMode;
+  let switchAddBookMode;
 
   beforeEach(() => {
-    addItem = jest.fn();
-    switchAddItemMode = jest.fn();
-    inputItem = (bookObj) => {
+    addBook = jest.fn();
+    switchAddBookMode = jest.fn();
+    bookItem = (bookObj) => {
       const {
         title, author, chapters, category,
       } = bookObj;
@@ -33,7 +33,7 @@ describe('CollectionItemForm', () => {
     };
 
     changeFilter = jest.fn();
-    newItem = {
+    newBook = {
       title: 'Some Title',
       author: 'Some Author',
       chapters: '20',
@@ -41,9 +41,9 @@ describe('CollectionItemForm', () => {
     };
     wrapper = shallow(
       <CollectionItemForm
-        addItem={addItem}
+        addBook={addBook}
         changeFilter={changeFilter}
-        switchAddItemMode={switchAddItemMode}
+        switchAddBookMode={switchAddBookMode}
       />,
     );
   });
@@ -55,8 +55,8 @@ describe('CollectionItemForm', () => {
   test('should change state during changes in title, author and category inputs', () => {
     const {
       title, author, chapters, category,
-    } = newItem;
-    inputItem(newItem);
+    } = newBook;
+    bookItem(newBook);
     expect(wrapper.state()).toEqual({
       title, category, author, chapters, error: '',
     });
@@ -70,10 +70,10 @@ describe('CollectionItemForm', () => {
   });
 
   test('should call addBook if valid title and category', () => {
-    inputItem(newItem);
+    bookItem(newBook);
     wrapper.find('form').simulate('submit', {
       preventDefault: () => {},
     });
-    expect(addItem).toHaveBeenLastCalledWith(newItem);
+    expect(addBook).toHaveBeenLastCalledWith({ ...newBook, currentChapter: '0', id: 'someId' });
   });
 });

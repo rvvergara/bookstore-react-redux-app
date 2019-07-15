@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { switchProgressUpdate } from '../actions/collection';
+import { switchProgressUpdate } from '../actions/book';
 
 export const ProgressUpdateBtn = ({ switchProgressUpdate, id }) => (
   <button

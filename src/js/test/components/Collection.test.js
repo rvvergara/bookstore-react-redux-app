@@ -10,8 +10,8 @@ describe('Collection', () => {
   let categories;
   let changeFilter;
   let filter;
-  let removeItem;
-  let switchAddItemMode;
+  let removeBook;
+  let switchAddBookMode;
   let switchProgressUpdate;
 
   beforeEach(() => {
@@ -19,8 +19,8 @@ describe('Collection', () => {
     categories = bookCategories;
     filter = '';
     changeFilter = jest.fn();
-    removeItem = jest.fn();
-    switchAddItemMode = jest.fn();
+    removeBook = jest.fn();
+    switchAddBookMode = jest.fn();
     switchProgressUpdate = jest.fn();
     wrapper = shallow(
       <Collection
@@ -28,8 +28,8 @@ describe('Collection', () => {
         itemForProgressUpdate={books[0]}
         filter={filter}
         changeFilter={changeFilter}
-        removeItem={removeItem}
-        switchAddItemMode={switchAddItemMode}
+        removeBook={removeBook}
+        switchAddBookMode={switchAddBookMode}
         progressUpdateMode={{ on: false, id: '' }}
         switchProgressUpdate={switchProgressUpdate}
       />,
@@ -45,8 +45,8 @@ describe('Collection', () => {
     expect(changeFilter).toHaveBeenLastCalledWith(categories[0]);
   });
 
-  test('it should call removeItem with id of an existing book', () => {
+  test('it should call removeBook with id of an existing book', () => {
     wrapper.find('CollectionItem').at(2).prop('handleRemove')(books[2].id);
-    expect(removeItem).toHaveBeenLastCalledWith(books[2].id);
+    expect(removeBook).toHaveBeenLastCalledWith(books[2].id);
   });
 });

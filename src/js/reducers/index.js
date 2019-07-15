@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import addItemMode from './addItemMode';
+import addBookMode from './addBookMode';
 import progressUpdateMode from './progressUpdateMode';
 import collection from './collection';
 import filter from './filter';
@@ -10,7 +10,7 @@ import searchTerm from './searchTerm';
 import users from './users';
 
 export default combineReducers({
-  addItemMode,
+  addBookMode,
   collection,
   filter,
   progressUpdateMode,
