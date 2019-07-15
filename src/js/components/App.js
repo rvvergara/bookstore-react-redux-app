@@ -9,6 +9,7 @@ import SignUpPage from './SignUpPage';
 import EditUserPage from './EditUserPage';
 import AdminDashboard from './AdminDashboard';
 import Header from './Header';
+import BookForm from './BookForm';
 import configureStore from '../store/configureStore';
 import { setCurrentUser } from '../actions/user';
 import { setAuthorizationToken } from '../services/api';
@@ -42,7 +43,7 @@ const App = () => (
           <Route path="/" component={withAuth(UserDashboard)} exact />
           <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
           <Route path="/admin" component={withAuth(withAdmin(AdminDashboard))} exact />
-          <Route path="/admin/book-search/:id" />
+          <Route path="/admin/book-search/:id" component={withAuth(withAdmin(BookForm))} />
         </Switch>
       </div>
     </Router>

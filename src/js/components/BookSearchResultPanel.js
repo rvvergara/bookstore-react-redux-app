@@ -2,16 +2,19 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BookSearchResultPanel = ({
-  book: {
-    id, title, subtitle, description, authors, imageLinks,
-  },
+  book,
 }) => {
+  const {
+    id, title, subtitle, description, authors, imageLinks,
+  } = book;
   const authorNames = authors.map(author => author).join(', ');
   return (
     <div className="book-result-item">
       <Link
-        to={`/admin/book-search/${id}`}
-        target="blank"
+        to={{
+          pathname: `/admin/book-search/${id}`,
+          book,
+        }}
       >
         <h3>
           {title}
@@ -35,8 +38,10 @@ const BookSearchResultPanel = ({
             {description.substr(0, 500)}
             {' '}
             <Link
-              to={`/admin/book-search/${id}`}
-              target="blank"
+              to={{
+                pathname: `/admin/book-search/${id}`,
+                book,
+              }}
               className="btn logout-btn active"
             >
               Add To Library

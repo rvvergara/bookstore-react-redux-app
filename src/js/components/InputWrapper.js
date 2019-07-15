@@ -12,6 +12,7 @@ const InputWrapper = ({
       {' '}
       {error}
     </label>
+    {type !== 'textarea' && (
     <input
       type={type}
       id={inputId}
@@ -19,6 +20,17 @@ const InputWrapper = ({
       value={inputValue}
       onChange={e => setInput(e.target.value)}
     />
+    )}
+    {
+      type === 'textarea' && (
+        <textarea
+          id={inputId}
+          className="form-input"
+          value={inputValue}
+          onChange={e => setInput(e.target.value)}
+        />
+      )
+    }
   </div>
 );
 
