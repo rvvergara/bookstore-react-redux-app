@@ -1,8 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { BooksForm } from '../../components/BooksForm';
+import { CollectionItemForm } from '../../components/CollectionItemForm';
 
-describe('BooksForm', () => {
+describe('CollectionItemForm', () => {
   let wrapper;
   let newItem;
   let addItem;
@@ -40,7 +40,7 @@ describe('BooksForm', () => {
       category: 'Action',
     };
     wrapper = shallow(
-      <BooksForm
+      <CollectionItemForm
         addItem={addItem}
         changeFilter={changeFilter}
         switchAddItemMode={switchAddItemMode}

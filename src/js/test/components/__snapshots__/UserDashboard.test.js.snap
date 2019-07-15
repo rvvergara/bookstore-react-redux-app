@@ -7,7 +7,7 @@ exports[`UserDashboard component should render correctly 1`] = `
   <div
     id="container"
   >
-    <BooksFormModal
+    <CollectionItemFormModal
       addItemMode={false}
       switchAddItemMode={[Function]}
     />

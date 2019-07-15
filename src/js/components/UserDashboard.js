@@ -3,12 +3,12 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { switchAddItemMode } from '../actions/collection';
 import Collection from './Collection';
-import BooksFormModal from './BooksFormModal';
+import CollectionItemFormModal from './CollectionItemFormModal';
 
 export const UserDashboard = ({ addItemMode, switchAddItemMode }) => (
   <div id="app">
     <div id="container">
-      <BooksFormModal
+      <CollectionItemFormModal
         addItemMode={addItemMode}
         switchAddItemMode={switchAddItemMode}
       />

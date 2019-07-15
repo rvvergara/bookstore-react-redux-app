@@ -1,10 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import BooksFormModal from '../../components/BooksFormModal';
+import CollectionItemFormModal from '../../components/CollectionItemFormModal';
 
-test('BooksFormModal should render correctly', () => {
+test('CollectionItemFormModal should render correctly', () => {
   const wrapper = shallow(
-    <BooksFormModal
+    <CollectionItemFormModal
       addItemMode={false}
       switchAddItemMode={() => {}}
     />,

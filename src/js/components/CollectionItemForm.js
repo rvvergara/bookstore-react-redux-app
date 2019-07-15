@@ -5,7 +5,7 @@ import { addItem, switchAddItemMode} from '../actions/collection';
 import { changeFilter} from '../actions/filter';
 import categories from '../data/bookCategories';
 
-export class BooksForm extends React.Component {
+export class CollectionItemForm extends React.Component {
   state = {
     title: '',
     author: '',
@@ -101,7 +101,7 @@ export class BooksForm extends React.Component {
   }
 }
 
-BooksForm.propTypes = {
+CollectionItemForm.propTypes = {
   addItem: PropTypes.func.isRequired,
   changeFilter: PropTypes.func.isRequired,
   switchAddItemMode: PropTypes.func.isRequired,
@@ -110,4 +110,4 @@ BooksForm.propTypes = {
 export default connect(
   null,
   { addItem, changeFilter, switchAddItemMode },
-)(BooksForm);
+)(CollectionItemForm);

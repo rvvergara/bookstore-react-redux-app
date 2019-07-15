@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`BooksFormModal should render correctly 1`] = `
+exports[`CollectionItemFormModal should render correctly 1`] = `
 <Modal
   ariaHideApp={false}
   bodyOpenClassName="ReactModal__Body--open"

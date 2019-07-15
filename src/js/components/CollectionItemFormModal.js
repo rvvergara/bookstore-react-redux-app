@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Modal from 'react-modal';
-import BooksForm from './BooksForm';
+import CollectionItemForm from './CollectionItemForm';
 
-const BooksFormModal = ({ addItemMode, switchAddItemMode }) => (
+const CollectionItemFormModal = ({ addItemMode, switchAddItemMode }) => (
   <Modal
     isOpen={addItemMode}
     ariaHideApp={false}
@@ -20,14 +20,14 @@ const BooksFormModal = ({ addItemMode, switchAddItemMode }) => (
       </button>
     </div>
     <div className="modal-body">
-      <BooksForm />
+      <CollectionItemForm />
     </div>
   </Modal>
 );
 
-BooksFormModal.propTypes = {
+CollectionItemFormModal.propTypes = {
   addItemMode: PropTypes.bool.isRequired,
   switchAddItemMode: PropTypes.func.isRequired,
 };
 
-export default BooksFormModal;
+export default CollectionItemFormModal;
