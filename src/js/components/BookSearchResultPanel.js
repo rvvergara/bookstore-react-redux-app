@@ -1,8 +1,10 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { switchAddBookMode } from '../actions/book';
 
-const BookSearchResultPanel = ({
-  book,
+export const BookSearchResultPanel = ({
+  book, switchAddBookMode,
 }) => {
   const {
     id, title, subtitle, description, authors, imageLinks,
@@ -37,15 +39,13 @@ const BookSearchResultPanel = ({
           <p>
             {description.substr(0, 500)}
             {' '}
-            <Link
-              to={{
-                pathname: `/admin/book-search/${id}`,
-                book,
-              }}
-              className="btn logout-btn active"
+            <button
+              type="button"
+              className="add-book-btn"
+              onClick={switchAddBookMode}
             >
               Add To Library
-            </Link>
+            </button>
           </p>
         </div>
       </div>
@@ -53,4 +53,4 @@ const BookSearchResultPanel = ({
   );
 };
 
-export default BookSearchResultPanel;
+export default connect(null, { switchAddBookMode })(BookSearchResultPanel);

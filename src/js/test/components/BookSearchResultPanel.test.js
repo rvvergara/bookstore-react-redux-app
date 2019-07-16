@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import BookSearchResultPanel from '../../components/BookSearchResultPanel';
+import { BookSearchResultPanel } from '../../components/BookSearchResultPanel';
 import books from '../fixtures/books';
 
 describe('BookSearchResultPanel', () => {

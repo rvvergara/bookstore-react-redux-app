@@ -2,13 +2,14 @@
 
 exports[`SearchResultsList should render correctly with search result 1`] = `
 <div>
+  <ConnectFunction />
   <h4
     className="search-result-heading"
   >
     Search results for
      
   </h4>
-  <BookSearchResultPanel
+  <ConnectFunction
     book={
       Object {
         "authors": Array [
@@ -27,7 +28,7 @@ exports[`SearchResultsList should render correctly with search result 1`] = `
     }
     key="0"
   />
-  <BookSearchResultPanel
+  <ConnectFunction
     book={
       Object {
         "authors": Array [
@@ -46,7 +47,7 @@ exports[`SearchResultsList should render correctly with search result 1`] = `
     }
     key="1"
   />
-  <BookSearchResultPanel
+  <ConnectFunction
     book={
       Object {
         "authors": Array [

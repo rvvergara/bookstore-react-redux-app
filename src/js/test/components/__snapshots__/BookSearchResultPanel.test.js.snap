@@ -54,30 +54,12 @@ exports[`BookSearchResultPanel should render corectly 1`] = `
       <p>
         Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.
          
-        <Link
-          className="btn logout-btn active"
-          to={
-            Object {
-              "book": Object {
-                "authors": Array [
-                  "Tolkien",
-                ],
-                "category": "Action",
-                "chapters": "35",
-                "currentChapter": "",
-                "description": "Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.",
-                "id": "0",
-                "imageLinks": Object {
-                  "smallThumbnail": "",
-                },
-                "title": "Lord of the Rings",
-              },
-              "pathname": "/admin/book-search/0",
-            }
-          }
+        <button
+          className="add-book-btn"
+          type="button"
         >
           Add To Library
-        </Link>
+        </button>
       </p>
     </div>
   </div>
