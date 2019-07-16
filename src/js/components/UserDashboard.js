@@ -22,7 +22,7 @@ const mapStateToProps = state => ({
 });
 
 UserDashboard.propTypes = {
-  addBookMode: PropTypes.bool.isRequired,
+  addBookMode: PropTypes.instanceOf(Object).isRequired,
   switchAddBookMode: PropTypes.func.isRequired,
 };
 

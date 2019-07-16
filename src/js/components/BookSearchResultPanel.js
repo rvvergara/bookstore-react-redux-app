@@ -42,7 +42,7 @@ export const BookSearchResultPanel = ({
             <button
               type="button"
               className="add-book-btn"
-              onClick={switchAddBookMode}
+              onClick={() => switchAddBookMode(book)}
             >
               Add To Library
             </button>

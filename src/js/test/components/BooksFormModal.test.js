@@ -5,7 +5,7 @@ import CollectionItemFormModal from '../../components/CollectionItemFormModal';
 test('CollectionItemFormModal should render correctly', () => {
   const wrapper = shallow(
     <CollectionItemFormModal
-      addBookMode={false}
+      addBookMode={{ on: false, book: null }}
       switchAddBookMode={() => {}}
     />,
   );

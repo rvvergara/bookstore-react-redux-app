@@ -12,8 +12,9 @@ const addBook = book => ({
   book,
 });
 
-const switchAddBookMode = () => ({
+const switchAddBookMode = book => ({
   type: SWITCH_ADD_BOOK_MODE,
+  book,
 });
 
 const removeBook = id => ({

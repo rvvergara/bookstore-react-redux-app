@@ -8,7 +8,12 @@ exports[`UserDashboard component should render correctly 1`] = `
     id="container"
   >
     <CollectionItemFormModal
-      addBookMode={false}
+      addBookMode={
+        Object {
+          "book": null,
+          "on": false,
+        }
+      }
       switchAddBookMode={[Function]}
     />
     <ConnectFunction />

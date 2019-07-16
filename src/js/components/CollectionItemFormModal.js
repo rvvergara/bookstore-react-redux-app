@@ -5,9 +5,9 @@ import CollectionItemForm from './CollectionItemForm';
 
 const CollectionItemFormModal = ({ addBookMode, switchAddBookMode }) => (
   <Modal
-    isOpen={addBookMode}
+    isOpen={addBookMode.on}
     ariaHideApp={false}
-    onRequestClose={switchAddBookMode}
+    onRequestClose={() => switchAddBookMode()}
     closeTimeoutMS={200}
   >
     <div className="modal-controls">
@@ -26,7 +26,7 @@ const CollectionItemFormModal = ({ addBookMode, switchAddBookMode }) => (
 );
 
 CollectionItemFormModal.propTypes = {
-  addBookMode: PropTypes.bool.isRequired,
+  addBookMode: PropTypes.instanceOf(Object).isRequired,
   switchAddBookMode: PropTypes.func.isRequired,
 };
 

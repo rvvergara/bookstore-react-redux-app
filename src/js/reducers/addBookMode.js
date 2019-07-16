@@ -1,3 +1,13 @@
 import { SWITCH_ADD_BOOK_MODE } from '../actions/actionTypes';
 
-export default (state = false, action) => (action.type === SWITCH_ADD_BOOK_MODE ? !state : state);
+const defaultState = {
+  on: false,
+  book: null,
+};
+
+export default (state = defaultState, action) => {
+  if (action.type === SWITCH_ADD_BOOK_MODE) {
+    return state.on ? { on: false, book: null } : { on: true, book: action.book };
+  }
+  return state;
+};

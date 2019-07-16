@@ -6,7 +6,7 @@ describe('UserDashboard component', () => {
   test('should render correctly', () => {
     const wrapper = shallow(
       <UserDashboard
-        addBookMode={false}
+        addBookMode={{ on: false, book: null }}
         switchAddBookMode={() => {}}
       />,
     );

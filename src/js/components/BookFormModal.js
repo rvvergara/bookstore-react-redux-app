@@ -7,12 +7,12 @@ import { switchAddBookMode } from '../actions/book';
 
 export const BookFormModal = ({ switchAddBookMode, addBookMode }) => (
   <Modal
-    isOpen={addBookMode}
+    isOpen={addBookMode.on}
     ariaHideApp={false}
-    onRequestClose={switchAddBookMode}
+    onRequestClose={() => switchAddBookMode(addBookMode.book)}
     closeTimeoutMS={200}
   >
-    <h3>Book Form Modal Here</h3>
+    <BookForm />
   </Modal>
 );
 

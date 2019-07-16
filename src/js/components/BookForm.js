@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import { addBookToLibrary } from '../thunks/book';
-import history from '../services/history';
+import { switchAddBookMode } from '../actions/book';
 import InputWrapper from './InputWrapper';
 
-export const BookForm = ({ location: { book }, addBookToLibrary }) => {
+export const BookForm = ({ book, addBookToLibrary, switchAddBookMode }) => {
   const [title, setTitle] = useState(book ? book.title : '');
   const [subTitle, setSubTitle] = useState(book ? book.subtitle : '');
   const [authors, setAuthors] = useState(book ? book.authors.join(', ') : '');
@@ -30,7 +30,7 @@ export const BookForm = ({ location: { book }, addBookToLibrary }) => {
         category,
       },
     })
-      .then(() => history.push('/admin'));
+      .then(() => switchAddBookMode());
   };
 
   return (
@@ -120,4 +120,8 @@ export const BookForm = ({ location: { book }, addBookToLibrary }) => {
   );
 };
 
-export default connect(null, { addBookToLibrary })(BookForm);
+const mapStateToProps = state => ({
+  book: state.addBookMode.book,
+});
+
+export default connect(mapStateToProps, { addBookToLibrary, switchAddBookMode })(BookForm);
