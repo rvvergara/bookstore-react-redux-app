@@ -1,25 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import BookSearchResultPanel from './BookSearchResultPanel';
 import BookFormModal from './BookFormModal';
+import { searchBooks } from '../thunks/book';
 
 export const SearchResultsList = ({
-  searchResults, searchTerm, error,
-}) => (
+  searchResults, searchTerm, error, searchBooks,
+}) => {
+  useEffect(() => {
+    if (searchTerm !== '') searchBooks(searchTerm, true);
+  }, [searchBooks, searchTerm]);
 
-  <div>
-    <BookFormModal />
-    {searchResults.length > 0 && (
+  return (
+    <div>
+      <BookFormModal />
+      {searchResults.length > 0 && (
       <h4 className="search-result-heading">
         Search results for
         {' '}
         {searchTerm}
       </h4>
-    )}
-    {searchResults.map(book => (
-      <BookSearchResultPanel key={book.id} book={book} />
-    ))}
-    {
+      )}
+      {searchResults.map(book => (
+        <BookSearchResultPanel key={book.id} book={book} />
+      ))}
+      {
         error && (
         <h4>
           No results for
@@ -28,8 +33,9 @@ export const SearchResultsList = ({
         </h4>
         )
       }
-  </div>
-);
+    </div>
+  );
+};
 
 const mapStateToProps = state => ({
   searchResults: state.searchResults,
@@ -37,4 +43,4 @@ const mapStateToProps = state => ({
   error: state.errors ? state.errors[0] : null,
 });
 
-export default connect(mapStateToProps)(SearchResultsList);
+export default connect(mapStateToProps, { searchBooks })(SearchResultsList);
