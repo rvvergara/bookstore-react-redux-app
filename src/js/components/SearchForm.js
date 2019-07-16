@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
+import history from '../services/history';
 import { searchBooks } from '../thunks/book';
 
-export const SearchForm = ({ searchBooks }) => {
-  const [keywords, setKeywords] = useState('');
+export const SearchForm = ({ searchBooks, searchTerm }) => {
+  const [keywords, setKeywords] = useState(searchTerm || '');
   const handleSearch = (e) => {
     e.preventDefault();
     searchBooks(keywords, true);
-    setKeywords('');
+    setKeywords(keywords);
+    history.push(`/admin/search/q=${keywords.split(' ').join('+')}`);
   };
   return (
     <div className="form-wrapper search-form">
@@ -31,4 +33,8 @@ export const SearchForm = ({ searchBooks }) => {
   );
 };
 
-export default connect(null, { searchBooks })(SearchForm);
+const mapStateToProps = state => ({
+  searchTerm: state.searchTerm,
+});
+
+export default connect(mapStateToProps, { searchBooks })(SearchForm);

@@ -109,7 +109,7 @@ exports[`App component should render correctly 1`] = `
               "type": [Function],
             }
           }
-          path="/admin/book-search/:id"
+          path="/admin/search"
         />
       </Switch>
     </div>

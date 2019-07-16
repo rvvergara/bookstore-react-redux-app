@@ -9,7 +9,6 @@ import SignUpPage from './SignUpPage';
 import EditUserPage from './EditUserPage';
 import AdminDashboard from './AdminDashboard';
 import Header from './Header';
-import BookForm from './BookForm';
 import configureStore from '../store/configureStore';
 import { setCurrentUser } from '../actions/user';
 import { setAuthorizationToken } from '../services/api';
@@ -17,6 +16,7 @@ import history from '../services/history';
 import withAuth from '../hocs/withAuth';
 import withCorrectUser from '../hocs/withCorrectUser';
 import withAdmin from '../hocs/withAdmin';
+import SearchWrapper from './SearchWrapper';
 
 const store = configureStore();
 
@@ -43,7 +43,7 @@ const App = () => (
           <Route path="/" component={withAuth(UserDashboard)} exact />
           <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
           <Route path="/admin" component={withAuth(withAdmin(AdminDashboard))} exact />
-          <Route path="/admin/book-search/:id" component={withAuth(withAdmin(BookForm))} />
+          <Route path="/admin/search" component={withAuth(withAdmin(SearchWrapper))} />
         </Switch>
       </div>
     </Router>

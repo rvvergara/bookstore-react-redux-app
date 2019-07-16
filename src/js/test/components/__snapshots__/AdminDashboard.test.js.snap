@@ -38,8 +38,7 @@ exports[`AdminDashboard component should render correctly 1`] = `
     forceRender={false}
     selectedClassName="react-tabs__tab-panel--selected"
   >
-    <ConnectFunction />
-    <ConnectFunction />
+    <SearchWrapper />
   </TabPanel>
   <TabPanel
     className="react-tabs__tab-panel"

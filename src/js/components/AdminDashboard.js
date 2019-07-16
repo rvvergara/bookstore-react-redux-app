@@ -4,8 +4,7 @@ import {
   Tab, Tabs, TabList, TabPanel,
 } from 'react-tabs';
 import 'react-tabs/style/react-tabs.scss';
-import SearchForm from './SearchForm';
-import SearchResultsList from './SearchResultsList';
+import SearchWrapper from './SearchWrapper';
 import UserList from './UserList';
 import { listSearchResults } from '../actions/search';
 
@@ -18,8 +17,7 @@ export const AdminDashboard = ({ listSearchResults }) => {
         <Tab>Manage Users</Tab>
       </TabList>
       <TabPanel>
-        <SearchForm />
-        <SearchResultsList />
+        <SearchWrapper />
       </TabPanel>
       <TabPanel>
         <UserList />
