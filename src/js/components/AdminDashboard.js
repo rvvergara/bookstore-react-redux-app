@@ -14,15 +14,15 @@ export const AdminDashboard = ({ listSearchResults }) => {
   return (
     <Tabs>
       <TabList>
-        <Tab>Manage Users</Tab>
         <Tab>Manage Books</Tab>
+        <Tab>Manage Users</Tab>
       </TabList>
-      <TabPanel>
-        <UserList />
-      </TabPanel>
       <TabPanel>
         <SearchForm />
         <SearchResultsList />
+      </TabPanel>
+      <TabPanel>
+        <UserList />
       </TabPanel>
     </Tabs>
   );

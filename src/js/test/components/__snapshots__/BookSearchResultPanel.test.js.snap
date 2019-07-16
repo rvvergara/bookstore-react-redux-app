@@ -4,33 +4,17 @@ exports[`BookSearchResultPanel should render corectly 1`] = `
 <div
   className="book-result-item"
 >
-  <Link
-    to={
-      Object {
-        "book": Object {
-          "authors": Array [
-            "Tolkien",
-          ],
-          "category": "Action",
-          "chapters": "35",
-          "currentChapter": "",
-          "description": "Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.",
-          "id": "0",
-          "imageLinks": Object {
-            "smallThumbnail": "",
-          },
-          "title": "Lord of the Rings",
-        },
-        "pathname": "/admin/book-search/0",
-      }
-    }
+  <button
+    className="logout-btn"
+    onClick={[Function]}
+    type="button"
   >
     <h3>
       Lord of the Rings
       :
        
     </h3>
-  </Link>
+  </button>
   <div
     className="book-result-item__details"
   >

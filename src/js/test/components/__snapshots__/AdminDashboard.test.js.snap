@@ -19,7 +19,7 @@ exports[`AdminDashboard component should render correctly 1`] = `
       selected={false}
       selectedClassName="react-tabs__tab--selected"
     >
-      Manage Users
+      Manage Books
     </Tab>
     <Tab
       className="react-tabs__tab"
@@ -30,7 +30,7 @@ exports[`AdminDashboard component should render correctly 1`] = `
       selected={false}
       selectedClassName="react-tabs__tab--selected"
     >
-      Manage Books
+      Manage Users
     </Tab>
   </TabList>
   <TabPanel
@@ -39,13 +39,13 @@ exports[`AdminDashboard component should render correctly 1`] = `
     selectedClassName="react-tabs__tab-panel--selected"
   >
     <ConnectFunction />
+    <ConnectFunction />
   </TabPanel>
   <TabPanel
     className="react-tabs__tab-panel"
     forceRender={false}
     selectedClassName="react-tabs__tab-panel--selected"
   >
-    <ConnectFunction />
     <ConnectFunction />
   </TabPanel>
 </Tabs>
