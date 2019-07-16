@@ -55,7 +55,7 @@ exports[`BookSearchResultPanel should render corectly 1`] = `
         Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.
          
         <button
-          className="add-book-btn"
+          className="logout-btn active"
           onClick={[Function]}
           type="button"
         >

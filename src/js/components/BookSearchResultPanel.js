@@ -1,30 +1,28 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
 import { switchAddBookMode } from '../actions/book';
 
 export const BookSearchResultPanel = ({
   book, switchAddBookMode,
 }) => {
   const {
-    id, title, subtitle, description, authors, imageLinks,
+    title, subtitle, description, authors, imageLinks,
   } = book;
   const authorNames = authors.map(author => author).join(', ');
   return (
     <div className="book-result-item">
-      <Link
-        to={{
-          pathname: `/admin/book-search/${id}`,
-          book,
-        }}
+      <button
+        type="button"
+        className="logout-btn"
+        onClick={() => switchAddBookMode(book)}
       >
         <h3>
           {title}
-            :
+              :
           {' '}
           {subtitle}
         </h3>
-      </Link>
+      </button>
       <div className="book-result-item__details">
         <div className="book-result-item__image-wrapper">
           <img src={imageLinks.smallThumbnail} alt={title} />
@@ -41,7 +39,7 @@ export const BookSearchResultPanel = ({
             {' '}
             <button
               type="button"
-              className="add-book-btn"
+              className="logout-btn active"
               onClick={() => switchAddBookMode(book)}
             >
               Add To Library
