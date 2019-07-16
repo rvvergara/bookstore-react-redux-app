@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import history from '../services/history';
 import { searchBooks } from '../thunks/book';
 
 export const SearchForm = ({ searchBooks, searchTerm }) => {
   const [keywords, setKeywords] = useState(searchTerm || '');
+
+  useEffect(() => {
+    setKeywords(searchTerm);
+  }, [setKeywords, searchTerm]);
+
   const handleSearch = (e) => {
     e.preventDefault();
     searchBooks(keywords, true);
