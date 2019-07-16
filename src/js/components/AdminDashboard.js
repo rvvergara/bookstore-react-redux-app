@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import {
   Tab, Tabs, TabList, TabPanel,
 } from 'react-tabs';
 import 'react-tabs/style/react-tabs.scss';
-import SearchWrapper from './SearchWrapper';
 import UserList from './UserList';
 import { listSearchResults } from '../actions/search';
 
@@ -17,7 +17,7 @@ export const AdminDashboard = ({ listSearchResults }) => {
         <Tab>Manage Users</Tab>
       </TabList>
       <TabPanel>
-        <SearchWrapper />
+        <Link to="/admin/search">Search Books To Add</Link>
       </TabPanel>
       <TabPanel>
         <UserList />

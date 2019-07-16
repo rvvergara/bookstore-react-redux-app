@@ -38,7 +38,11 @@ exports[`AdminDashboard component should render correctly 1`] = `
     forceRender={false}
     selectedClassName="react-tabs__tab-panel--selected"
   >
-    <SearchWrapper />
+    <Link
+      to="/admin/search"
+    >
+      Search Books To Add
+    </Link>
   </TabPanel>
   <TabPanel
     className="react-tabs__tab-panel"
