@@ -17,7 +17,7 @@ export const AdminDashboard = ({ listSearchResults }) => {
         <Tab>Manage Users</Tab>
       </TabList>
       <TabPanel>
-        <Link to="/admin/search">Search Books To Add</Link>
+        <Link to="/admin/books/search">Search Books To Add</Link>
       </TabPanel>
       <TabPanel>
         <UserList />

@@ -22,6 +22,14 @@ export const bookListFromGoogle = async (keyword) => {
   return books;
 };
 
+export const bookListFromLibrary = async (keyword) => {
+  const url = `/v1/search/books?q=${keyword}`;
+
+  const books = await axios.get(url);
+
+  return books;
+};
+
 // Sample query to googlebooks api
 export const sampleList = () => {
   bookListFromGoogle('cool')

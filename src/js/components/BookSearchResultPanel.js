@@ -6,9 +6,10 @@ export const BookSearchResultPanel = ({
   book, switchAddBookMode,
 }) => {
   const {
-    title, subtitle, description, authors, imageLinks,
+    title, subtitle, description, authors, imageLinks, thumbnail,
   } = book;
-  const authorNames = authors.map(author => author).join(', ');
+  const authorNames = typeof authors === 'string' ? authors : authors.map(author => author).join(', ');
+  const imageLink = imageLinks ? imageLinks.smallThumbnail : thumbnail;
   return (
     <div className="book-result-item">
       <button
@@ -25,7 +26,7 @@ export const BookSearchResultPanel = ({
       </button>
       <div className="book-result-item__details">
         <div className="book-result-item__image-wrapper">
-          <img src={imageLinks.smallThumbnail} alt={title} />
+          <img src={imageLink} alt={title} />
         </div>
         <div className="book-result-item__infos">
           <h4>

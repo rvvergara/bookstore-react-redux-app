@@ -1,7 +1,7 @@
 import { listSearchResults } from '../actions/search';
 import { setSearchTerm } from '../actions/searchTerm';
 import { setErrors } from '../actions/errors';
-import { bookListFromGoogle, fetchData } from '../services/api';
+import { bookListFromGoogle, bookListFromLibrary, fetchData } from '../services/api';
 import getUnique from '../services/arrayProcessing';
 
 export const searchBooks = (keyword, isAdminSearch) => (dispatch) => {
@@ -22,6 +22,10 @@ export const searchBooks = (keyword, isAdminSearch) => (dispatch) => {
         dispatch(listSearchResults([]));
       });
   }
+  return bookListFromLibrary(keyword)
+    .then((res) => {
+      dispatch(listSearchResults(res.data.books));
+    });
 };
 
 export const addBookToLibrary = book => (dispatch) => {
