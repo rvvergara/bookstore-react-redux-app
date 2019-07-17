@@ -14,7 +14,7 @@ export const SearchForm = ({ searchBooks, searchTerm }) => {
     e.preventDefault();
     searchBooks(keywords, true);
     setKeywords(keywords);
-    history.push(`/admin/search/q=${keywords.split(' ').join('+')}`);
+    history.push(`/admin/search?q=${keywords.split(' ').join('+')}`);
   };
   return (
     <div className="form-wrapper search-form">

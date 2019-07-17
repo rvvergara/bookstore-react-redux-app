@@ -6,8 +6,8 @@ import { setSearchTerm } from '../actions/searchTerm';
 
 export const SearchWrapper = ({ setSearchTerm, location }) => {
   useEffect(() => {
-    const { pathname } = location;
-    const keywords = pathname.substr(16).split('+').join(' ');
+    const { search } = location;
+    const keywords = search.substr(3).split('+').join(' ');
     setSearchTerm(keywords);
   });
 
