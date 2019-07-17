@@ -121,7 +121,7 @@ exports[`App component should render correctly 1`] = `
               "type": [Function],
             }
           }
-          path="/books/search"
+          path="/library/search"
         />
       </Switch>
     </div>

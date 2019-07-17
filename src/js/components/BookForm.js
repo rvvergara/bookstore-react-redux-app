@@ -5,15 +5,27 @@ import { switchAddBookMode } from '../actions/book';
 import InputWrapper from './InputWrapper';
 
 export const BookForm = ({ book, addBookToLibrary, switchAddBookMode }) => {
+  const authorNames = book ? (typeof book.authors === 'object' ? book.authors.join(', ') : book.authors) : ' ';
+
+  const thumbNailLink = book ? (book.imageLinks ? book.imageLinks.smallThumbnail : book.thumbnail) : ' ';
+
+  const categoryName = book ? (book.categories ? book.categories[0] : book.category) : '';
+
+  const isbnCode = book ? (book.industryIdentifiers ? book.industryIdentifiers[0].identifier : book.isbn) : '';
+
+  const pages = book ? (book.pageCount || book.page_count) : '';
+
+  const publicationDate = book ? (book.publishedDate || book.published_date) : '';
+
   const [title, setTitle] = useState(book ? book.title : '');
   const [subTitle, setSubTitle] = useState(book ? book.subtitle : '');
-  const [authors, setAuthors] = useState(book ? book.authors.join(', ') : '');
+  const [authors, setAuthors] = useState(authorNames);
   const [description, setDescription] = useState(book ? book.description : '');
-  const [publishedDate, setPublishedDate] = useState(book ? book.publishedDate : '');
-  const [thumbNail, setThumbNail] = useState(book ? book.imageLinks.smallThumbnail : '');
-  const [isbn, setIsbn] = useState(book ? book.industryIdentifiers[0].identifier : '');
-  const [pageCount, setPageCount] = useState(book ? book.pageCount : '');
-  const [category, setCategory] = useState(book ? book.categories[0] : '');
+  const [publishedDate, setPublishedDate] = useState(publicationDate);
+  const [thumbNail, setThumbNail] = useState(thumbNailLink);
+  const [isbn, setIsbn] = useState(isbnCode);
+  const [pageCount, setPageCount] = useState(pages);
+  const [category, setCategory] = useState(categoryName);
 
   const handleSubmit = (e) => {
     e.preventDefault();

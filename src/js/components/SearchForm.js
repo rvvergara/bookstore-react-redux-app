@@ -14,8 +14,8 @@ export const SearchForm = ({ searchBooks, searchTerm, isAdmin }) => {
     e.preventDefault();
     searchBooks(keywords, isAdmin);
     setKeywords(keywords);
-    const basePath = isAdmin ? '/admin' : '';
-    history.push(`${basePath}/books/search?q=${keywords.split(' ').join('+')}`);
+    const basePath = isAdmin ? '/admin/books' : '/library';
+    history.push(`${basePath}/search?q=${keywords.split(' ').join('+')}`);
   };
   return (
     <div className="form-wrapper search-form">
