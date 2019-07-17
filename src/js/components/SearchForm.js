@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import history from '../services/history';
 import { searchBooks } from '../thunks/book';
 
-export const SearchForm = ({ searchBooks, searchTerm }) => {
+export const SearchForm = ({ searchBooks, searchTerm, isAdmin }) => {
   const [keywords, setKeywords] = useState(searchTerm || '');
 
   useEffect(() => {
@@ -12,9 +12,10 @@ export const SearchForm = ({ searchBooks, searchTerm }) => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    searchBooks(keywords, true);
+    searchBooks(keywords, isAdmin);
     setKeywords(keywords);
-    history.push(`/admin/search?q=${keywords.split(' ').join('+')}`);
+    const basePath = isAdmin ? '/admin' : '';
+    history.push(`${basePath}/books/search?q=${keywords.split(' ').join('+')}`);
   };
   return (
     <div className="form-wrapper search-form">

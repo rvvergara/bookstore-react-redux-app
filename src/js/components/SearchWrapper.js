@@ -11,10 +11,12 @@ export const SearchWrapper = ({ setSearchTerm, location }) => {
     setSearchTerm(keywords);
   });
 
+  const isAdmin = location.pathname.includes('admin');
+
   return (
     <div>
-      <SearchForm />
-      <SearchResultsList />
+      <SearchForm isAdmin={isAdmin} />
+      <SearchResultsList isAdmin={isAdmin} />
     </div>
   );
 };

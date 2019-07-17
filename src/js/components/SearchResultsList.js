@@ -5,11 +5,11 @@ import BookFormModal from './BookFormModal';
 import { searchBooks } from '../thunks/book';
 
 export const SearchResultsList = ({
-  searchResults, searchTerm, error, searchBooks,
+  searchResults, searchTerm, error, searchBooks, isAdmin,
 }) => {
   useEffect(() => {
-    if (searchTerm !== '') searchBooks(searchTerm, true);
-  }, [searchBooks, searchTerm]);
+    if (searchTerm !== '') searchBooks(searchTerm, isAdmin);
+  }, [searchBooks, searchTerm, isAdmin]);
 
   return (
     <div>
