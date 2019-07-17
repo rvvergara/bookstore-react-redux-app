@@ -44,7 +44,7 @@ const App = () => (
           <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
           <Route path="/admin" component={withAuth(withAdmin(AdminDashboard))} exact />
           <Route path="/admin/books/search" component={withAuth(withAdmin(SearchWrapper))} />
-          <Route path="/books/search" component={withAuth(SearchWrapper)} />
+          <Route path="/library/search" component={withAuth(SearchWrapper)} />
         </Switch>
       </div>
     </Router>
