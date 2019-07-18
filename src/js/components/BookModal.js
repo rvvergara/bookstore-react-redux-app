@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import BookForm from './BookForm';
+import Book from './Book';
 import { switchAddBookMode } from '../actions/book';
 
 export const BookModal = ({ switchAddBookMode, addBookMode, isAdmin }) => (
@@ -11,7 +12,8 @@ export const BookModal = ({ switchAddBookMode, addBookMode, isAdmin }) => (
     onRequestClose={() => switchAddBookMode(addBookMode.book)}
     closeTimeoutMS={200}
   >
-    {isAdmin && <BookForm />}
+    {isAdmin && <BookForm /> }
+    {!isAdmin && addBookMode.on && <Book book={addBookMode.book} /> }
   </Modal>
 );
 
