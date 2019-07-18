@@ -4,14 +4,14 @@ import Modal from 'react-modal';
 import BookForm from './BookForm';
 import { switchAddBookMode } from '../actions/book';
 
-export const BookFormModal = ({ switchAddBookMode, addBookMode }) => (
+export const BookModal = ({ switchAddBookMode, addBookMode, isAdmin }) => (
   <Modal
     isOpen={addBookMode.on}
     ariaHideApp={false}
     onRequestClose={() => switchAddBookMode(addBookMode.book)}
     closeTimeoutMS={200}
   >
-    <BookForm />
+    {isAdmin && <BookForm />}
   </Modal>
 );
 
@@ -19,4 +19,4 @@ const mapStateToProps = state => ({
   addBookMode: state.addBookMode,
 });
 
-export default connect(mapStateToProps, { switchAddBookMode })(BookFormModal);
+export default connect(mapStateToProps, { switchAddBookMode })(BookModal);

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import BookSearchResultPanel from './BookSearchResultPanel';
-import BookFormModal from './BookFormModal';
+import BookModal from './BookModal';
 import { searchBooks } from '../thunks/book';
 
 export const SearchResultsList = ({
@@ -13,7 +13,7 @@ export const SearchResultsList = ({
 
   return (
     <div>
-      <BookFormModal />
+      <BookModal isAdmin={isAdmin} />
       {searchResults.length > 0 && (
       <h4 className="search-result-heading">
         Search results for
