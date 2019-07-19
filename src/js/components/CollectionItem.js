@@ -36,7 +36,7 @@ const CollectionItem = (props) => {
           </div>
           <div className="chapter-info">
             <CurrentChapter currentPage={String(current_page)} />
-            <ProgressUpdateBtn id={item.book_id} />
+            <ProgressUpdateBtn id={item.id} />
           </div>
         </div>
       </div>

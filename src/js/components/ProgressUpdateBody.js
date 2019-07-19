@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect } from 'react-redux';
-import { updatePage} from '../actions/book';
+// import { updatePage} from '../actions/book';
+import { fetchUpdatePage } from '../thunks/book';
 
 export class ProgressUpdateBody extends React.Component {
   state = {
@@ -9,12 +10,12 @@ export class ProgressUpdateBody extends React.Component {
   }
 
   handleChange = (target) => {
-    const { book_id, updatePage } = this.props;
+    const { id, fetchUpdatePage, username } = this.props;
     this.setState({
       [target.name]: target.value,
     });
-
-    updatePage(book_id, target.value);
+    const newPage = target.value === "Not started" ? '0' : target.value;
+    fetchUpdatePage(username, id, newPage); 
   }
 
   render(){
@@ -50,9 +51,14 @@ export class ProgressUpdateBody extends React.Component {
 
 ProgressUpdateBody.propTypes = {
   pagesArray: PropTypes.instanceOf(Object).isRequired,
-  book_id: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  updatePage: PropTypes.func.isRequired,
+  fetchUpdatePage: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
 };
 
-export default connect(null, { updatePage})(ProgressUpdateBody);
+const mapStateToProps = state => ({
+  username: state.currentUser.data.username,
+})
+
+export default connect(mapStateToProps, { fetchUpdatePage })(ProgressUpdateBody);

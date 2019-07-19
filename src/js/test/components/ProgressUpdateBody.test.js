@@ -1,20 +1,22 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { ProgressUpdateBody } from '../../components/ProgressUpdateBody';
+import users from '../fixtures/users';
 
 describe('ProgressUpdateBody', () => {
   let wrapper;
-  let updatePage;
+  let fetchUpdatePage;
 
   beforeEach(() => {
     const pagesArray = [1, 2, 3, 4, 5];
-    updatePage = jest.fn();
+    fetchUpdatePage = jest.fn(() => Promise.resolve());
     wrapper = shallow(
       <ProgressUpdateBody
         pagesArray={pagesArray}
-        book_id="someId"
+        id="someId"
         title="Some Title"
-        updatePage={updatePage}
+        fetchUpdatePage={fetchUpdatePage}
+        username={users[0].username}
       />,
     );
   });
@@ -32,6 +34,6 @@ describe('ProgressUpdateBody', () => {
     });
 
     expect(wrapper.state('current')).toBe('3');
-    expect(updatePage).toHaveBeenLastCalledWith('someId', '3');
+    expect(fetchUpdatePage).toHaveBeenLastCalledWith(users[0].username, 'someId', '3');
   });
 });

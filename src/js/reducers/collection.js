@@ -13,7 +13,7 @@ export default (state = [], action) => {
     case UPDATE_PAGE:
     {
       const { id, newPage } = action;
-      const bookIndex = state.findIndex(book => book.book_id === id);
+      const bookIndex = state.findIndex(item => item.id === id);
       const newState = [...state];
       newState[bookIndex] = { ...newState[bookIndex], current_page: newPage };
       return newState;
