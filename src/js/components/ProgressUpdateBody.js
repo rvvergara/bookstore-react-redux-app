@@ -5,20 +5,20 @@ import { updateChapter} from '../actions/book';
 
 export class ProgressUpdateBody extends React.Component {
   state = {
-    current: this.props.currentChapter || "0",
+    current: this.props.currentPage || "0",
   }
 
   handleChange = (target) => {
-    const { id, updateChapter } = this.props;
+    const { book_id, updateChapter } = this.props;
     this.setState({
       [target.name]: target.value,
     });
 
-    updateChapter(id, target.value);
+    updateChapter(book_id, target.value);
   }
 
   render(){
-    const { chaptersArray, id, title } = this.props;
+    const { pagesArray, id, title } = this.props;
     const { current} = this.state;
     return (
       <div>
@@ -30,7 +30,7 @@ export class ProgressUpdateBody extends React.Component {
           onChange={e => this.handleChange(e.target)}
         >
           {
-            ['Not started', ...chaptersArray].map(chapter => (
+            ['Not started', ...pagesArray].map(chapter => (
               <option
                 value={chapter}
                 key={`${id}-${chapter}
@@ -49,8 +49,8 @@ export class ProgressUpdateBody extends React.Component {
 }
 
 ProgressUpdateBody.propTypes = {
-  chaptersArray: PropTypes.instanceOf(Object).isRequired,
-  id: PropTypes.string.isRequired,
+  pagesArray: PropTypes.instanceOf(Object).isRequired,
+  book_id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   updateChapter: PropTypes.func.isRequired,
 };

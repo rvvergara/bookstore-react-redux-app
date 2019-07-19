@@ -26,7 +26,7 @@ export const Collection = (
 ) => {
   useEffect(() => {
     if (collection.length === 0) fetchCollection(username);
-  }, [fetchCollection, username]);
+  }, [fetchCollection, username, collection.length]);
 
   return (
     <div>

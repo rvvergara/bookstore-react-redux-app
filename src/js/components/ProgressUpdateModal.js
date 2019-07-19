@@ -10,7 +10,7 @@ const ProgressUpdateModal = (
     switchProgressUpdate,
   },
 ) => {
-  const chaptersArray = Array.from({ length: itemForProgressUpdate.chapters }, (v, k) => k + 1);
+  const pagesArray = Array.from({ length: itemForProgressUpdate.page_count }, (v, k) => k + 1);
   return (
     <Modal
       isOpen={progressUpdateMode.on}
@@ -29,7 +29,7 @@ const ProgressUpdateModal = (
       </div>
       <div className="modal-body">
         <ProgressUpdateBody
-          chaptersArray={chaptersArray}
+          pagesArray={pagesArray}
           {...itemForProgressUpdate}
         />
       </div>
