@@ -1,11 +1,16 @@
 import {
   ADD_BOOK,
   REMOVE_BOOK,
+  SET_COLLECTION,
   SWITCH_ADD_BOOK_MODE,
   SWITCH_PROGRESS_UPDATE,
   UPDATE_CHAPTER,
 } from './actionTypes';
 
+const setCollection = collection => ({
+  type: SET_COLLECTION,
+  collection,
+});
 
 const addBook = book => ({
   type: ADD_BOOK,
@@ -36,6 +41,7 @@ const updateChapter = (id, newChapter) => ({
 export {
   addBook,
   removeBook,
+  setCollection,
   switchAddBookMode,
   switchProgressUpdate,
   updateChapter,

@@ -1,5 +1,6 @@
 import { listSearchResults } from '../actions/search';
 import { setSearchTerm } from '../actions/searchTerm';
+import { setCollection } from '../actions/book';
 import { setErrors } from '../actions/errors';
 import { bookListFromGoogle, bookListFromLibrary, fetchData } from '../services/api';
 import getUnique from '../services/arrayProcessing';
@@ -35,4 +36,13 @@ export const addBookToLibrary = book => (dispatch) => {
       console.log(res.data);
     })
     .catch(err => console.log(err));
+};
+
+export const fetchCollection = username => (dispatch) => {
+  const path = `/v1/users/${username}/collection`;
+
+  return fetchData('get', path)
+    .then((res) => {
+      dispatch(setCollection(res.data.user.collection));
+    });
 };
