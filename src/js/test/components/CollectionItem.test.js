@@ -8,7 +8,7 @@ describe('Book component', () => {
   let handleRemove;
   beforeEach(() => {
     item = {
-      id: 1,
+      book_id: 1,
       title: 'Antiquities of the Jews',
       author: 'Josephus',
       chapters: '30',
@@ -25,6 +25,6 @@ describe('Book component', () => {
 
   test('it should call handleRemove on button click', () => {
     wrapper.find('button').simulate('click');
-    expect(handleRemove).toHaveBeenLastCalledWith(item.id);
+    expect(handleRemove).toHaveBeenLastCalledWith(item.book_id);
   });
 });

@@ -35,6 +35,7 @@ exports[`ProgressUpdateModal component should render correctly 1`] = `
           "Roddenberry",
         ]
       }
+      book_id="2"
       category="Sci-Fi"
       chapters="30"
       chaptersArray={

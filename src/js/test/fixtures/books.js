@@ -1,5 +1,6 @@
 export default [
   {
+    book_id: '0',
     id: '0',
     title: 'Lord of the Rings',
     authors: ['Tolkien'],
@@ -10,6 +11,7 @@ export default [
     description: 'Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.',
   },
   {
+    book_id: '1',
     id: '1',
     title: 'Guide to Investing',
     authors: ['Kiyosaki'],
@@ -20,6 +22,7 @@ export default [
     description: 'Nostrud aliquip velit eu ea amet qui exercitation anim mollit do minim commodo pariatur.',
   },
   {
+    book_id: '2',
     id: '2',
     title: 'Star Trek',
     authors: ['Roddenberry'],

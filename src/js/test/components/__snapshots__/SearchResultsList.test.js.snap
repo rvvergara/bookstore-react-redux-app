@@ -15,6 +15,7 @@ exports[`SearchResultsList should render correctly with search result 1`] = `
         "authors": Array [
           "Tolkien",
         ],
+        "book_id": "0",
         "category": "Action",
         "chapters": "35",
         "currentChapter": "",
@@ -34,6 +35,7 @@ exports[`SearchResultsList should render correctly with search result 1`] = `
         "authors": Array [
           "Kiyosaki",
         ],
+        "book_id": "1",
         "category": "Learning",
         "chapters": "24",
         "currentChapter": "",
@@ -53,6 +55,7 @@ exports[`SearchResultsList should render correctly with search result 1`] = `
         "authors": Array [
           "Roddenberry",
         ],
+        "book_id": "2",
         "category": "Sci-Fi",
         "chapters": "30",
         "currentChapter": "",

@@ -8,7 +8,7 @@ import 'react-circular-progressbar/dist/styles.css';
 const CollectionItem = (props) => {
   const { handleRemove, item } = props;
   const {
-    id, title, author, category, chapters, currentChapter,
+    book_id, title, author, category, chapters, currentChapter,
   } = item;
 
   return (
@@ -23,7 +23,7 @@ const CollectionItem = (props) => {
               {author}
             </p>
             <div className="action">
-              <button className="btn btn-link" type="button" onClick={() => handleRemove(id)}>
+              <button className="btn btn-link" type="button" onClick={() => handleRemove(book_id)}>
                 Remove
               </button>
             </div>
@@ -36,7 +36,7 @@ const CollectionItem = (props) => {
           </div>
           <div className="chapter-info">
             <CurrentChapter currentChapter={currentChapter} />
-            <ProgressUpdateBtn id={item.id} />
+            <ProgressUpdateBtn id={item.book_id} />
           </div>
         </div>
       </div>
