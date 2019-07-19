@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { switchAddBookMode, removeBook, switchProgressUpdate } from '../actions/book';
+import {
+  switchAddBookMode, removeBook, switchProgressUpdate, setCollection,
+} from '../actions/book';
 import { changeFilter } from '../actions/filter';
 import CollectionItem from './CollectionItem';
 import CategoryFilter from './CategoryFilter';
@@ -20,11 +22,13 @@ export const Collection = (
     switchProgressUpdate,
     fetchCollection,
     username,
+    setCollection,
   },
 ) => {
   useEffect(() => {
     fetchCollection(username);
-  }, [fetchCollection, username]);
+    return () => setCollection([]);
+  }, [fetchCollection, username, setCollection]);
 
   return (
     <div>
@@ -51,10 +55,10 @@ export const Collection = (
       <div>
         {collection.map(item => (
           <CollectionItem
-          key={item.book_id}
-          item={item}
-          handleRemove={id => removeBook(id)}
-        />
+            key={item.book_id}
+            item={item}
+            handleRemove={id => removeBook(id)}
+          />
         ))}
       </div>
     </div>
@@ -63,7 +67,7 @@ export const Collection = (
 
 const mapStateToProps = state => ({
   collection: state.collection.filter(item => (state.filter === '' ? true : item.category === state.filter)),
-  itemForProgressUpdate: state.collection.find(({ id }) => state.progressUpdateMode.id === id) || {},
+  itemForProgressUpdate: state.collection.find(({ book_id }) => state.progressUpdateMode.id === book_id) || {},
   filter: state.filter,
   progressUpdateMode: state.progressUpdateMode,
   username: state.currentUser.data.username,
@@ -83,6 +87,11 @@ Collection.propTypes = {
 export default connect(
   mapStateToProps,
   {
-    removeBook, changeFilter, switchAddBookMode, switchProgressUpdate, fetchCollection,
+    removeBook,
+    changeFilter,
+    switchAddBookMode,
+    switchProgressUpdate,
+    fetchCollection,
+    setCollection,
   },
 )(Collection);
