@@ -12,7 +12,7 @@ export const searchBooks = (keyword, isAdminSearch) => (dispatch) => {
         const resultsData = res.data.items.map(({ id, volumeInfo }) => ({
           id,
           ...volumeInfo,
-        })).filter(book => book.imageLinks && book.description && book.authors && book.subtitle);
+        })).filter(book => book.imageLinks && book.description && book.authors && book.subtitle && book.categories);
 
         dispatch(listSearchResults(getUnique(resultsData, 'id')));
         dispatch(setSearchTerm(keyword));
