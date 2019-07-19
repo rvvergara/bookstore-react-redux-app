@@ -1,20 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect } from 'react-redux';
-import { updateChapter} from '../actions/book';
+import { updatePage} from '../actions/book';
 
 export class ProgressUpdateBody extends React.Component {
   state = {
-    current: this.props.currentPage || "0",
+    current: this.props.current_page || "0",
   }
 
   handleChange = (target) => {
-    const { book_id, updateChapter } = this.props;
+    const { book_id, updatePage } = this.props;
     this.setState({
       [target.name]: target.value,
     });
 
-    updateChapter(book_id, target.value);
+    updatePage(book_id, target.value);
   }
 
   render(){
@@ -23,22 +23,22 @@ export class ProgressUpdateBody extends React.Component {
     return (
       <div>
         <h1>{title}</h1>
-        <strong>Now reading chapter: </strong>
+        <strong>Now reading page: </strong>
         <select
           name="current"
           value={current}
           onChange={e => this.handleChange(e.target)}
         >
           {
-            ['Not started', ...pagesArray].map(chapter => (
+            ['Not started', ...pagesArray].map(page => (
               <option
-                value={chapter}
-                key={`${id}-${chapter}
+                value={page}
+                key={`${id}-${page}
                 `}
-                id={`${id} ${chapter}
+                id={`${id} ${page}
                 `}
               >
-                {chapter}
+                {page}
               </option>
             ))
           }
@@ -52,7 +52,7 @@ ProgressUpdateBody.propTypes = {
   pagesArray: PropTypes.instanceOf(Object).isRequired,
   book_id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
-  updateChapter: PropTypes.func.isRequired,
+  updatePage: PropTypes.func.isRequired,
 };
 
-export default connect(null, { updateChapter})(ProgressUpdateBody);
+export default connect(null, { updatePage})(ProgressUpdateBody);

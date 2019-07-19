@@ -1,5 +1,5 @@
 import {
-  ADD_BOOK, REMOVE_BOOK, SET_COLLECTION, UPDATE_CHAPTER,
+  ADD_BOOK, REMOVE_BOOK, SET_COLLECTION, UPDATE_PAGE,
 } from '../actions/actionTypes';
 
 export default (state = [], action) => {
@@ -10,12 +10,12 @@ export default (state = [], action) => {
       return [...state, action.book];
     case REMOVE_BOOK:
       return state.filter(book => book.book_id !== action.id);
-    case UPDATE_CHAPTER:
+    case UPDATE_PAGE:
     {
-      const { id, newChapter } = action;
-      const bookIndex = state.findIndex(book => book.id === id);
+      const { id, newPage } = action;
+      const bookIndex = state.findIndex(book => book.book_id === id);
       const newState = [...state];
-      newState[bookIndex] = { ...newState[bookIndex], currentChapter: newChapter };
+      newState[bookIndex] = { ...newState[bookIndex], current_page: newPage };
       return newState;
     }
     default:
