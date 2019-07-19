@@ -9,6 +9,7 @@ import CollectionItem from './CollectionItem';
 import CategoryFilter from './CategoryFilter';
 import ProgressUpdateModal from './ProgressUpdateModal';
 import { fetchCollection } from '../thunks/book';
+import history from '../services/history';
 
 export const Collection = (
   {
@@ -17,11 +18,11 @@ export const Collection = (
     changeFilter,
     filter,
     removeBook,
-    switchAddBookMode,
     progressUpdateMode,
     switchProgressUpdate,
     fetchCollection,
     username,
+    searchTerm,
   },
 ) => {
   useEffect(() => {
@@ -45,7 +46,7 @@ export const Collection = (
         <button
           className="add-book-btn btn-sm"
           type="button"
-          onClick={switchAddBookMode}
+          onClick={() => history.push(`/library/search?q=${searchTerm}`)}
         >
           Add To Collection
         </button>
@@ -69,6 +70,7 @@ const mapStateToProps = state => ({
   filter: state.filter,
   progressUpdateMode: state.progressUpdateMode,
   username: state.currentUser.data.username,
+  searchTerm: state.searchTerm,
 });
 
 Collection.propTypes = {

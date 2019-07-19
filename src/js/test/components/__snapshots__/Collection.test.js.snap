@@ -11,7 +11,7 @@ exports[`Collection it should render properly 1`] = `
     />
     <button
       className="add-book-btn btn-sm"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       type="button"
     >
       Add To Collection
