@@ -1,6 +1,6 @@
 import { listSearchResults } from '../actions/search';
 import { setSearchTerm } from '../actions/searchTerm';
-import { setCollection, updatePage } from '../actions/book';
+import { setCollection, updatePage, addBook } from '../actions/book';
 import { setErrors } from '../actions/errors';
 import { bookListFromGoogle, bookListFromLibrary, fetchData } from '../services/api';
 import getUnique from '../services/arrayProcessing';
@@ -29,14 +29,13 @@ export const searchBooks = (keyword, isAdminSearch) => (dispatch) => {
     });
 };
 
-export const addBookToLibrary = book => (dispatch) => {
-  const path = '/v1/books';
-  return fetchData('post', path, book)
-    .then((res) => {
-      console.log(res.data);
-    })
-    .catch(err => console.log(err));
-};
+export const addBookToLibrary = (path, book) => dispatch => fetchData('post', path, book)
+  .then((res) => {
+    if (path.includes('users')) dispatch(addBook(res.data.collection_item));
+  })
+  .catch((err) => {
+    dispatch(setErrors([`Book ${err.response.data.errors.book_id[0]}`]));
+  });
 
 export const fetchCollection = username => (dispatch) => {
   const path = `/v1/users/${username}/collection`;

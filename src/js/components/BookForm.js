@@ -17,7 +17,8 @@ export const BookForm = ({ book, addBookToLibrary, switchAddBookMode }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addBookToLibrary({
+    const path = '/v1/books';
+    addBookToLibrary(path, {
       book: {
         title,
         subtitle: subTitle,
