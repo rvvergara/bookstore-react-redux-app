@@ -23,7 +23,11 @@ const CollectionItem = (props) => {
               {authors}
             </p>
             <div className="action">
-              <button className="btn btn-link" type="button" onClick={() => handleRemove(book_id)}>
+              <button
+                className="btn btn-link"
+                type="button"
+                onClick={() => handleRemove(book_id)}
+              >
                 Remove
               </button>
             </div>

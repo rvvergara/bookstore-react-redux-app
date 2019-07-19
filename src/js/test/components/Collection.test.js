@@ -4,13 +4,15 @@ import { Collection } from '../../components/Collection';
 import dummyBooks from '../fixtures/books';
 import bookCategories from '../fixtures/categories';
 
+
 describe('Collection', () => {
   let wrapper;
   let books;
   let categories;
   let changeFilter;
   let filter;
-  let removeBook;
+  let fetchRemoveBook;
+  let fetchCollection;
   let switchAddBookMode;
   let switchProgressUpdate;
 
@@ -19,7 +21,8 @@ describe('Collection', () => {
     categories = bookCategories;
     filter = '';
     changeFilter = jest.fn();
-    removeBook = jest.fn();
+    fetchRemoveBook = jest.fn(() => Promise.resolve());
+    fetchCollection = jest.fn(() => Promise.resolve());
     switchAddBookMode = jest.fn();
     switchProgressUpdate = jest.fn();
     wrapper = shallow(
@@ -28,10 +31,13 @@ describe('Collection', () => {
         itemForProgressUpdate={books[0]}
         filter={filter}
         changeFilter={changeFilter}
-        removeBook={removeBook}
+        fetchCollection={fetchCollection}
+        fetchRemoveBook={fetchRemoveBook}
         switchAddBookMode={switchAddBookMode}
         progressUpdateMode={{ on: false, id: '' }}
         switchProgressUpdate={switchProgressUpdate}
+        username="willy"
+        searchTerm="Nothing"
       />,
     );
   });
@@ -47,6 +53,6 @@ describe('Collection', () => {
 
   test('it should call removeBook with id of an existing book', () => {
     wrapper.find('CollectionItem').at(2).prop('handleRemove')(books[2].id);
-    expect(removeBook).toHaveBeenLastCalledWith(books[2].id);
+    expect(fetchRemoveBook).toHaveBeenLastCalledWith('willy', books[2].id);
   });
 });

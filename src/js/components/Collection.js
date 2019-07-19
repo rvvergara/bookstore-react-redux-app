@@ -2,13 +2,13 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  switchAddBookMode, removeBook, switchProgressUpdate,
+  switchAddBookMode, switchProgressUpdate,
 } from '../actions/book';
 import { changeFilter } from '../actions/filter';
 import CollectionItem from './CollectionItem';
 import CategoryFilter from './CategoryFilter';
 import ProgressUpdateModal from './ProgressUpdateModal';
-import { fetchCollection } from '../thunks/book';
+import { fetchCollection, fetchRemoveBook } from '../thunks/book';
 import history from '../services/history';
 
 export const Collection = (
@@ -17,7 +17,7 @@ export const Collection = (
     itemForProgressUpdate,
     changeFilter,
     filter,
-    removeBook,
+    fetchRemoveBook,
     progressUpdateMode,
     switchProgressUpdate,
     fetchCollection,
@@ -56,7 +56,7 @@ export const Collection = (
           <CollectionItem
             key={item.id}
             item={item}
-            handleRemove={id => removeBook(id)}
+            handleRemove={() => fetchRemoveBook(username, item.id)}
           />
         ))}
       </div>
@@ -78,16 +78,18 @@ Collection.propTypes = {
   itemForProgressUpdate: PropTypes.instanceOf(Object).isRequired,
   changeFilter: PropTypes.func.isRequired,
   filter: PropTypes.string.isRequired,
-  removeBook: PropTypes.func.isRequired,
-  switchAddBookMode: PropTypes.func.isRequired,
+  fetchRemoveBook: PropTypes.func.isRequired,
   progressUpdateMode: PropTypes.instanceOf(Object).isRequired,
   switchProgressUpdate: PropTypes.func.isRequired,
+  fetchCollection: PropTypes.func.isRequired,
+  searchTerm: PropTypes.string.isRequired,
+  username: PropTypes.string.isRequired,
 };
 
 export default connect(
   mapStateToProps,
   {
-    removeBook,
+    fetchRemoveBook,
     changeFilter,
     switchAddBookMode,
     switchProgressUpdate,
