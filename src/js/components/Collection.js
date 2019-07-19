@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
-  switchAddBookMode, removeBook, switchProgressUpdate, setCollection,
+  switchAddBookMode, removeBook, switchProgressUpdate,
 } from '../actions/book';
 import { changeFilter } from '../actions/filter';
 import CollectionItem from './CollectionItem';
@@ -22,13 +22,11 @@ export const Collection = (
     switchProgressUpdate,
     fetchCollection,
     username,
-    setCollection,
   },
 ) => {
   useEffect(() => {
-    fetchCollection(username);
-    return () => setCollection([]);
-  }, [fetchCollection, username, setCollection]);
+    if (collection.length === 0) fetchCollection(username);
+  }, [fetchCollection, username]);
 
   return (
     <div>
@@ -92,6 +90,5 @@ export default connect(
     switchAddBookMode,
     switchProgressUpdate,
     fetchCollection,
-    setCollection,
   },
 )(Collection);
