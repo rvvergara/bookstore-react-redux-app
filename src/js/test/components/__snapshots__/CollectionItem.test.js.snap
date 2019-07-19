@@ -25,7 +25,6 @@ exports[`Book component it should render the Book component correctly 1`] = `
         </h3>
         <p>
           by: 
-          Josephus
         </p>
         <div
           className="action"
@@ -43,15 +42,15 @@ exports[`Book component it should render the Book component correctly 1`] = `
         className="progress"
       >
         <Progress
-          chapters={30}
-          currentChapter={0}
+          currentPage={NaN}
+          pages={NaN}
         />
       </div>
       <div
         className="chapter-info"
       >
         <CurrentChapter
-          currentChapter=""
+          currentPage="undefined"
         />
         <ConnectFunction
           id={1}
