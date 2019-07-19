@@ -3,6 +3,8 @@ import { setCurrentUser, listUsers } from '../actions/user';
 import { setErrors } from '../actions/errors';
 import { fetchData, setAuthorizationToken } from '../services/api';
 import { setCollection } from '../actions/book';
+import { setSearchTerm } from '../actions/searchTerm';
+import { listSearchResults } from '../actions/search';
 
 const setUserInStore = (user, dispatch) => {
   const { token } = user;
@@ -43,6 +45,8 @@ export const logout = () => (dispatch) => {
   setAuthorizationToken(false);
   dispatch(setCurrentUser({ authenticated: false, data: null }));
   dispatch(setCollection([]));
+  dispatch(listSearchResults([]));
+  dispatch(setSearchTerm(''));
 };
 
 export const signUp = signupParams => (dispatch) => {
