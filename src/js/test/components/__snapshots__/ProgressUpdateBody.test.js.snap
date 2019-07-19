@@ -6,7 +6,7 @@ exports[`ProgressUpdateBody should render correctly 1`] = `
     Some Title
   </h1>
   <strong>
-    Now reading chapter: 
+    Now reading page: 
   </strong>
   <select
     name="current"
@@ -14,54 +14,54 @@ exports[`ProgressUpdateBody should render correctly 1`] = `
     value="0"
   >
     <option
-      id="someId Not started
+      id="undefined Not started
                 "
-      key="someId-Not started
+      key="undefined-Not started
                 "
       value="Not started"
     >
       Not started
     </option>
     <option
-      id="someId 1
+      id="undefined 1
                 "
-      key="someId-1
+      key="undefined-1
                 "
       value={1}
     >
       1
     </option>
     <option
-      id="someId 2
+      id="undefined 2
                 "
-      key="someId-2
+      key="undefined-2
                 "
       value={2}
     >
       2
     </option>
     <option
-      id="someId 3
+      id="undefined 3
                 "
-      key="someId-3
+      key="undefined-3
                 "
       value={3}
     >
       3
     </option>
     <option
-      id="someId 4
+      id="undefined 4
                 "
-      key="someId-4
+      key="undefined-4
                 "
       value={4}
     >
       4
     </option>
     <option
-      id="someId 5
+      id="undefined 5
                 "
-      key="someId-5
+      key="undefined-5
                 "
       value={5}
     >

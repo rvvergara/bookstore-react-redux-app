@@ -3,10 +3,10 @@ import {
   removeBook,
   switchAddBookMode,
   switchProgressUpdate,
-  updateChapter,
+  updatePage,
 } from '../../actions/book';
 import {
-  ADD_BOOK, REMOVE_BOOK, SWITCH_ADD_BOOK_MODE, SWITCH_PROGRESS_UPDATE, UPDATE_CHAPTER,
+  ADD_BOOK, REMOVE_BOOK, SWITCH_ADD_BOOK_MODE, SWITCH_PROGRESS_UPDATE, UPDATE_PAGE,
 } from '../../actions/actionTypes';
 import books from '../fixtures/books';
 
@@ -45,9 +45,9 @@ test('switchUpdateProgress should return the right action', () => {
 });
 
 test('updateChapter should return the right action', () => {
-  expect(updateChapter('someId', '30')).toEqual({
-    type: UPDATE_CHAPTER,
+  expect(updatePage('someId', '30')).toEqual({
+    type: UPDATE_PAGE,
     id: 'someId',
-    newChapter: '30',
+    newPage: '30',
   });
 });

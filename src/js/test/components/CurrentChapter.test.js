@@ -3,6 +3,6 @@ import { shallow } from 'enzyme';
 import CurrentChapter from '../../components/CurrentChapter';
 
 test('CurrentChapter should render correctly', () => {
-  const wrapper = shallow(<CurrentChapter currentChapter="" />);
+  const wrapper = shallow(<CurrentChapter currentPage="" />);
   expect(wrapper).toMatchSnapshot();
 });

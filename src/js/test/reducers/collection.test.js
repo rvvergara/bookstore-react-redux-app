@@ -1,6 +1,6 @@
 import collectionReducer from '../../reducers/collection';
 import books from '../fixtures/books';
-import { UPDATE_CHAPTER } from '../../actions/actionTypes';
+import { UPDATE_PAGE } from '../../actions/actionTypes';
 
 let collectionState;
 
@@ -32,11 +32,11 @@ test('it should remove an existing book', () => {
   expect(collectionReducer(collectionState, action)).toEqual(collectionState.slice(1));
 });
 
-test('it should update current chapter of selected book', () => {
+test('it should update current page of selected book', () => {
   const action = {
-    type: UPDATE_CHAPTER,
+    type: UPDATE_PAGE,
     id: collectionState[1].id,
-    newChapter: '15',
+    newPage: '15',
   };
-  expect(collectionReducer(collectionState, action)[1].currentChapter).toBe('15');
+  expect(collectionReducer(collectionState, action)[1].current_page).toBe('15');
 });

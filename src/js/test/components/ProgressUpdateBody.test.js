@@ -4,17 +4,17 @@ import { ProgressUpdateBody } from '../../components/ProgressUpdateBody';
 
 describe('ProgressUpdateBody', () => {
   let wrapper;
-  let updateChapter;
+  let updatePage;
 
   beforeEach(() => {
-    const chaptersArray = [1, 2, 3, 4, 5];
-    updateChapter = jest.fn();
+    const pagesArray = [1, 2, 3, 4, 5];
+    updatePage = jest.fn();
     wrapper = shallow(
       <ProgressUpdateBody
-        chaptersArray={chaptersArray}
-        id="someId"
+        pagesArray={pagesArray}
+        book_id="someId"
         title="Some Title"
-        updateChapter={updateChapter}
+        updatePage={updatePage}
       />,
     );
   });
@@ -32,6 +32,6 @@ describe('ProgressUpdateBody', () => {
     });
 
     expect(wrapper.state('current')).toBe('3');
-    expect(updateChapter).toHaveBeenLastCalledWith('someId', '3');
+    expect(updatePage).toHaveBeenLastCalledWith('someId', '3');
   });
 });
