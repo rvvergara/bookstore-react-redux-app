@@ -7,7 +7,7 @@ export default (state = [], action) => {
     case SET_COLLECTION:
       return action.collection;
     case ADD_BOOK:
-      return [...state, action.book];
+      return [action.book, ...state];
     case REMOVE_BOOK:
       return state.filter(item => item.id !== action.id);
     case UPDATE_PAGE:
