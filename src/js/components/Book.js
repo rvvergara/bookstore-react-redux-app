@@ -1,16 +1,41 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addBookToLibrary } from '../thunks/book';
+import { addBookToLibrary, fetchRemoveBook } from '../thunks/book';
 import { switchAddBookMode } from '../actions/book';
 
 export const Book = ({
- book, addBookToLibrary, username, switchAddBookMode 
+  book, addBookToLibrary, fetchRemoveBook, username, switchAddBookMode,
 }) => {
   const addToCollection = () => {
     const path = `/v1/users/${username}/collection`;
     addBookToLibrary(path, { collection_item: { book_id: book.id } })
       .then(() => switchAddBookMode());
   };
+
+  const removeFromCollection = () => {
+    fetchRemoveBook(username, book.item_id)
+      .then(() => switchAddBookMode());
+  };
+
+  const addBookBtn = (
+    <button
+      type="button"
+      className="add-book-btn"
+      onClick={addToCollection}
+    >
+      Add To Collection
+    </button>
+  );
+
+  const removeBookBtn = (
+    <button
+      type="button"
+      className="add-book-btn"
+      onClick={removeFromCollection}
+    >
+      Remove From Collection
+    </button>
+  );
 
   return (
     <div>
@@ -49,13 +74,7 @@ export const Book = ({
           {' '}
           {book.published_date}
         </p>
-        <button
-          type="button"
-          className="add-book-btn"
-          onClick={addToCollection}
-        >
-        Add To Collection
-        </button>
+        {book.included ? removeBookBtn : addBookBtn}
       </div>
     </div>
   );
@@ -65,4 +84,4 @@ const mapStateToProps = state => ({
   username: state.currentUser.data.username,
 });
 
-export default connect(mapStateToProps, { addBookToLibrary, switchAddBookMode })(Book);
+export default connect(mapStateToProps, { addBookToLibrary, fetchRemoveBook, switchAddBookMode })(Book);
