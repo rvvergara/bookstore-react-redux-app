@@ -24,7 +24,7 @@ test('it should add new book', () => {
       category: 'Comedy',
     },
   };
-  expect(collectionReducer(collectionState, action)).toEqual([...collectionState, action.book]);
+  expect(collectionReducer(collectionState, action)).toEqual([action.book, ...collectionState]);
 });
 
 test('it should remove an existing book', () => {
