@@ -1,8 +1,18 @@
-import { LIST_SEARCH_RESULTS } from '../actions/actionTypes';
+import { LIST_SEARCH_RESULTS, UPDATE_SEARCH_RESULT } from '../actions/actionTypes';
 
 export default (state = [], action) => {
-  if (action.type === LIST_SEARCH_RESULTS) {
-    return action.searchResults;
+  switch (action.type) {
+    case LIST_SEARCH_RESULTS:
+      return action.searchResults;
+    case UPDATE_SEARCH_RESULT:
+    {
+      const { book_id, item_id } = action;
+      const resultIndex = state.findIndex(result => result.id === book_id);
+      const newState = [...state];
+      newState[resultIndex] = { ...newState[resultIndex], included: true, item_id };
+      return newState;
+    }
+    default:
+      return state;
   }
-  return state;
 };

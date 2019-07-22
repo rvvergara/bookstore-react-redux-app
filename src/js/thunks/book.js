@@ -34,6 +34,7 @@ export const searchBooks = (keyword, isAdminSearch) => (dispatch) => {
 export const addBookToLibrary = (path, book) => dispatch => fetchData('post', path, book)
   .then((res) => {
     if (path.includes('users')) dispatch(addBook(res.data.collection_item));
+    return res.data;
   })
   .catch((err) => {
     dispatch(setErrors([`Book ${err.response.data.errors.book_id[0]}`]));

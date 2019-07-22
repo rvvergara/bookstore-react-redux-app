@@ -2,14 +2,23 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addBookToLibrary, fetchRemoveBook } from '../thunks/book';
 import { switchAddBookMode } from '../actions/book';
+import { updateSearchResult } from '../actions/search';
 
 export const Book = ({
-  book, addBookToLibrary, fetchRemoveBook, username, switchAddBookMode,
+  book,
+  addBookToLibrary,
+  fetchRemoveBook,
+  username,
+  switchAddBookMode,
+  updateSearchResult,
 }) => {
   const addToCollection = () => {
     const path = `/v1/users/${username}/collection`;
     addBookToLibrary(path, { collection_item: { book_id: book.id } })
-      .then(() => switchAddBookMode());
+      .then((res) => {
+        updateSearchResult(book.id, res.collection_item.id);
+        // switchAddBookMode();
+      });
   };
 
   const removeFromCollection = () => {
@@ -85,4 +94,6 @@ const mapStateToProps = state => ({
   book: state.addBookMode.book,
 });
 
-export default connect(mapStateToProps, { addBookToLibrary, fetchRemoveBook, switchAddBookMode })(Book);
+export default connect(mapStateToProps, {
+  addBookToLibrary, fetchRemoveBook, switchAddBookMode, updateSearchResult,
+})(Book);
