@@ -16,16 +16,18 @@ export const Book = ({
     const path = `/v1/users/${username}/collection`;
     addBookToLibrary(path, { collection_item: { book_id: book.id } })
       .then((res) => {
-        const { id } = res.collection_item;
-        updateSearchResult(book.id, id);
-        switchAddBookMode({ ...book, item_id: id, included: true });
-        // switchAddBookMode();
+        const { item_id } = res.collection_item;
+        updateSearchResult(book.id, item_id, true);
+        switchAddBookMode({ ...book, item_id, included: true });
       });
   };
 
   const removeFromCollection = () => {
-    fetchRemoveBook(username, book.item_id)
-      .then(() => switchAddBookMode());
+    fetchRemoveBook(username, book.item_id, false)
+      .then(() => {
+        updateSearchResult(book.id, null, false);
+        switchAddBookMode({ ...book, item_id: null, included: false });
+      });
   };
 
   const addBookBtn = (

@@ -5,8 +5,9 @@ export const listSearchResults = searchResults => ({
   searchResults,
 });
 
-export const updateSearchResult = (book_id, item_id) => ({
+export const updateSearchResult = (book_id, item_id, included) => ({
   type: UPDATE_SEARCH_RESULT,
   book_id,
   item_id,
+  included,
 });

@@ -6,10 +6,10 @@ export default (state = [], action) => {
       return action.searchResults;
     case UPDATE_SEARCH_RESULT:
     {
-      const { book_id, item_id } = action;
+      const { book_id, item_id, included } = action;
       const resultIndex = state.findIndex(result => result.id === book_id);
       const newState = [...state];
-      newState[resultIndex] = { ...newState[resultIndex], included: true, item_id };
+      newState[resultIndex] = { ...newState[resultIndex], included, item_id };
       return newState;
     }
     default:
