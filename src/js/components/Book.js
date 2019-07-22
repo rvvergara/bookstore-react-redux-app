@@ -16,7 +16,9 @@ export const Book = ({
     const path = `/v1/users/${username}/collection`;
     addBookToLibrary(path, { collection_item: { book_id: book.id } })
       .then((res) => {
-        updateSearchResult(book.id, res.collection_item.id);
+        const { id } = res.collection_item;
+        updateSearchResult(book.id, id);
+        switchAddBookMode({ ...book, item_id: id, included: true });
         // switchAddBookMode();
       });
   };

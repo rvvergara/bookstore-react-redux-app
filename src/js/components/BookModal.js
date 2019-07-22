@@ -9,7 +9,7 @@ export const BookModal = ({ switchAddBookMode, addBookMode, isAdmin }) => (
   <Modal
     isOpen={addBookMode.on}
     ariaHideApp={false}
-    onRequestClose={() => switchAddBookMode(addBookMode.book)}
+    onRequestClose={() => switchAddBookMode()}
     closeTimeoutMS={200}
   >
     {isAdmin && <BookForm /> }

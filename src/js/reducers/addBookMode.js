@@ -7,7 +7,10 @@ const defaultState = {
 
 export default (state = defaultState, action) => {
   if (action.type === SWITCH_ADD_BOOK_MODE) {
-    return state.on ? { on: false, book: null } : { on: true, book: action.book };
+    if (state.on) {
+      return action.book ? { on: true, book: action.book } : { on: false, book: null };
+    }
+    return { on: true, book: action.book };
   }
   return state;
 };
