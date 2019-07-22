@@ -61,5 +61,7 @@ export const fetchRemoveBook = (username, id) => (dispatch) => {
   const path = `/v1/users/${username}/collection/${id}`;
 
   return fetchData('delete', path)
-    .then(() => dispatch(removeBook(id)));
+    .then(() => {
+      dispatch(removeBook(id));
+    });
 };

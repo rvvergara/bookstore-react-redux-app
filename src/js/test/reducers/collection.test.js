@@ -28,7 +28,7 @@ test('it should add new book', () => {
 });
 
 test('it should remove an existing book', () => {
-  const action = { type: 'REMOVE_BOOK', id: '0' };
+  const action = { type: 'REMOVE_BOOK', id: 'zero' };
   expect(collectionReducer(collectionState, action)).toEqual(collectionState.slice(1));
 });
 

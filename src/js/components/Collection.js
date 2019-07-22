@@ -56,7 +56,7 @@ export const Collection = (
           <CollectionItem
             key={item.id}
             item={item}
-            handleRemove={() => fetchRemoveBook(username, item.id)}
+            handleRemove={() => fetchRemoveBook(username, item.item_id)}
           />
         ))}
       </div>

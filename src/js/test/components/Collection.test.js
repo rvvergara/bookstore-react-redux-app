@@ -52,7 +52,7 @@ describe('Collection', () => {
   });
 
   test('it should call removeBook with id of an existing book', () => {
-    wrapper.find('CollectionItem').at(2).prop('handleRemove')(books[2].id);
-    expect(fetchRemoveBook).toHaveBeenLastCalledWith('willy', books[2].id);
+    wrapper.find('CollectionItem').at(2).prop('handleRemove')(books[2].item_id);
+    expect(fetchRemoveBook).toHaveBeenLastCalledWith('willy', books[2].item_id);
   });
 });

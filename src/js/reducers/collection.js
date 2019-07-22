@@ -9,7 +9,7 @@ export default (state = [], action) => {
     case ADD_BOOK:
       return [action.book, ...state];
     case REMOVE_BOOK:
-      return state.filter(item => item.id !== action.id);
+      return state.filter(item => item.item_id !== action.id);
     case UPDATE_PAGE:
     {
       const { id, newPage } = action;

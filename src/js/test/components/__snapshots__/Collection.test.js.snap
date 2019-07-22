@@ -34,6 +34,7 @@ exports[`Collection it should render properly 1`] = `
           "imageLinks": Object {
             "smallThumbnail": "",
           },
+          "item_id": "zero",
           "title": "Lord of the Rings",
         }
       }
@@ -55,6 +56,7 @@ exports[`Collection it should render properly 1`] = `
           "imageLinks": Object {
             "smallThumbnail": "",
           },
+          "item_id": "one",
           "title": "Guide to Investing",
         }
       }
@@ -76,6 +78,7 @@ exports[`Collection it should render properly 1`] = `
           "imageLinks": Object {
             "smallThumbnail": "",
           },
+          "item_id": "two",
           "title": "Star Trek",
         }
       }

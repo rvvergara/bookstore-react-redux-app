@@ -24,6 +24,7 @@ exports[`SearchResultsList should render correctly with search result 1`] = `
         "imageLinks": Object {
           "smallThumbnail": "",
         },
+        "item_id": "zero",
         "title": "Lord of the Rings",
       }
     }
@@ -44,6 +45,7 @@ exports[`SearchResultsList should render correctly with search result 1`] = `
         "imageLinks": Object {
           "smallThumbnail": "",
         },
+        "item_id": "one",
         "title": "Guide to Investing",
       }
     }
@@ -64,6 +66,7 @@ exports[`SearchResultsList should render correctly with search result 1`] = `
         "imageLinks": Object {
           "smallThumbnail": "",
         },
+        "item_id": "two",
         "title": "Star Trek",
       }
     }

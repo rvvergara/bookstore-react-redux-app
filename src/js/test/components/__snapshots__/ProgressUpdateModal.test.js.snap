@@ -46,6 +46,7 @@ exports[`ProgressUpdateModal component should render correctly 1`] = `
           "smallThumbnail": "",
         }
       }
+      item_id="two"
       pagesArray={Array []}
       title="Star Trek"
     />

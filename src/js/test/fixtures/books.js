@@ -1,6 +1,7 @@
 export default [
   {
     book_id: '0',
+    item_id: 'zero',
     id: '0',
     title: 'Lord of the Rings',
     authors: ['Tolkien'],
@@ -12,6 +13,7 @@ export default [
   },
   {
     book_id: '1',
+    item_id: 'one',
     id: '1',
     title: 'Guide to Investing',
     authors: ['Kiyosaki'],
@@ -23,6 +25,7 @@ export default [
   },
   {
     book_id: '2',
+    item_id: 'two',
     id: '2',
     title: 'Star Trek',
     authors: ['Roddenberry'],
