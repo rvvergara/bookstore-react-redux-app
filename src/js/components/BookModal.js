@@ -13,7 +13,7 @@ export const BookModal = ({ switchAddBookMode, addBookMode, isAdmin }) => (
     closeTimeoutMS={200}
   >
     {isAdmin && <BookForm /> }
-    {!isAdmin && addBookMode.on && <Book book={addBookMode.book} /> }
+    {!isAdmin && addBookMode.on && <Book /> }
   </Modal>
 );
 

@@ -82,6 +82,7 @@ export const Book = ({
 
 const mapStateToProps = state => ({
   username: state.currentUser.data.username,
+  book: state.addBookMode.book,
 });
 
 export default connect(mapStateToProps, { addBookToLibrary, fetchRemoveBook, switchAddBookMode })(Book);
