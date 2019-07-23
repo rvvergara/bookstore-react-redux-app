@@ -58,6 +58,7 @@ export const signUp = signupParams => (dispatch) => {
     })
     .catch((err) => {
       setErrorInStore(err, dispatch);
+      return Promise.reject(err);
     });
 };
 
@@ -76,5 +77,6 @@ export const updateAccount = userParams => (dispatch) => {
     })
     .catch((err) => {
       dispatch(setErrors(err.response.data));
+      return Promise.reject(err);
     });
 };

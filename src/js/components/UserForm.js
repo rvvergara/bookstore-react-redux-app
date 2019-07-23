@@ -34,7 +34,8 @@ export const UserForm = ({
     const userParamsData = password === '' ? profileAttributes : { ...profileAttributes, ...secureAttributes };
     const params = userData ? { user: userParamsData, id: userData.id } : { user: userParamsData };
     saveUser(params)
-      .then(() => history.push('/'));
+      .then(() => history.push('/'))
+      .catch(err => err);
   };
 
   return (
