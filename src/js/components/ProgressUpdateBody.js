@@ -10,16 +10,16 @@ export class ProgressUpdateBody extends React.Component {
   }
 
   handleChange = (target) => {
-    const { id, fetchUpdatePage, username } = this.props;
+    const { item_id, fetchUpdatePage, username } = this.props;
     this.setState({
       [target.name]: target.value,
     });
     const newPage = target.value === "Not started" ? '0' : target.value;
-    fetchUpdatePage(username, id, newPage); 
+    fetchUpdatePage(username, item_id, newPage); 
   }
 
   render(){
-    const { pagesArray, id, title } = this.props;
+    const { pagesArray, item_id, title } = this.props;
     const { current} = this.state;
     return (
       <div>
@@ -34,9 +34,9 @@ export class ProgressUpdateBody extends React.Component {
             ['Not started', ...pagesArray].map(page => (
               <option
                 value={page}
-                key={`${id}-${page}
+                key={`${item_id}-${page}
                 `}
-                id={`${id} ${page}
+                id={`${item_id} ${page}
                 `}
               >
                 {page}
