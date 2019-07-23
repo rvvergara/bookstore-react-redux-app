@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { switchAddBookMode } from '../actions/book';
 
@@ -50,6 +51,11 @@ export const BookSearchResultPanel = ({
       </div>
     </div>
   );
+};
+
+BookSearchResultPanel.propTypes = {
+  book: PropTypes.instanceOf(Object).isRequired,
+  switchAddBookMode: PropTypes.func.isRequired,
 };
 
 export default connect(null, { switchAddBookMode })(BookSearchResultPanel);
