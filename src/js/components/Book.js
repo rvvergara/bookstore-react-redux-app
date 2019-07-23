@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addBookToLibrary, fetchRemoveBook } from '../thunks/book';
 import { switchAddBookMode } from '../actions/book';
@@ -96,6 +97,19 @@ const mapStateToProps = state => ({
   book: state.addBookMode.book,
 });
 
-export default connect(mapStateToProps, {
-  addBookToLibrary, fetchRemoveBook, switchAddBookMode, updateSearchResult,
-})(Book);
+Book.propTypes = {
+  book: PropTypes.instanceOf(Object).isRequired,
+  addBookToLibrary: PropTypes.func.isRequired,
+  fetchRemoveBook: PropTypes.func.isRequired,
+  switchAddBookMode: PropTypes.func.isRequired,
+  updateSearchResult: PropTypes.func.isRequired,
+  username: PropTypes.string.isRequired,
+};
+
+export default connect(mapStateToProps,
+  {
+    addBookToLibrary,
+    fetchRemoveBook,
+    switchAddBookMode,
+    updateSearchResult,
+  })(Book);
