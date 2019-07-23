@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Switch from 'react-switch';
 import { updateAccount, fetchUsers } from '../thunks/user';
 
 export const UserPanel = ({
-  user: {
-    id, username, first_name, last_name, access_level,
-  }, updateAccount, currentUserLevel, fetchUsers,
+  user,
+  updateAccount,
+  currentUserLevel,
+  fetchUsers,
 }) => {
+  const {
+    id, username, first_name, last_name, access_level,
+  } = user;
   const [checked, setChecked] = useState(access_level > 1);
 
   const handleChange = () => {
@@ -53,5 +58,12 @@ export const UserPanel = ({
 const mapStateToProps = state => ({
   currentUserLevel: state.currentUser.data.access_level,
 });
+
+UserPanel.propTypes = {
+  user: PropTypes.instanceOf(Object).isRequired,
+  updateAccount: PropTypes.func.isRequired,
+  currentUserLevel: PropTypes.number.isRequired,
+  fetchUsers: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, { updateAccount, fetchUsers })(UserPanel);
