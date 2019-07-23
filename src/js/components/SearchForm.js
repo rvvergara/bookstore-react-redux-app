@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import history from '../services/history';
 import { searchBooks } from '../thunks/book';
@@ -43,5 +44,10 @@ export const SearchForm = ({ searchBooks, searchTerm }) => {
 const mapStateToProps = state => ({
   searchTerm: state.searchTerm,
 });
+
+SearchForm.propTypes = {
+  searchBooks: PropTypes.func.isRequired,
+  searchTerm: PropTypes.string.isRequired,
+};
 
 export default connect(mapStateToProps, { searchBooks })(SearchForm);
