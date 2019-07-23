@@ -45,7 +45,7 @@ describe('UserForm component for signup', () => {
         password: 'password',
         password_confirmation: 'password',
       },
-    });
+    }, '');
   });
 
   test('should show error when user information incomplete', () => {
@@ -85,7 +85,7 @@ describe('UserForm for editing user account', () => {
         username, email, first_name: newFirstName, last_name,
       },
       id: users[0].id,
-    });
+    }, username);
   });
 
   test('should show an error when a user info is missing', () => {

@@ -33,7 +33,8 @@ export const UserForm = ({
     };
     const userParamsData = password === '' ? profileAttributes : { ...profileAttributes, ...secureAttributes };
     const params = userData ? { user: userParamsData, id: userData.id } : { user: userParamsData };
-    saveUser(params)
+    const usernameParam = isAuthenticated ? userData.username : '';
+    saveUser(params, usernameParam)
       .then(() => history.push('/'))
       .catch(err => err);
   };

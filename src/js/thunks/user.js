@@ -62,8 +62,8 @@ export const signUp = signupParams => (dispatch) => {
     });
 };
 
-export const updateAccount = userParams => (dispatch) => {
-  const path = `/v1/users/${userParams.user.username}`;
+export const updateAccount = (userParams, usernameParam) => (dispatch) => {
+  const path = `/v1/users/${usernameParam}`;
   return fetchData('put', path, userParams)
     .then((res) => {
       const { user } = res.data;

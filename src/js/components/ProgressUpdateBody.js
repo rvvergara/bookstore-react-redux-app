@@ -50,7 +50,7 @@ export class ProgressUpdateBody extends React.Component {
 
 ProgressUpdateBody.propTypes = {
   pagesArray: PropTypes.instanceOf(Object).isRequired,
-  id: PropTypes.string.isRequired,
+  item_id: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   fetchUpdatePage: PropTypes.func.isRequired,
   username: PropTypes.string.isRequired,
