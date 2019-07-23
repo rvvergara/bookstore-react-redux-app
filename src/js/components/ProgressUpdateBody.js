@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect } from 'react-redux';
-// import { updatePage} from '../actions/book';
 import { fetchUpdatePage } from '../thunks/book';
 
 export class ProgressUpdateBody extends React.Component {
@@ -15,7 +14,7 @@ export class ProgressUpdateBody extends React.Component {
       [target.name]: target.value,
     });
     const newPage = target.value === "Not started" ? '0' : target.value;
-    fetchUpdatePage(username, item_id, newPage); 
+    fetchUpdatePage(username, item_id, newPage);
   }
 
   render(){
