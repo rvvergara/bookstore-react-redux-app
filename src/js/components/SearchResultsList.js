@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import BookSearchResultPanel from './BookSearchResultPanel';
 import BookModal from './BookModal';
@@ -6,7 +7,10 @@ import { searchBooks } from '../thunks/book';
 import history from '../services/history';
 
 export const SearchResultsList = ({
-  searchResults, searchTerm, error, searchBooks,
+  searchResults,
+  searchTerm,
+  error,
+  searchBooks,
 }) => {
   const isAdmin = history.location.pathname.includes('admin');
 
@@ -45,5 +49,16 @@ const mapStateToProps = state => ({
   searchTerm: state.searchTerm,
   error: state.errors ? state.errors[0] : null,
 });
+
+SearchResultsList.propTypes = {
+  searchResults: PropTypes.instanceOf(Object).isRequired,
+  searchTerm: PropTypes.string.isRequired,
+  error: PropTypes.instanceOf(Object),
+  searchBooks: PropTypes.func.isRequired,
+};
+
+SearchResultsList.defaultProps = {
+  error: null,
+};
 
 export default connect(mapStateToProps, { searchBooks })(SearchResultsList);
