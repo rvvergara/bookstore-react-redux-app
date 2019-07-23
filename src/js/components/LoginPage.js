@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { login } from '../thunks/user';
 import InputWrapper from './InputWrapper';
 
-export const LoginPage = ({ login, errors, history }) => {
+export const LoginPage = ({
+  login,
+  errors,
+  history,
+}) => {
   const [emailOrUsername, setEmailOrUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(errors ? errors.message : errors);
@@ -63,6 +68,16 @@ export const LoginPage = ({ login, errors, history }) => {
 const mapStateToProps = state => ({
   errors: state.errors,
 });
+
+LoginPage.propTypes = {
+  login: PropTypes.func.isRequired,
+  errors: PropTypes.instanceOf(Object),
+  history: PropTypes.instanceOf(Object).isRequired,
+};
+
+LoginPage.defaultProps = {
+  errors: null,
+};
 
 export default connect(
   mapStateToProps,
