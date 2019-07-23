@@ -94,7 +94,7 @@ export const BookForm = ({ book, addBookToLibrary, switchAddBookMode }) => {
         error={null}
       />
       <InputWrapper
-        inputValue={pageCount}
+        inputValue={String(pageCount)}
         labelValue="Page Count: "
         setInput={setPageCount}
         type="text"

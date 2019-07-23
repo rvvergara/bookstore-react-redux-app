@@ -9,6 +9,7 @@ exports[`LoginPage component should render correctly 1`] = `
       className="form user-form"
     >
       <InputWrapper
+        error={null}
         inputId="email"
         inputValue=""
         labelValue="Username/Email:"
@@ -16,6 +17,7 @@ exports[`LoginPage component should render correctly 1`] = `
         type="text"
       />
       <InputWrapper
+        error={null}
         inputId="password"
         inputValue=""
         labelValue="Password:"
@@ -57,6 +59,7 @@ exports[`LoginPage component wrong password should show error message 1`] = `
         className="error"
       />
       <InputWrapper
+        error={null}
         inputId="email"
         inputValue=""
         labelValue="Username/Email:"
@@ -64,6 +67,7 @@ exports[`LoginPage component wrong password should show error message 1`] = `
         type="text"
       />
       <InputWrapper
+        error={null}
         inputId="password"
         inputValue=""
         labelValue="Password:"

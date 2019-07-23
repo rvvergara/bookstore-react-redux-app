@@ -1,7 +1,13 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const InputWrapper = ({
-  setInput, inputValue, labelValue, type, inputId, error,
+  setInput,
+  inputValue,
+  labelValue,
+  type,
+  inputId,
+  error,
 }) => (
   <div className="input-wrapper">
     <label
@@ -33,5 +39,18 @@ const InputWrapper = ({
     }
   </div>
 );
+
+InputWrapper.propTypes = {
+  setInput: PropTypes.func.isRequired,
+  inputValue: PropTypes.string.isRequired,
+  labelValue: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  inputId: PropTypes.string.isRequired,
+  error: PropTypes.instanceOf(Object),
+};
+
+InputWrapper.defaultProps = {
+  error: null,
+};
 
 export default InputWrapper;
