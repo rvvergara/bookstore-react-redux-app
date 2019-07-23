@@ -13,7 +13,7 @@ describe('ProgressUpdateBody', () => {
     wrapper = shallow(
       <ProgressUpdateBody
         pagesArray={pagesArray}
-        id="someId"
+        item_id="someId"
         title="Some Title"
         fetchUpdatePage={fetchUpdatePage}
         username={users[0].username}
