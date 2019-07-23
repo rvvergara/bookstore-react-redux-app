@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
 import BookForm from './BookForm';
@@ -24,5 +25,10 @@ export const BookModal = ({ switchAddBookMode, addBookMode }) => {
 const mapStateToProps = state => ({
   addBookMode: state.addBookMode,
 });
+
+BookModal.propTypes = {
+  switchAddBookMode: PropTypes.func.isRequired,
+  addBookMode: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default connect(mapStateToProps, { switchAddBookMode })(BookModal);
