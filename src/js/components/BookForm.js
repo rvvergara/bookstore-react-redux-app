@@ -127,9 +127,13 @@ const mapStateToProps = state => ({
 });
 
 BookForm.propTypes = {
-  book: PropTypes.instanceOf(Object).isRequired,
+  book: PropTypes.instanceOf(Object),
   addBookToLibrary: PropTypes.func.isRequired,
   switchAddBookMode: PropTypes.func.isRequired,
+};
+
+BookForm.defaultProps = {
+  book: null,
 };
 
 export default connect(mapStateToProps,

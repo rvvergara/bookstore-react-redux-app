@@ -3,8 +3,9 @@ import { connect } from 'react-redux';
 import history from '../services/history';
 import { searchBooks } from '../thunks/book';
 
-export const SearchForm = ({ searchBooks, searchTerm, isAdmin }) => {
+export const SearchForm = ({ searchBooks, searchTerm }) => {
   const [keywords, setKeywords] = useState(searchTerm || '');
+  const isAdmin = history.location.pathname.includes('admin');
 
   useEffect(() => {
     setKeywords(searchTerm);

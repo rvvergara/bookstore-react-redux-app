@@ -3,10 +3,10 @@ import { shallow } from 'enzyme';
 import { SearchForm } from '../../components/SearchForm';
 
 describe('SearchForm component', () => {
-  const searchBooks = jest.fn();
+  const searchBooks = jest.fn(() => Promise.resolve());
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<SearchForm searchBooks={searchBooks} isAdmin />);
+    wrapper = shallow(<SearchForm searchBooks={searchBooks} />);
   });
 
   test('should render correctly', () => {
@@ -19,6 +19,6 @@ describe('SearchForm component', () => {
       target: { value: searchTerm },
     });
     wrapper.find('button').simulate('click', { preventDefault: () => {} });
-    expect(searchBooks).toHaveBeenLastCalledWith(searchTerm, true);
+    expect(searchBooks).toHaveBeenLastCalledWith(searchTerm, false);
   });
 });
