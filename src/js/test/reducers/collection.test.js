@@ -35,7 +35,7 @@ test('it should remove an existing book', () => {
 test('it should update current page of selected book', () => {
   const action = {
     type: UPDATE_PAGE,
-    id: collectionState[1].id,
+    id: collectionState[1].item_id,
     newPage: '15',
   };
   expect(collectionReducer(collectionState, action)[1].current_page).toBe('15');
