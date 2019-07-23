@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { signUp, updateAccount } from '../thunks/user';
 import history from '../services/history';
@@ -6,7 +7,12 @@ import { setErrors } from '../actions/errors';
 import InputWrapper from './InputWrapper';
 
 export const UserForm = ({
-  signUp, errors, setErrors, isAuthenticated, userData, updateAccount,
+  signUp,
+  errors,
+  setErrors,
+  isAuthenticated,
+  userData,
+  updateAccount,
 }) => {
   const [username, setUsername] = useState(userData ? userData.username : '');
   const [email, setEmail] = useState(userData ? userData.email : '');
@@ -117,5 +123,19 @@ const mapStateToProps = state => ({
   isAuthenticated: state.currentUser.authenticated,
   userData: state.currentUser.data,
 });
+
+UserForm.propTypes = {
+  signUp: PropTypes.func.isRequired,
+  errors: PropTypes.instanceOf(Object),
+  setErrors: PropTypes.func.isRequired,
+  isAuthenticated: PropTypes.bool.isRequired,
+  userData: PropTypes.instanceOf(Object),
+  updateAccount: PropTypes.func.isRequired,
+};
+
+UserForm.defaultProps = {
+  errors: null,
+  userData: null,
+};
 
 export default connect(mapStateToProps, { signUp, setErrors, updateAccount })(UserForm);
