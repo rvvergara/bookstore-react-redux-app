@@ -14,7 +14,9 @@ describe('UserForm component for signup', () => {
       <UserForm
         error={null}
         signUp={signUp}
-        setError={setError}
+        setErrors={setError}
+        isAuthenticated={false}
+        updateAccount={updateAccount}
       />,
     );
   });
@@ -63,7 +65,8 @@ describe('UserForm for editing user account', () => {
       <UserForm
         error={null}
         updateAccount={updateAccount}
-        setError={setError}
+        signUp={signUp}
+        setErrors={setError}
         isAuthenticated
         userData={{
           id, username, email, first_name, last_name,

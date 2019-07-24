@@ -8,6 +8,7 @@ exports[`SearchResultsList should render correctly with search result 1`] = `
   >
     Search results for
      
+    some term
   </h4>
   <ConnectFunction
     book={

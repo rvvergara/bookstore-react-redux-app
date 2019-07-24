@@ -55,7 +55,7 @@ exports[`Header component Should render correctly while authenticated 1`] = `
     </span>
     <button
       className="logout-btn"
-      onClick={[MockFunction]}
+      onClick={[Function]}
       type="button"
     >
       Log Out

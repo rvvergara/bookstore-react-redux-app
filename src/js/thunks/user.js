@@ -47,6 +47,7 @@ export const logout = () => (dispatch) => {
   dispatch(setCollection([]));
   dispatch(listSearchResults([]));
   dispatch(setSearchTerm(''));
+  return Promise.resolve();
 };
 
 export const signUp = signupParams => (dispatch) => {

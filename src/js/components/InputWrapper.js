@@ -42,7 +42,7 @@ const InputWrapper = ({
 
 InputWrapper.propTypes = {
   setInput: PropTypes.func.isRequired,
-  inputValue: PropTypes.string.isRequired,
+  inputValue: PropTypes.string,
   labelValue: PropTypes.string.isRequired,
   type: PropTypes.string.isRequired,
   inputId: PropTypes.string.isRequired,
@@ -51,6 +51,7 @@ InputWrapper.propTypes = {
 
 InputWrapper.defaultProps = {
   error: null,
+  inputValue: '',
 };
 
 export default InputWrapper;

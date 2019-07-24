@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import NProgress from 'nprogress';
 import { login } from '../thunks/user';
 import InputWrapper from './InputWrapper';
 
@@ -15,12 +16,14 @@ export const LoginPage = ({
 
   const loginUser = (e) => {
     e.preventDefault();
+    NProgress.start();
     setEmailOrUsername('');
     setPassword('');
     login({ email_or_username: emailOrUsername, password })
       .then(() => {
         history.push('/');
       })
+      .then(() => NProgress.done())
       .catch(() => setErrorMessage(errors));
   };
 

@@ -12,7 +12,7 @@ exports[`SearchForm component should render correctly 1`] = `
       onChange={[Function]}
       placeholder="Search books, authors, etc"
       type="search"
-      value=""
+      value="cool"
     />
     <button
       className="add-book-btn btn-sm"

@@ -6,7 +6,7 @@ describe('SearchForm component', () => {
   const searchBooks = jest.fn(() => Promise.resolve());
   let wrapper;
   beforeEach(() => {
-    wrapper = shallow(<SearchForm searchBooks={searchBooks} />);
+    wrapper = shallow(<SearchForm searchBooks={searchBooks} searchTerm="cool" />);
   });
 
   test('should render correctly', () => {

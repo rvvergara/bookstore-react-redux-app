@@ -8,6 +8,7 @@ describe('BookSearchResultPanel', () => {
   const wrapper = shallow(
     <BookSearchResultPanel
       book={books[0]}
+      searchTerm="someTerm"
       switchAddBookMode={switchAddBookMode}
     />,
   );
