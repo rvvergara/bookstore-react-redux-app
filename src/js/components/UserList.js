@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import NProgress from 'nprogress';
 import { fetchUsers } from '../thunks/user';
 import { listUsers } from '../actions/user';
 import UserPanel from './UserPanel';
@@ -12,7 +13,8 @@ export const UserList = ({
   currentUser,
 }) => {
   useEffect(() => {
-    fetchUsers();
+    NProgress.start();
+    fetchUsers().then(() => NProgress.done());
     return () => listUsers([]);
   }, [fetchUsers, listUsers]);
 

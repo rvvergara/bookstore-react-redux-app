@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import NProgress from 'nprogress';
 import Switch from 'react-switch';
 import { updateAccount, fetchUsers } from '../thunks/user';
 
@@ -16,10 +17,12 @@ export const UserPanel = ({
   const [checked, setChecked] = useState(access_level > 1);
 
   const handleChange = () => {
+    NProgress.start();
     const level = checked ? 1 : 2;
     setChecked(!checked);
     updateAccount({ user: { access_level: level, username }, id })
-      .then(() => fetchUsers());
+      .then(() => fetchUsers())
+      .then(() => NProgress.done());
   };
   const badge = (level) => {
     switch (level) {
