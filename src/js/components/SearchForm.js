@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import NProgress from 'nprogress';
 import history from '../services/history';
 import { searchBooks } from '../thunks/book';
 
@@ -13,8 +14,9 @@ export const SearchForm = ({ searchBooks, searchTerm }) => {
   }, [setKeywords, searchTerm]);
 
   const handleSearch = (e) => {
+    NProgress.start();
     e.preventDefault();
-    searchBooks(keywords, isAdmin);
+    searchBooks(keywords, isAdmin).then(() => NProgress.done());
     setKeywords(keywords);
     const basePath = isAdmin ? '/admin/books' : '/library';
     history.push(`${basePath}/search?q=${keywords.split(' ').join('+')}`);
