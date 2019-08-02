@@ -4,6 +4,8 @@
     "/**": "index.html"
   },
   "proxies": {
-    "/v1": "https://bookstore-cms-api.herokuapp.com/v1"
+    "/v1": {
+      "origin": "https://bookstore-cms-api.herokuapp.com/v1"
+    }
   }
 }
