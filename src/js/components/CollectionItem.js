@@ -8,7 +8,7 @@ import 'react-circular-progressbar/dist/styles.css';
 const CollectionItem = (props) => {
   const { handleRemove, item } = props;
   const {
-    book_id, title, authors, category, page_count, current_page,
+    title, authors, category, page_count, current_page,
   } = item;
 
   return (
@@ -26,7 +26,7 @@ const CollectionItem = (props) => {
               <button
                 className="btn btn-link"
                 type="button"
-                onClick={() => handleRemove(book_id)}
+                onClick={handleRemove}
               >
                 Remove
               </button>
