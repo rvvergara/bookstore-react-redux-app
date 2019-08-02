@@ -1,0 +1,9 @@
+{
+  "root": "build/",
+  "routes": {
+    "/**": "index.html"
+  },
+  "proxies": {
+    "/v1": "https://bookstore-cms-api.herokuapp.com/v1"
+  }
+}
