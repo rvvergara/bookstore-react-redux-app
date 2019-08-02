@@ -17,10 +17,10 @@ export const Book = ({
   const addToCollection = () => {
     const path = `/v1/users/${username}/collection`;
     NProgress.start();
-    addBookToLibrary(path, { collection_item: { book_id: book.id } })
+    addBookToLibrary(path, { collection_item: { book_id: book.book_id } })
       .then((res) => {
         const { item_id } = res.collection_item;
-        updateSearchResult(book.id, item_id, true);
+        updateSearchResult(book.book_id, item_id, true);
         switchAddBookMode({ ...book, item_id, included: true });
       })
       .then(() => NProgress.done());
@@ -29,7 +29,7 @@ export const Book = ({
   const removeFromCollection = () => {
     NProgress.start();
     fetchRemoveBook(username, book.item_id, false)
-      .then(() => updateSearchResult(book.id, null, false))
+      .then(() => updateSearchResult(book.book_id, null, false))
       .then(() => switchAddBookMode({ ...book, item_id: null, included: false }))
       .then(() => NProgress.done());
   };

@@ -54,7 +54,7 @@ export const Collection = (
       <div>
         {collection.map(item => (
           <CollectionItem
-            key={item.id}
+            key={item.book_id}
             item={item}
             handleRemove={() => fetchRemoveBook(username, item.item_id)}
           />

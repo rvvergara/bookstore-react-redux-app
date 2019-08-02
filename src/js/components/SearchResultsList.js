@@ -29,7 +29,7 @@ export const SearchResultsList = ({
       </h4>
       )}
       {searchResults.map(book => (
-        <BookSearchResultPanel key={book.id} book={book} />
+        <BookSearchResultPanel key={book.book_id} book={book} />
       ))}
       {
         error && (
