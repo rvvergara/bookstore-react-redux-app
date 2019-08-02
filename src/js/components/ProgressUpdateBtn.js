@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { switchProgressUpdate } from '../actions/book';
 
-export const ProgressUpdateBtn = ({ switchProgressUpdate, id }) => (
+export const ProgressUpdateBtn = ({ switchProgressUpdate, item_id }) => (
   <button
     className="update-btn update-btn-primary"
     type="button"
-    onClick={() => switchProgressUpdate(id)}
+    onClick={() => switchProgressUpdate(item_id)}
   >
     Update Progress
   </button>
@@ -15,7 +15,7 @@ export const ProgressUpdateBtn = ({ switchProgressUpdate, id }) => (
 
 ProgressUpdateBtn.propTypes = {
   switchProgressUpdate: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
+  item_id: PropTypes.string.isRequired,
 };
 
 export default connect(null, { switchProgressUpdate })(ProgressUpdateBtn);

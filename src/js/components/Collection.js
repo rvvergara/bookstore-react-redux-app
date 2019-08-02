@@ -66,7 +66,7 @@ export const Collection = (
 
 const mapStateToProps = state => ({
   collection: state.collection.filter(item => (state.filter === '' ? true : item.category === state.filter)),
-  itemForProgressUpdate: state.collection.find(({ id }) => state.progressUpdateMode.id === id) || {},
+  itemForProgressUpdate: state.collection.find(({ item_id }) => state.progressUpdateMode.id === item_id) || {},
   filter: state.filter,
   progressUpdateMode: state.progressUpdateMode,
   username: state.currentUser.data.username,

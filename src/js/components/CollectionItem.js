@@ -40,7 +40,7 @@ const CollectionItem = (props) => {
           </div>
           <div className="chapter-info">
             <CurrentChapter currentPage={String(current_page)} />
-            <ProgressUpdateBtn id={item.id} />
+            <ProgressUpdateBtn item_id={item.item_id} />
           </div>
         </div>
       </div>
