@@ -2,7 +2,7 @@
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
-> Bookstore CMS App built using React, Redux and React-Redux. [Live Demo](https://bookstore-cms-react-redux.netlify.com)
+> Bookstore CMS App built using React, Redux and React-Redux. [Live Demo](https://bookstore-cms-react-redux-app.herokuapp.com/)
 
 Current version features:
 
