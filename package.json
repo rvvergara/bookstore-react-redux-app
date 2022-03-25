@@ -20,14 +20,14 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "uuid": "^3.3.2",
-    "snyk": "^1.362.1"
+    "@snyk/protect": "latest"
   },
   "scripts": {
     "start": "PORT=8080 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "snyk-protect": "snyk protect",
+    "snyk-protect": "snyk-protect",
     "prepare": "yarn run snyk-protect"
   },
   "proxy": "http://localhost:3000",
