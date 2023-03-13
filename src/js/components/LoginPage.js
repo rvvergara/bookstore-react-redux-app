@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import NProgress from 'nprogress';
@@ -13,7 +14,7 @@ export const LoginPage = ({
   const [emailOrUsername, setEmailOrUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(errors ? errors.message : errors);
-
+  const navigate = useNavigate();
   const loginUser = (e) => {
     e.preventDefault();
     NProgress.start();
@@ -21,7 +22,7 @@ export const LoginPage = ({
     setPassword('');
     login({ email_or_username: emailOrUsername, password })
       .then(() => {
-        history.push('/');
+        navigate('/');
       })
       .then(() => NProgress.done())
       .catch(() => setErrorMessage(errors));
@@ -57,7 +58,7 @@ export const LoginPage = ({
             <button
               type="button"
               className="user-form__btn"
-              onClick={() => history.push('/signup')}
+              onClick={() => navigate('/signup')}
             >
               Sign Up
             </button>

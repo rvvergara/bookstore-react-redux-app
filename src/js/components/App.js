@@ -1,22 +1,22 @@
 import React from 'react';
-import { Route, Router, Switch } from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import decode from 'jwt-decode';
 import UserDashboard from './UserDashboard';
 import '../../scss/main.scss';
-import LoginPage from './LoginPage';
+import LoginPageConnected from './LoginPage';
 import SignUpPage from './SignUpPage';
 import EditUserPage from './EditUserPage';
-import AdminDashboard from './AdminDashboard';
-import Header from './Header';
+import AdminDashboardConnected from './AdminDashboard';
+import HeaderConnected from './Header';
 import configureStore from '../store/configureStore';
 import { setCurrentUser } from '../actions/user';
 import { setAuthorizationToken } from '../services/api';
 import history from '../services/history';
-import withAuth from '../hocs/withAuth';
+import WithAuth from '../hocs/withAuth';
 import withCorrectUser from '../hocs/withCorrectUser';
 import withAdmin from '../hocs/withAdmin';
-import SearchWrapper from './SearchWrapper';
+import SearchWrapperConnected from './SearchWrapper';
 
 const store = configureStore();
 
@@ -34,20 +34,21 @@ if (localStorage.token) {
 
 const App = () => (
   <Provider store={store}>
-    <Router history={history}>
+    <BrowserRouter history={history}>
       <div>
-        <Header />
-        <Switch>
-          <Route path="/login" component={withAuth(LoginPage, true)} />
-          <Route path="/signup" component={withAuth(SignUpPage, true)} />
-          <Route path="/" component={withAuth(UserDashboard)} exact />
-          <Route path="/users/:id" component={withAuth(withCorrectUser(EditUserPage))} />
-          <Route path="/admin" component={withAuth(withAdmin(AdminDashboard))} exact />
-          <Route path="/admin/books/search" component={withAuth(withAdmin(SearchWrapper))} />
-          <Route path="/library/search" component={withAuth(SearchWrapper)} />
-        </Switch>
+        <HeaderConnected />
+        <Routes>
+          <Route path="/login" element={WithAuth(LoginPageConnected)} />
+          {/*<Route path="/login" element={<withAuth Component={LoginPageConnected} isPublic={true}/>} />*/}
+          {/*<Route path="/signup" element={<WithAuth element={<SignUpPage />} isPublic={true}/>} />*/}
+          {/*<Route path="/" element={<WithAuth element={<UserDashboard />} />} exact />*/}
+          {/*<Route path="/users/:id" element={WithAuth(withCorrectUser(EditUserPage))} />*/}
+          {/*<Route path="/admin" element={withAuth(withAdmin(AdminDashboardConnected))} exact />*/}
+          {/*<Route path="/admin/books/search" element={withAuth(withAdmin(SearchWrapperConnected))} />*/}
+          {/*<Route path="/library/search" element={withAuth(SearchWrapperConnected)} />*/}
+        </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
   </Provider>
 );
 

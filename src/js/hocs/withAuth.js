@@ -1,17 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
-const withAuth = (Component, isPublic) => {
+const WithAuth = (Component) => {
   const Authenticate = ({ isAuthenticated, ...props }) => {
-    if (isPublic) {
-      return (isAuthenticated ? <Redirect to="/" /> : <Component {...props} />);
-    }
-    return (isAuthenticated ? <Component {...props} /> : <Redirect to="/login" />);
+    return isAuthenticated ? <Component {...props} /> : <Navigate to="/login" />;
   };
 
-  const mapStateToProps = state => ({
+  const mapStateToProps = (state) => ({
     isAuthenticated: state.currentUser.authenticated,
   });
 
@@ -22,4 +19,4 @@ const withAuth = (Component, isPublic) => {
   return connect(mapStateToProps)(Authenticate);
 };
 
-export default withAuth;
+export default WithAuth;

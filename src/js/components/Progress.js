@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import CircularProgressbar from 'react-circular-progressbar';
+import { CircularProgressbar } from 'react-circular-progressbar';
 
 const Progress = ({ currentPage, pages }) => {
   const percentage = Math.round((currentPage / pages) * 100, 2);

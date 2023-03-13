@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import NProgress from 'nprogress';
 import { logout } from '../thunks/user';
@@ -10,6 +10,17 @@ export const Header = ({ logout, currentUser }) => {
     NProgress.start();
     logout().then(() => NProgress.done());
   };
+
+  const navigate = useNavigate();
+  const pushButton = () => {
+    if (currentUser.authenticated) {
+      handleLogOut();
+    } else {
+        console.log("HELLO THERE");
+      navigate('/login');
+    }
+  };
+
   return (
     <header className="panel-bg">
       <h1 className="bookstore-cms">
@@ -40,7 +51,7 @@ export const Header = ({ logout, currentUser }) => {
         <button
           type="button"
           className="logout-btn"
-          onClick={currentUser.authenticated ? handleLogOut : () => history.push('/login')}
+          onClick={pushButton}
         >
           {currentUser.authenticated ? 'Log Out' : 'Log In'}
         </button>
